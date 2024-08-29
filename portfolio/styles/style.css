@@ -1,0 +1,64 @@
+:root {
+
+}
+
+body {
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho {
+    display: flex;
+    background-color: grey;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    padding: 30px;
+}
+
+svg {
+    height: 5%;
+    width: 5%;
+}
+
+/* .slider {
+    background-color: #ccc;
+    width: 40px;
+    height: 20px;
+    border: 2px solid #bbb;
+    border-radius: 20px;
+    position: relative;
+    transition: all 300ms ease-in-out;
+}
+
+.slider__botao {
+    background-color: deeppink;
+    border: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    pointer-events: none; desativa o botao para nao interferir no slider
+    top: 3px;
+    left: 3px;
+    position: absolute;
+    transition: all 300ms ease-in-out;
+}
+
+.toggle label {
+    cursor: pointer;
+}
+
+.toggle__input:checked ~ .slider {
+    background-color: deeppink;
+}
+
+.toggle__input:checked ~ .slider > .slider__botao {
+    background-color: #ccc;
+    left: 23px;
+} */
+
