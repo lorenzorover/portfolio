@@ -26,39 +26,26 @@ svg {
     width: 5%;
 }
 
-/* .slider {
-    background-color: #ccc;
-    width: 40px;
-    height: 20px;
-    border: 2px solid #bbb;
-    border-radius: 20px;
-    position: relative;
-    transition: all 300ms ease-in-out;
+button {
+    background-color: transparent;
 }
 
-.slider__botao {
-    background-color: deeppink;
-    border: none;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    pointer-events: none; desativa o botao para nao interferir no slider
-    top: 3px;
-    left: 3px;
-    position: absolute;
-    transition: all 300ms ease-in-out;
+#pagina-1 {
+    height: 100vh;
+    background-color: antiquewhite;
 }
 
-.toggle label {
-    cursor: pointer;
+#pagina-2 {
+    height: 100vh;
+    background-color: aqua;
 }
 
-.toggle__input:checked ~ .slider {
-    background-color: deeppink;
+#pagina-3 {
+    height: 100vh;
+    background-color: aquamarine;
 }
 
-.toggle__input:checked ~ .slider > .slider__botao {
-    background-color: #ccc;
-    left: 23px;
-} */
-
+.button-info-selecionado {
+    /* Ativado quando selecionado o botão de info */
+    background-color: brown;
+}
