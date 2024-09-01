@@ -1,5 +1,11 @@
 :root {
-
+    --tema-background-escuro-1: #232222;
+    --tema-background-escuro-2: #494647;
+    --tema-color-escuro-1: #E0DADC; /* #CBC3C4;  */
+    --tema-background-claro-1: #F5F5F5;
+    --tema-background-claro-2: #D9D9D9;
+    --tema-color-claro-1: #3D3B3C;
+    --fonte-principal: "Inter", sans-serif;
 }
 
 body {
@@ -16,10 +22,81 @@ body {
     display: flex;
     background-color: grey;
     top: 0;
-    position: fixed;
+    position: sticky;
     width: 100%;
     padding: 30px;
 }
+
+/* Switch */
+
+.label__switch {
+    position: relative;
+    top: 20px;
+    right: 20px;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.label__switch input {
+    display: none;
+}
+
+.span__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.span__slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .span__slider {
+    background-color: #2196F3;
+}
+
+input:checked + .span__slider:before {
+    transform: translateX(26px);
+}
+
+/* Páginas e temas respectivos */
+
+.paginas {
+    height: 100vh;
+}
+
+#pagina-3 {
+    min-height: 100vh;
+}
+
+.tema__escuro {
+    background: linear-gradient(to right bottom, var(--tema-background-escuro-1), var(--tema-background-escuro-2));
+    color: var(--tema-color-escuro-1);
+    transition: 0.4s; /* all 0.4s */
+}
+
+.tema__claro {
+    background: linear-gradient(to right bottom, var(--tema-background-claro-2), var(--tema-background-claro-1));
+    color: var(--tema-color-claro-1);
+    transition: 0.4s;
+}
+
+/* pag 1 */
 
 svg {
     height: 5%;
@@ -30,22 +107,24 @@ button {
     background-color: transparent;
 }
 
-#pagina-1 {
-    height: 100vh;
-    background-color: antiquewhite;
-}
-
-#pagina-2 {
-    height: 100vh;
-    background-color: aqua;
-}
-
-#pagina-3 {
-    height: 100vh;
-    background-color: aquamarine;
-}
-
 .button-info-selecionado {
     /* Ativado quando selecionado o botão de info */
     background-color: brown;
+}
+
+.container__projetos {
+    display: flex;
+    flex-wrap: wrap; /* talvez tirar, porque isso faz quebrar linha nos divs */
+    /* Remover o flex-wrap em outros tamanhos */
+    gap: 20px;
+}
+
+.container__projetos__projeto {
+    flex-basis: 100%;
+    max-width: 400px;
+    /* 3 itens por linha com espaçamento */
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    box-sizing: border-box;
 }

@@ -1,5 +1,6 @@
 let valorAnterior = document.getElementById('paragrafo-1');
 let botaoAnterior = document.getElementById('button-info-1');
+let paginas = document.querySelectorAll('.paginas');
 const checkBox = document.getElementById('trocar-tema');
 
 paginaInicio();
@@ -17,7 +18,10 @@ function paginaInicio() {
     valorAnterior.style.display = 'block';
     botaoAnterior.classList.add('button-info-selecionado');
 
-    // caso o tema escuro nao funcione normalmente, colocar ele aqui
+    paginas.forEach(pagina => {
+        pagina.classList.add('tema__escuro');
+        pagina.classList.remove('tema__claro');
+    });
 }
 
 function mostrarParagrafo(valor) {
@@ -46,8 +50,14 @@ function mostrarParagrafo(valor) {
 checkBox.addEventListener('change', function() {
 
     if (checkBox.checked) {
-
+        paginas.forEach(pagina => {
+            pagina.classList.add('tema__escuro');
+            pagina.classList.remove('tema__claro');
+        });
     } else {
-
+        paginas.forEach(pagina => {
+            pagina.classList.add('tema__claro');
+            pagina.classList.remove('tema__escuro');
+        });
     }
 });
