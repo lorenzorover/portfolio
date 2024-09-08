@@ -14,15 +14,27 @@ svg {
     width: auto;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     box-sizing: border-box;
     flex-wrap: wrap;
 }
 
-* {
-    margin: 0;
-    padding: 0;
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    font-size: 1.2rem;
+    padding: 6px;
+    border-radius: 8px;
 }
+
+/* Cabeçalho */
 
 .cabecalho {
     display: flex;
@@ -31,6 +43,7 @@ body {
     color: var(--tema-fonte-cabecalho);
     position: sticky;
     top: 0;
+    z-index: 100; /* para a seta com transform nao atrapalhar */
     height: 60px;
     padding: 15px;
     justify-content: space-between;
@@ -44,7 +57,15 @@ body {
 .button__cabecalho {
     display: flex;
     align-items: center;
+    color: var(--tema-fonte-cabecalho);
     gap: 5px;
+}
+
+.button__cabecalho:hover {
+    background: linear-gradient(to right,
+        rgb(63, 169, 255) 0%,
+        rgb(63, 169, 255, 0) 100%
+    );
 }
 
 .container__cabecalho__switch {
@@ -99,7 +120,7 @@ input:checked + .span__slider:before {
     transform: translateX(26px);
 }
 
-/* Páginas e temas respectivos */
+/* Páginas em geral e temas respectivos */
 
 .paginas {
     height: 100vh;
@@ -128,51 +149,85 @@ input:checked + .span__slider:before {
     transition: 0.4s;
 }
 
-/* pag 1 */
+/* Página 1 */
 
-button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    width: auto;
-    font-size: 1.2rem;
-    padding: 6px;
-    border-radius: 8px;
+#pagina-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.button__cabecalho:hover {
-    background: linear-gradient(to right,
-        rgb(63, 169, 255) 0%,
-        rgb(63, 169, 255, 0) 100%
-    );
+.container__scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-height: 30%;
 }
 
-.button__info:hover {
-    background: linear-gradient(to right,
-        rgba(138, 138, 138, 0.6) 0%,
-        rgb(138, 138, 138, 0) 100%
-    );
+.container__scroll__balao {
+    position: relative;
 }
 
 .icone__info {
     width: 30px;
 }
 
+.balao__info {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    cursor: default;
+    user-select: none;
+    left: 15px;
+    bottom: 35px;
+
+    background: #DABD90;
+    color: var(--tema-fonte-cabecalho);
+    font-size: 1rem;
+    width: 140px;
+    padding: 5px;
+    transition: 0.4s;
+    border: #655743 2px solid;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.balao__info.mostrar {
+    /* Função do JS para mostrar o balão do icone info */
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s;
+}
+
 .seta {
     width: 100px;
-    height: auto;
+    height: 100%;
     transition: 0.4s;
 }
 
 .seta:hover {
-    transform: scale(1.1);
+    transform: scale(1.12);
     transition: 0.4s;
 }
+
+/* Página 2 */
 
 .button-info-selecionado {
     /* Ativado quando selecionado o botão de info */
     background-color: brown;
 }
+
+.button__info:hover {
+    background: linear-gradient(to right,
+        rgb(138, 138, 138, 0.6) 0%,
+        rgb(138, 138, 138, 0) 100%
+    );
+}
+
+
+
+/* Página 3*/
 
 .container__projetos {
     display: flex;

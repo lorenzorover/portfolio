@@ -2,6 +2,10 @@ let valorAnterior = document.getElementById('paragrafo-1');
 let botaoAnterior = document.getElementById('button-info-1');
 let paginas = document.querySelectorAll('.paginas');
 const checkBox = document.getElementById('trocar-tema');
+const iconeInfo = document.querySelector('.icone__info');
+const balaoInfo = document.querySelector('.balao__info');
+
+let balaoMouse = false;
 
 paginaInicio();
 
@@ -61,3 +65,31 @@ checkBox.addEventListener('change', function() {
         });
     }
 });
+
+iconeInfo.addEventListener('mouseenter', function() {
+    balaoInfo.classList.add('mostrar');
+    balaoMouse = true;
+});
+
+iconeInfo.addEventListener('mouseleave', function() {
+    balaoInfo.classList.remove('mostrar');
+});
+
+balaoInfo.addEventListener('mouseenter', function() {
+    balaoInfo.classList.add('mostrar');
+    balaoMouse = true;
+});
+
+balaoInfo.addEventListener('mouseleave', function() {
+    balaoInfo.classList.remove('mostrar');
+});
+
+setTimeout(function() {
+    balaoInfo.classList.add('mostrar');
+}, 4000);
+
+setTimeout(function() {
+    if (balaoMouse === false) {
+        balaoInfo.classList.remove('mostrar');
+    }
+}, 11000);
