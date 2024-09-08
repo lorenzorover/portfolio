@@ -4,6 +4,8 @@ let paginas = document.querySelectorAll('.paginas');
 const checkBox = document.getElementById('trocar-tema');
 const iconeInfo = document.querySelector('.icone__info');
 const balaoInfo = document.querySelector('.balao__info');
+const iconeSol = document.querySelector('.svg__sol');
+const iconeLua = document.querySelector('.svg__lua');
 
 let balaoMouse = false;
 
@@ -26,6 +28,9 @@ function paginaInicio() {
         pagina.classList.add('tema__escuro');
         pagina.classList.remove('tema__claro');
     });
+
+    iconeLua.classList.add('svg__switch__mostrar');
+    iconeSol.classList.remove('svg__switch__mostrar');
 }
 
 function mostrarParagrafo(valor) {
@@ -57,11 +62,17 @@ checkBox.addEventListener('change', function() {
         paginas.forEach(pagina => {
             pagina.classList.add('tema__escuro');
             pagina.classList.remove('tema__claro');
+
+            iconeLua.classList.add('svg__switch__mostrar');
+            iconeSol.classList.remove('svg__switch__mostrar');
         });
     } else {
         paginas.forEach(pagina => {
             pagina.classList.add('tema__claro');
             pagina.classList.remove('tema__escuro');
+
+            iconeSol.classList.add('svg__switch__mostrar');
+            iconeLua.classList.remove('svg__switch__mostrar');
         });
     }
 });
@@ -93,3 +104,13 @@ setTimeout(function() {
         balaoInfo.classList.remove('mostrar');
     }
 }, 11000);
+
+function direcionarPagina(numeroPagina){
+    paginas.forEach(pagina => {
+        const paginaConferir = 'pagina-' + String(numeroPagina);
+
+        if (pagina.id === paginaConferir) {
+            pagina.scrollIntoView({behavior: 'smooth'});
+        }
+    });
+}
