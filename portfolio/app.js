@@ -1,6 +1,11 @@
 let valorAnterior = document.getElementById('paragrafo-1');
 let botaoAnterior = document.getElementById('button-info-1');
 let paginas = document.querySelectorAll('.paginas');
+
+const tituloInicial1 = document.getElementById('titulo-1');
+const tituloInicial2 = document.getElementById('titulo-2');
+const tituloInicial3 = document.getElementById('titulo-3');
+
 const checkBox = document.getElementById('trocar-tema');
 const iconeInfo = document.querySelector('.icone__info');
 const balaoInfo = document.querySelector('.balao__info');
@@ -10,6 +15,7 @@ const iconeLua = document.querySelector('.svg__lua');
 let balaoMouse = false;
 
 paginaInicio();
+mostrarTitulo();
 
 function esconderParagrafos() {
     // Desativar os parágrafos das informações sobre mim da página
@@ -97,13 +103,13 @@ balaoInfo.addEventListener('mouseleave', function() {
 
 setTimeout(function() {
     balaoInfo.classList.add('mostrar');
-}, 4000);
+}, 5000);
 
 setTimeout(function() {
     if (balaoMouse === false) {
         balaoInfo.classList.remove('mostrar');
     }
-}, 11000);
+}, 12000);
 
 function direcionarPagina(numeroPagina){
     paginas.forEach(pagina => {
@@ -113,4 +119,17 @@ function direcionarPagina(numeroPagina){
             pagina.scrollIntoView({ behavior: 'smooth', block: 'end' });
         }
     });
+}
+
+function mostrarTitulo() {
+
+    setTimeout(function() {
+        tituloInicial1.classList.add('mostrar');
+    }, 1000);
+    setTimeout(function() {
+        tituloInicial2.classList.add('mostrar');
+    }, 2000);
+    setTimeout(function() {
+        tituloInicial3.classList.add('mostrar');
+    }, 3000);
 }
