@@ -103,13 +103,13 @@ balaoInfo.addEventListener('mouseleave', function() {
 
 setTimeout(function() {
     balaoInfo.classList.add('mostrar');
-}, 5000);
+}, 6000);
 
 setTimeout(function() {
     if (balaoMouse === false) {
         balaoInfo.classList.remove('mostrar');
     }
-}, 12000);
+}, 13000);
 
 function direcionarPagina(numeroPagina){
     paginas.forEach(pagina => {

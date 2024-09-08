@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 :root {
     --tema-background-cabecalho: #989293;
     --tema-fonte-cabecalho: #242323;
@@ -5,8 +7,8 @@
     --tema-fonte-escuro: #E0DADC; /* #CBC3C4;  */
     --tema-background-claro: linear-gradient(to right bottom, #F5F5F5, #D9D9D9);
     --tema-fonte-claro: #3D3B3C;
-    --fonte-principal: "Inter", sans-serif;
-    --cor-hover-botao-1: 
+    --fonte-titulo: "Montserrat", sans-serif;
+    --fonte-paragrafo: "Open Sans", sans-serif;
 }
 
 svg {
@@ -226,6 +228,7 @@ input:checked + .span__slider:before {
 .titulos {
     opacity: 0;
     visibility: hidden;
+    font-family: var(--fonte-titulo);
 }
 
 .titulos.mostrar {
@@ -273,6 +276,7 @@ input:checked + .span__slider:before {
     background: #DABD90;
     color: var(--tema-fonte-cabecalho);
     font-size: 1rem;
+    font-family: var(--fonte-paragrafo);
     width: 140px;
     padding: 5px;
     transition: 0.4s;
