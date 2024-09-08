@@ -110,7 +110,7 @@ function direcionarPagina(numeroPagina){
         const paginaConferir = 'pagina-' + String(numeroPagina);
 
         if (pagina.id === paginaConferir) {
-            pagina.scrollIntoView({behavior: 'smooth'});
+            pagina.scrollIntoView({ behavior: 'smooth', block: 'end' });
         }
     });
 }
