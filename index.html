@@ -70,7 +70,7 @@
                 </div>
 
                 <!-- Seta com Scroll -->
-                <button class="button__seta" onclick="direcionarPagina(2)">
+                <button class="button__seta" id="seta-1" onclick="direcionarPagina(2)">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="seta">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5" />
                       </svg>
@@ -89,7 +89,7 @@
             </button>
 
             <div class="container__conteudo">
-                <div>
+                <div class="container__conteudo__botoes">
                     <!-- Painel de botões-->
                     <button onclick="mostrarParagrafo(1)" class="button__info" id="button-info-1">Sobre mim</button>
                     <button onclick="mostrarParagrafo(2)" class="button__info" id="button-info-2">Formação</button>
@@ -98,14 +98,21 @@
                     <button onclick="mostrarParagrafo(5)" class="button__info" id="button-info-5">Experiência profissional</button>
                     <button onclick="mostrarParagrafo(6)" class="button__info" id="button-info-6">Contato</button>
                 </div>
-                <div>
+                <div class="container__conteudo__paragrafos">
                     <!-- Informações correspondente ao botão selecionado -->
-                    <p class="paragrafo__button" id="paragrafo-1">aaa</p>
-                    <p class="paragrafo__button" id="paragrafo-2">bbb</p>
-                    <p class="paragrafo__button" id="paragrafo-3">ccc</p>
-                    <p class="paragrafo__button" id="paragrafo-4">ddd</p>
-                    <p class="paragrafo__button" id="paragrafo-5">eee</p>
-                    <p class="paragrafo__button" id="paragrafo-6">fff</p>
+                    <div class="paragrafo__button" id="paragrafo-1">
+                        <ul>
+                            <li>Meu nome é Lorenzo Rover;</li>
+                            <li>Tenho 24 anos de idade (2024);</li>
+                            <li>Atualmente resido em Florianópolis - SC;</li>
+                            <li>Sou focado nas linguagens e frameworks envolvendo Back-end;</li>
+                        </ul>
+                    </div>
+                    <div class="paragrafo__button" id="paragrafo-2"><li>b</li></div>
+                    <div class="paragrafo__button" id="paragrafo-3"><li>c</li></div>
+                    <div class="paragrafo__button" id="paragrafo-4"><li>d</li></div>
+                    <div class="paragrafo__button" id="paragrafo-5"><li>e</li></div>
+                    <div class="paragrafo__button" id="paragrafo-6"><li>f</li></div>
                 </div>
             </div>
 
@@ -130,7 +137,6 @@
             <h1>Projetos</h1>
 
             <div class="container__projetos">
-                
                 <div class="container__projetos__projeto">
                     <!-- Projeto 1 -->
                     <h2></h2>

@@ -1,6 +1,8 @@
 let valorAnterior = document.getElementById('paragrafo-1');
 let botaoAnterior = document.getElementById('button-info-1');
 let paginas = document.querySelectorAll('.paginas');
+let titulos = document.querySelectorAll('.titulos');
+let seta1 = document.getElementById('seta-1')
 
 const tituloInicial1 = document.getElementById('titulo-1');
 const tituloInicial2 = document.getElementById('titulo-2');
@@ -14,12 +16,15 @@ const iconeLua = document.querySelector('.svg__lua');
 
 let balaoMouse = false;
 
+const linha = document.createElement("span");
+linha.id = "linha-botao";
+
+balaoInfo.style.display = 'none';
+
 paginaInicio();
 mostrarTitulo();
 
 function esconderParagrafos() {
-    // Desativar os parágrafos das informações sobre mim da página
-
     document.querySelectorAll('.paragrafo__button').forEach(paragrafo => {
         paragrafo.style.display = 'none';
     });
@@ -28,34 +33,46 @@ function esconderParagrafos() {
 function paginaInicio() {
     esconderParagrafos();
     valorAnterior.style.display = 'block';
-    botaoAnterior.classList.add('button-info-selecionado');
+    botaoAnterior.appendChild(linha);
+    linha.classList.add('linha-ativada');
 
+    // Aplica o tema do switch manualmente
     paginas.forEach(pagina => {
         pagina.classList.add('tema__escuro');
         pagina.classList.remove('tema__claro');
     });
 
+    // Aplica o icone correspondente manualmente
     iconeLua.classList.add('svg__switch__mostrar');
     iconeSol.classList.remove('svg__switch__mostrar');
 }
 
+//Mostrar o parágrafo do texto de informações sobre mim correspondente
 function mostrarParagrafo(valor) {
     const valorAtual = document.getElementById('paragrafo-' + valor);
     const botaoAtual = document.getElementById('button-info-' + valor);
     
     if (valorAnterior !== valorAtual) {
         if (valor > 0 && valor < 7) {
-            valorAtual.style.display = 'block'; // ou flex
-            botaoAtual.classList.add('button-info-selecionado');
-    
+            linha.classList.remove('linha-ativada'); //remove a linha para aplicar o transition
+
             if (valorAnterior !== undefined) {
+                
                 valorAnterior.style.display = 'none';
+                
             }
     
             if (botaoAnterior !== undefined) {
-                botaoAnterior.classList.remove('button-info-selecionado');
+                botaoAnterior.removeChild(linha);
             }
-        
+
+            valorAtual.style.display = 'block'; // ou flex
+            botaoAtual.appendChild(linha);
+            
+            setTimeout(() => { // timeout para aplicar corretamente o transition
+                linha.classList.add('linha-ativada');
+            }, 10);
+
             botaoAnterior = botaoAtual;
             valorAnterior = valorAtual;
         }
@@ -83,6 +100,7 @@ checkBox.addEventListener('change', function() {
     }
 });
 
+//Mostrar o balao ao passar o mouse sobre o icone
 iconeInfo.addEventListener('mouseenter', function() {
     balaoInfo.classList.add('mostrar');
     balaoMouse = true;
@@ -92,6 +110,7 @@ iconeInfo.addEventListener('mouseleave', function() {
     balaoInfo.classList.remove('mostrar');
 });
 
+//Mostrar o balao ao passar o mouse sobre o balao
 balaoInfo.addEventListener('mouseenter', function() {
     balaoInfo.classList.add('mostrar');
     balaoMouse = true;
@@ -101,6 +120,7 @@ balaoInfo.addEventListener('mouseleave', function() {
     balaoInfo.classList.remove('mostrar');
 });
 
+//Mostrar o balao após determinado tempo
 setTimeout(function() {
     balaoInfo.classList.add('mostrar');
 }, 6000);
@@ -111,12 +131,13 @@ setTimeout(function() {
     }
 }, 13000);
 
+//Direcionamento da página pelas setas
 function direcionarPagina(numeroPagina){
     paginas.forEach(pagina => {
         const paginaConferir = 'pagina-' + String(numeroPagina);
 
         if (pagina.id === paginaConferir) {
-            pagina.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            pagina.scrollIntoView({ behavior: 'smooth', block: 'end' }); //end para centralizar a página começando por baixo
         }
     });
 }
@@ -132,4 +153,18 @@ function mostrarTitulo() {
     setTimeout(function() {
         tituloInicial3.classList.add('mostrar');
     }, 3000);
+    setTimeout(function() {
+        seta1.classList.add('mostrar');
+        balaoInfo.style.display = 'block';
+        iconeInfo.classList.add('mostrar');
+        iconeInfo.classList.add('icone__info__opacidade:hover');
+    }, 3700);
+
+    setTimeout(function() {
+        titulos.forEach(titulo => {
+            titulo.classList.add('fixo');
+        });
+
+    }, 4000);
+
 }

@@ -1,14 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
     --tema-background-cabecalho: #989293;
     --tema-fonte-cabecalho: #242323;
     --tema-background-escuro: linear-gradient(to right bottom, #232222, #494647);
-    --tema-fonte-escuro: #E0DADC; /* #CBC3C4;  */
+    --tema-fonte-escuro: #E0DADC;
     --tema-background-claro: linear-gradient(to right bottom, #F5F5F5, #D9D9D9);
     --tema-fonte-claro: #3D3B3C;
+
     --fonte-titulo: "Montserrat", sans-serif;
     --fonte-paragrafo: "Open Sans", sans-serif;
+    --fonte-rodape: "Roboto", sans-serif;
 }
 
 svg {
@@ -33,6 +35,7 @@ button {
     width: auto;
     padding: 6px;
     border-radius: 8px;
+    font-family: var(--fonte-paragrafo);
 }
 
 /* Cabeçalho */
@@ -45,7 +48,7 @@ button {
     position: sticky;
     top: 0;
     z-index: 100; /* para a seta com transform nao atrapalhar */
-    height: 60px;
+    height: 7vh;
     padding: 15px;
     justify-content: space-between;
     gap: 65px;
@@ -61,6 +64,7 @@ button {
     display: flex;
     align-items: center;
     color: var(--tema-fonte-cabecalho);
+    font-weight: bold;
     font-size: 1rem;
     padding: 4px;
     gap: 5px;
@@ -71,6 +75,10 @@ button {
         rgb(63, 169, 255) 0%,
         rgb(63, 169, 255, 0) 100%
     );
+}
+
+.button__cabecalho:active {
+    box-shadow: inset 4px 0px 6px 0px rgba(0, 0, 0, 0.15);
 }
 
 .container__cabecalho__switch {
@@ -87,27 +95,12 @@ button {
     right: 65px;
 }
 
-/* Páginas */
-
-.paginas {
-    display: flex;
-    flex-direction: column;
-    height: 87vh;
-    padding: 40px 60px;
-    gap: 50px;
-}
-
-#pagina-1,
-#pagina-2 {
-    justify-content: space-between;
-}
-
 /* Temas das páginas */
 
 .tema__escuro {
     background: var(--tema-background-escuro);
     color: var(--tema-fonte-escuro);
-
+    
     .button__info {
         color: var(--tema-fonte-escuro);
     };
@@ -140,22 +133,36 @@ button {
     width: 125px;
     height: 100%;
     transition: 0.4s;
+    opacity: 0.6;
+}
+
+#seta-1 {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+#seta-1.mostrar {
+    /* Função do JS para mostrar seta */
+    visibility: visible;
+    opacity: 1;
 }
 
 .seta:hover {
     transform: scale(1.15);
-    transition: 0.4s;
+    opacity: 1;
 }
 
 .seta__contraria {
     width: 75px;
     height: 100%;
     transition: 0.4s;
+    opacity: 0.6;
 }
 
 .seta__contraria:hover {
     transform: scale(1.25);
-    transition: 0.4s;
+    opacity: 1;
 }
 
 .svg__switch__mostrar {
@@ -171,7 +178,7 @@ button {
     position: relative;
     display: inline-block;
     width: 60px;
-    height: 100%;
+    height: 30px;
 }
 
 .label__switch input {
@@ -185,9 +192,10 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #ebebeb;
     transition: 0.4s;
     border-radius: 34px;
+    box-shadow: inset 0px 0px 6px 2px rgba(0, 0, 0, 0.30);
 }
 
 .span__slider:before {
@@ -200,6 +208,7 @@ button {
     background-color: white;
     transition: 0.4s;
     border-radius: 50%;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
 }
 
 input:checked + .span__slider {
@@ -209,6 +218,21 @@ input:checked + .span__slider {
 input:checked + .span__slider:before {
     transform: translateX(28px);
 }
+
+
+/* Páginas */
+
+.paginas {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 93vh;
+}
+
+/* #pagina-1,
+#pagina-2 {
+    justify-content: space-between;
+} */
 
 /* Página 1 */
 
@@ -235,7 +259,12 @@ input:checked + .span__slider:before {
     /* Função no JS para mostrar os titulos aos poucos */
     opacity: 1;
     visibility: visible;
-    transition: 1s;
+    transition: 1s; /* Transition mudado para 1s e depois voltar ao normal para 0.4s ao ativar switch */
+}
+
+.titulos.fixo {
+    /* Função no JS para normalizar transition para temas e manter visibilidade da 1 pagina */
+    transition: 0s;
 }
 
 #titulo-1 {
@@ -261,6 +290,13 @@ input:checked + .span__slider:before {
 
 .icone__info {
     width: 30px;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.icone__info.mostrar {
+    visibility: visible;
+    opacity: 0.8;
 }
 
 .balao__info {
@@ -293,9 +329,49 @@ input:checked + .span__slider:before {
 
 /* Página 2 */
 
-.button-info-selecionado {
-    /* Ativado quando selecionado o botão de info */
-    background-color: brown;
+#pagina-2 {
+    
+}
+
+.container__conteudo {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 15%;
+    
+    align-content: center;
+    height: 100%;
+    width: 60%;
+    gap: 8%;
+}
+
+
+.container__conteudo__botoes {
+    display: flex;
+    gap: 15px;
+}
+
+.button__info {
+    font-size: 1.2rem;
+    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    align-self: flex-end;
+}
+
+#linha-botao {
+    height: 3px;
+    background:rgb(57, 136, 255, 1);
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    transition: 0.5s ;
+}
+
+#linha-botao.linha-ativada { /* Puxar o id junto por causa de hierarquia */
+    /* Função do JS usada para o transition da linha do botão de informação */
+    width: 90%;
 }
 
 .button__info:hover {
@@ -305,11 +381,21 @@ input:checked + .span__slider:before {
     );
 }
 
-.container__conteudo {
-    height: 100%;
+.container__conteudo__paragrafos {
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 2%;
+    font-family: var(--fonte-paragrafo);
+    font-size: 1.2rem;
+    border: 1px solid rgb(57, 136, 255, 1);
+    box-shadow: 2px 4px 12px 2px rgba(0, 0, 0, 0.4);
 }
 
-
+.paragrafo__button {
+    list-style-position: inside;
+    
+}
 
 /* Página 3*/
 
