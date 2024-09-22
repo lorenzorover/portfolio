@@ -382,9 +382,8 @@ input:checked + .span__slider:before {
 }
 
 .container__conteudo__paragrafos {
-    position: relative;
     width: auto;
-    height: auto;
+    height: 100%;
     padding: 2%;
     font-family: var(--fonte-paragrafo);
     font-size: 1.2rem;
@@ -394,7 +393,24 @@ input:checked + .span__slider:before {
 
 .paragrafo__button {
     list-style-position: inside;
+}
+
+#paragrafo-2 {
     
+}
+
+table {
+    border: 1px solid black;
+    padding: 2px;
+    border-spacing: 3px;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 5px 10px;
+    width: auto;
 }
 
 /* Página 3*/
