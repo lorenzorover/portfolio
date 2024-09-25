@@ -32,7 +32,7 @@ function esconderParagrafos() {
 
 function paginaInicio() {
     esconderParagrafos();
-    valorAnterior.style.display = 'block';
+    valorAnterior.style.display = 'flex';
     botaoAnterior.appendChild(linha);
     linha.classList.add('linha-ativada');
 
@@ -66,7 +66,7 @@ function mostrarParagrafo(valor) {
                 botaoAnterior.removeChild(linha);
             }
 
-            valorAtual.style.display = 'block'; // ou flex
+            valorAtual.style.display = 'flex'; // ou flex
             botaoAtual.appendChild(linha);
             
             setTimeout(() => { // timeout para aplicar corretamente o transition
