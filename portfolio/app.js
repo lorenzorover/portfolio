@@ -2,7 +2,8 @@ let valorAnterior = document.getElementById('paragrafo-1');
 let botaoAnterior = document.getElementById('button-info-1');
 let paginas = document.querySelectorAll('.paginas');
 let titulos = document.querySelectorAll('.titulos');
-let seta1 = document.getElementById('seta-1')
+let seta1 = document.getElementById('seta-1');
+let paragrafoDiscord = document.getElementById("paragrafo-discord");
 
 const tituloInicial1 = document.getElementById('titulo-1');
 const tituloInicial2 = document.getElementById('titulo-2');
@@ -167,4 +168,19 @@ function mostrarTitulo() {
 
     }, 4000);
 
+}
+
+function copiarMensagem() {
+    navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
+        if (result.state === "granted" || result.state === "prompt") {
+            navigator.clipboard.writeText("Rakard");
+
+            paragrafoDiscord.innerText = "Copiado!";
+
+            setTimeout(function() {
+                paragrafoDiscord.innerText = "Nick: Rakard";
+            }, 2500);
+        }
+
+      });
 }
