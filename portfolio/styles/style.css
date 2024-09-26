@@ -21,8 +21,8 @@ svg {
 }
 
 img {
-    height: 35px;
-    width: 35px;
+    height: 28px;
+    width: 28px;
 }
 
 * {
@@ -351,7 +351,7 @@ input:checked + .span__slider:before {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    padding: 5% 25%;
+    padding: 3% 20%;
     height: auto;
     width: 100%;
     align-items: start;
@@ -447,6 +447,11 @@ td {
     border: 3px solid rgb(57, 136, 255, 1);
     width: min-content;
     background-color: var(--tema-background-cabecalho);
+}
+
+.borderless {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 /* Página 3*/
