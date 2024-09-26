@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
     --tema-background-cabecalho: #989293;
@@ -11,11 +12,17 @@
     --fonte-titulo: "Montserrat", sans-serif;
     --fonte-paragrafo: "Open Sans", sans-serif;
     --fonte-rodape: "Roboto", sans-serif;
+    --fonte-badge: "Poppins", sans-serif;
 }
 
 svg {
     height: 100%;
     width: auto;
+}
+
+img {
+    height: 35px;
+    width: 35px;
 }
 
 * {
@@ -348,7 +355,7 @@ input:checked + .span__slider:before {
     height: auto;
     width: 100%;
     align-items: start;
-    gap: 8%;
+    gap: 20px;
 }
 
 .container__conteudo__botoes {
@@ -402,6 +409,9 @@ input:checked + .span__slider:before {
 
 .paragrafo__button {
     list-style-position: inside;
+    display: flex;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 #paragrafo-2 {
@@ -412,12 +422,31 @@ input:checked + .span__slider:before {
     border: 1px solid black;
     padding: 2px;
     border-spacing: 3px;
+    width: 100%;
 }
 
 th,
 td {
     border: 1px solid black;
     padding: 10px 10px;
+}
+
+.linha__badges {
+    display: flex;
+    gap: 5px;
+}
+
+.badges {
+    display: flex;
+    font-family: var(--fonte-badge);
+    color: var(--tema-fonte-cabecalho);
+    align-items: center;
+    gap: 3px;
+    padding: 3px;
+    border-radius: 30px;
+    border: 3px solid rgb(57, 136, 255, 1);
+    width: min-content;
+    background-color: var(--tema-background-cabecalho);
 }
 
 /* Página 3*/
