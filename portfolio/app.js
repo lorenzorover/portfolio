@@ -3,7 +3,7 @@ let botaoAnterior = document.getElementById('button-info-1');
 let paginas = document.querySelectorAll('.paginas');
 let titulos = document.querySelectorAll('.titulos');
 let seta1 = document.getElementById('seta-1');
-let paragrafoDiscord = document.getElementById("paragrafo-discord");
+const paragrafoDiscord = document.getElementById("paragrafo-discord");
 
 const tituloInicial1 = document.getElementById('titulo-1');
 const tituloInicial2 = document.getElementById('titulo-2');
@@ -181,6 +181,5 @@ function copiarMensagem() {
                 paragrafoDiscord.innerText = "Nick: Rakard";
             }, 2500);
         }
-
       });
 }

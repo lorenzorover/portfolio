@@ -86,6 +86,7 @@ button {
 
 .button__cabecalho:active {
     box-shadow: inset 4px 0px 6px 0px rgba(0, 0, 0, 0.15);
+    scale: 0.95;
 }
 
 .container__cabecalho__switch {
@@ -135,6 +136,11 @@ button {
 }
 
 /* Setas de scroll */
+
+.button__seta {
+    width: fit-content;
+    align-self: center;
+}
 
 .seta {
     width: 125px;
@@ -398,13 +404,21 @@ input:checked + .span__slider:before {
 
 .container__conteudo__paragrafos {
     box-sizing: border-box;
-    width: 100%;
+    width: auto; /* aqui era o problema, agora o container só nao respeita o padding da direita, estava em 100% agora é auto */
     height: auto;
     padding: 3%;
     font-family: var(--fonte-paragrafo);
     font-size: 1rem;
     border: 1px solid rgb(57, 136, 255, 1);
     box-shadow: 2px 4px 12px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Parágrafo 2 */
+
+#paragrafo-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .paragrafo__button {
@@ -418,7 +432,6 @@ input:checked + .span__slider:before {
     border: 1px solid black;
     padding: 2px;
     border-spacing: 3px;
-    width: 100%;
 }
 
 th,
@@ -426,6 +439,33 @@ td {
     border: 1px solid black;
     padding: 10px 10px;
 }
+
+/* Parágrafo 3 */
+
+#paragrafo-3 {
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.icon__expand {
+    width: 30px;
+    align-self: flex-end;
+}
+
+.container__certificados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    padding: 10px;
+    gap: 10px;
+}
+
+.iframe__inicial {
+    
+}
+
+/* Parágrafo 4 */
 
 .linha__badges {
     display: flex;
@@ -450,10 +490,19 @@ td {
     padding-left: 10px;
 }
 
+/* Parágrafo 6 */
+
 #paragrafo-6 {
     display: flex;
     flex-direction: column;
+    gap: 15px;
+}
+
+.container__links {
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px;
+    margin-bottom: 20px;
 }
 
 .botao__sites {
@@ -476,6 +525,7 @@ td {
 
 .botao__sites:active {
     box-shadow: inset 0px -4px 12px rgba(0, 0, 0, 0.5);
+    scale: 0.95;
 }
 
 #img-linkedin,
@@ -489,6 +539,7 @@ td {
 #img-gmail,
 #img-discord {
     fill: white;
+    z-index: 1;
 }
 
 #botao-gmail {
@@ -498,21 +549,29 @@ td {
 
 .container__discord {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    align-items: center;
 }
 
 #botao-discord {
-    height: fit-content;
+    align-items: center;
+    position: relative;
+    border-bottom-left-radius: 0;
     padding-left: 6px;
+    border-top-left-radius: 0;
+    border-left: 0;
+    margin: 15px;
+    right: -60px;
+    height: fit-content;
     background-color: #5865F2;
-    
 }
 
 #foto-discord {
-    height: 70px;
-    border: 8px solid #5865F2;
+    position: absolute;
+    left: -78px;
+    height: 60px;
+    border: 6px solid #5865F2;
     border-radius: 100%;
+    border-right: 12px solid #5865F2;
     width: fit-content;
 }
 
