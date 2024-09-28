@@ -93,6 +93,15 @@ function fecharDialog() {
     dialogCertificado.close();
 }
 
+/* travar Scroll do mouse para o dialog */
+window.addEventListener('wheel', function(event) {
+    if (dialogCertificado.open === true) {
+        event.preventDefault();
+    }
+}, {
+    passive: false 
+});
+
 checkBox.addEventListener('change', function() {
 
     if (checkBox.checked) {
