@@ -3,6 +3,7 @@ let botaoAnterior = document.getElementById('button-info-1');
 let paginas = document.querySelectorAll('.paginas');
 let titulos = document.querySelectorAll('.titulos');
 let seta1 = document.getElementById('seta-1');
+let dialogCertificado;
 const paragrafoDiscord = document.getElementById("paragrafo-discord");
 
 const tituloInicial1 = document.getElementById('titulo-1');
@@ -78,6 +79,18 @@ function mostrarParagrafo(valor) {
             valorAnterior = valorAtual;
         }
     }
+}
+
+function mostrarDialog(valor) {
+    dialogCertificado = document.getElementById('dialog-certificado-' + valor);
+
+    if (valor > 0 && valor < 4) {
+        dialogCertificado.showModal();
+    }
+}
+
+function fecharDialog() {
+    dialogCertificado.close();
 }
 
 checkBox.addEventListener('change', function() {
@@ -183,3 +196,4 @@ function copiarMensagem() {
         }
       });
 }
+

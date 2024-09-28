@@ -447,22 +447,55 @@ td {
     flex-wrap: wrap;
 }
 
-.icon__expand {
+.icon__expand,
+.icon__close {
     width: 30px;
     align-self: flex-end;
+    cursor: pointer;
+    color: var(--tema-fonte-cabecalho);
 }
 
 .container__certificados {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
+    border: 1px solid #007bff;
+    color: var(--tema-fonte-cabecalho);
+    background-color: var(--tema-background-cabecalho);
     padding: 10px;
     gap: 10px;
 }
 
+.paragrafo__certificados {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
 .iframe__inicial {
     
+}
+
+.dialog__certificados {
+    border: none;
+    justify-self: center;
+    align-self: center;
+}
+
+.dialog__certificados::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container__certificados__ampliados {
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid black;
+    background-color: var(--tema-background-cabecalho);
+}
+
+.iframe__ampliado {
+    width: 50vh;
+    height: 50vh;
 }
 
 /* Parágrafo 4 */
