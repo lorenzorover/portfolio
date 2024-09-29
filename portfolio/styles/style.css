@@ -45,6 +45,16 @@ button {
     font-family: var(--fonte-paragrafo);
 }
 
+li {
+    list-style-position: inside;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 10px 10px;
+}
+
 /* Cabeçalho */
 
 .cabecalho {
@@ -140,6 +150,14 @@ button {
 .button__seta {
     width: fit-content;
     align-self: center;
+}
+
+.button__seta__normal {
+    margin-bottom: 75px;
+}
+
+.button__seta__invertida {
+    margin-top: 75px;
 }
 
 .seta {
@@ -239,7 +257,7 @@ input:checked + .span__slider:before {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    height: 93vh;
+    height: 107vh;
 }
 
 /* #pagina-1,
@@ -422,7 +440,6 @@ input:checked + .span__slider:before {
 }
 
 .paragrafo__button {
-    list-style-position: inside;
     display: flex;
     max-height: 100%;
     max-width: 100%;
@@ -432,12 +449,6 @@ input:checked + .span__slider:before {
     border: 1px solid black;
     padding: 2px;
     border-spacing: 3px;
-}
-
-th,
-td {
-    border: 1px solid black;
-    padding: 10px 10px;
 }
 
 /* Parágrafo 3 */
@@ -610,19 +621,75 @@ td {
 
 /* Página 3*/
 
+#pagina-3 {
+    height: auto;
+    min-height: 100vh;
+}
+
+#titulo-pagina-3 {
+    font-size: 2.5rem;
+    font-family: var(--fonte-titulo);
+    padding: 3% 20%;
+    align-self: center;
+}
+
 .container__projetos {
     display: flex;
     flex-wrap: wrap; /* talvez tirar, porque isso faz quebrar linha nos divs */
     /* Remover o flex-wrap em outros tamanhos */
-    gap: 20px;
+    padding: 3% 20%;
+    gap: 30px;
 }
 
 .container__projetos__projeto {
-    flex-basis: 100%;
-    max-width: 400px;
-    /* 3 itens por linha com espaçamento */
-    margin: 5px;
-    background-color: #007bff;
+    background-color: var(--tema-background-cabecalho);
+    border: 1px solid rgb(57, 136, 255, 1);
+    font-family: var(--fonte-paragrafo);
+    font-size: 1rem;
+    color: var(--tema-fonte-cabecalho);
+    padding: 20px;
+    max-width: 25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.titulo__projetos {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+}
+
+#img-lista-consulta {
+    width: 24rem;
+    height: auto;
+}
+
+#img-cadastro-consulta {
+    width: 16rem;
+    height: auto;
+}
+
+#img-lista-paciente {
+    width: 24rem;
+    height: auto;
+}
+
+#img-informacoes-adicionais {
+    width: 16rem;
+    height: auto;
+}
+
+.container__projetos__links {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.link__projetos {
+    background-color: black;
     color: white;
-    box-sizing: border-box;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid rgb(57, 136, 255, 1);
+    padding: 5px;
 }

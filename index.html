@@ -70,7 +70,7 @@
                 </div>
 
                 <!-- Seta com Scroll -->
-                <button class="button__seta" id="seta-1" onclick="direcionarPagina(2)">
+                <button class="button__seta button__seta__normal" id="seta-1" onclick="direcionarPagina(2)">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="seta">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5" />
                       </svg>
@@ -81,7 +81,7 @@
         <section id="pagina-2" class="paginas">
             <!-- 2ª página: Informações sobre mim -->
             <div class="container__pagina-2">
-                <button class="button__seta" id="seta2" onclick="direcionarPagina(1)">
+                <button class="button__seta button__seta__invertida" id="seta2" onclick="direcionarPagina(1)">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="seta__contraria">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
@@ -95,7 +95,9 @@
                         <button onclick="mostrarParagrafo(2)" class="button__info" id="button-info-2">Formação</button>
                         <button onclick="mostrarParagrafo(3)" class="button__info" id="button-info-3">Certificados</button>
                         <button onclick="mostrarParagrafo(4)" class="button__info" id="button-info-4">Habilidades técnicas</button>
-                        <button onclick="mostrarParagrafo(5)" class="button__info" id="button-info-5">Experiência profissional</button>
+                        <!-- 
+                        <button onclick="mostrarParagrafo(5)" class="button__info" id="button-info-5">Experiência profissional</button> 
+                        -->
                         <button onclick="mostrarParagrafo(6)" class="button__info" id="button-info-6">Contato</button>
                     </div>
                     <div class="container__conteudo__paragrafos">
@@ -107,7 +109,7 @@
                                 <li>Atualmente, resido em Florianópolis - SC.</li>
                                 <li>Tenho foco principal em linguagens e frameworks relacionados ao <em>back-end</em>.</li>
                                 <li>Possuo conhecimento básico em <em>front-end</em>.</li>
-                                <li>Meu objetivo é aprimorar cada vez mais minhas habilidades de programação, sempre me mantendo atualizado.</li>
+                                <li>Meu objetivo é conseguir um estágio ou emprego que me permita consolidar minhas habilidades em desenvolvimento de software e continuar aprimorando meu conhecimento.</li>
                                 <li>Sou uma pessoa focada e responsável quando o assunto é trabalho.</li>
                             </ul>
                         </div>
@@ -276,7 +278,9 @@
                                 </tr>
                             </table>
                         </div>
-                        <div class="paragrafo__button" id="paragrafo-5"><li>e</li></div>
+                        <!-- 
+                        <div class="paragrafo__button" id="paragrafo-5"><li>e</li></div> 
+                        -->
                         <div class="paragrafo__button" id="paragrafo-6">
                             <p>Abaixo estão links para contato e redes sociais onde você pode visualizar meus projetos e poder conversar comigo.</p>
 
@@ -311,7 +315,7 @@
                 </div>
             </div>
             
-            <button class="button__seta" onclick="direcionarPagina(3)">
+            <button class="button__seta button__seta__normal" onclick="direcionarPagina(3)">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="seta">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5" />
                   </svg>
@@ -322,33 +326,57 @@
         <section id="pagina-3" class="paginas">
             <!-- 3ª página: Projetos -->
 
-            <button class="button__seta" onclick="direcionarPagina(2)">
+            <button class="button__seta button__seta__invertida" onclick="direcionarPagina(2)">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="seta__contraria">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
                   </svg>
             </button>
 
-            <h1>Projetos</h1>
+            <h1 id="titulo-pagina-3">Projetos</h1>
 
             <div class="container__projetos">
                 <div class="container__projetos__projeto">
                     <!-- Projeto 1 -->
-                    <h2></h2>
-                    <p></p>
-                    <button></button>
+                    <h2 class="titulo__projetos">Controle de consultório</h2>
+                    <p>Projeto integrador desenvolvido durante o curso <i>Jovem Programador - Programador de Sistemas</i> - <strong><i>Senac</i></strong></p>
+                    <p>A proposta do projeto é aumentar a agilidade e funcionalidade na organização e consulta de dados importantes pelo usuário.</p>
+                    <img loading="lazy" src="./portfolio/source/lista-de-consulta.png" id="img-lista-consulta" alt="Lista de consultas do programa">
+                    <div class="expandir__projeto">
+                        <table>
+                            <tr>
+                                <th>Tempo de desenvolvimento</th>
+                                <td>Um mês e meio (junho/julho de 2024)</td>
+                            </tr>
+                            <tr>
+                                <th>Linguagens e ferramentas utilizadas</th>
+                                <td>Java, Java-Swing, Eclipse IDE, SQL, MySQL Workbench</td>
+                            </tr>
+                        </table>
+                        <img loading="lazy" src="./portfolio/source/cadastro-de-consulta.png" id="img-cadastro-consulta" alt="Imagem de cadastro de uma consulta do programa">
+                        <img loading="lazy" src="./portfolio/source/lista-de-paciente.png" id="img-lista-paciente" alt="Lista de pacientes do programa">
+                        <img loading="lazy" src="./portfolio/source/informacoes-paciente.png" id="img-informacoes-adicionais" alt="Informações adicionais do paciente escolhido">
+
+                        <p>Mais imagens na documentação.</p>
+
+                        <div class="container__projetos__links">
+                            <a class="link__projetos" href="https://github.com/lorenzorover/PI" target="_blank">Github do Projeto</a>
+                            <a class="link__projetos" href="https://github.com/lorenzorover/PI/raw/main/Projeto-Integrador.pdf" download="Controle-Consultorio.pdf">Baixar Documentação(PDF)</a>
+                        </div>
+                    </div>
+                    
                 </div>
                 <div class="container__projetos__projeto">
                     <!-- Projeto 2 -->
-                    <h2></h2>
+                    <h2 class="titulo__projetos">bbb</h2>
                     <p></p>
-                    <button></button>
+                    <a href="" download=""></a>
                 </div>
                 <div class="container__projetos__projeto">
                     <!-- Projeto 3 -->
-                    <h2></h2>
+                    <h2 class="titulo__projetos">ccc</h2>
                     <p></p>
-                    <button></button>
+                    <a href="" download=""></a>
                 </div>
             </div>
             

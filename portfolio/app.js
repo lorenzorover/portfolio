@@ -160,7 +160,7 @@ function direcionarPagina(numeroPagina){
         const paginaConferir = 'pagina-' + String(numeroPagina);
 
         if (pagina.id === paginaConferir) {
-            pagina.scrollIntoView({ behavior: 'smooth', block: 'end' }); //end para centralizar a página começando por baixo
+            pagina.scrollIntoView({ behavior: 'smooth', block: 'start' }); //end para centralizar a página começando por baixo
         }
     });
 }
