@@ -10,6 +10,7 @@ const tituloInicial1 = document.getElementById('titulo-1');
 const tituloInicial2 = document.getElementById('titulo-2');
 const tituloInicial3 = document.getElementById('titulo-3');
 
+// 
 const checkBox = document.getElementById('trocar-tema');
 const iconeInfo = document.querySelector('.icone__info');
 const balaoInfo = document.querySelector('.balao__info');
@@ -18,6 +19,7 @@ const iconeLua = document.querySelector('.svg__lua');
 
 let balaoMouse = false;
 
+// Linha dos botoes de "Sobre mim"
 const linha = document.createElement("span");
 linha.id = "linha-botao";
 
@@ -33,6 +35,8 @@ function esconderParagrafos() {
 }
 
 function paginaInicio() {
+    const paginaInicial = document.getElementById('pagina-1');
+    paginaInicial.scrollIntoView({ behavior: 'smooth', block: 'start' });
     esconderParagrafos();
     valorAnterior.style.display = 'flex';
     botaoAnterior.appendChild(linha);
