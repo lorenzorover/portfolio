@@ -14,8 +14,8 @@ const tituloInicial3 = document.getElementById('titulo-3');
 const checkBox = document.getElementById('trocar-tema');
 const iconeInfo = document.querySelector('.icone__info');
 const balaoInfo = document.querySelector('.balao__info');
-const iconeSol = document.querySelector('.svg__sol');
-const iconeLua = document.querySelector('.svg__lua');
+const iconeSol = document.getElementById('svg-sol');
+const iconeLua = document.getElementById('svg-lua');
 
 let balaoMouse = false;
 
@@ -36,7 +36,7 @@ function esconderParagrafos() {
 
 function paginaInicio() {
     const paginaInicial = document.getElementById('pagina-1');
-    paginaInicial.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // paginaInicial.scrollIntoView({ behavior: 'smooth', block: 'start' });
     esconderParagrafos();
     valorAnterior.style.display = 'flex';
     botaoAnterior.appendChild(linha);
