@@ -36,7 +36,7 @@ function esconderParagrafos() {
 
 function paginaInicio() {
     const paginaInicial = document.getElementById('pagina-1');
-    // paginaInicial.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    paginaInicial.scrollIntoView({ behavior: 'smooth', block: 'start' });
     esconderParagrafos();
     valorAnterior.style.display = 'flex';
     botaoAnterior.appendChild(linha);

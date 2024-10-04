@@ -1,0 +1,69 @@
+/* Temas das páginas */
+
+.tema__escuro {
+    background: var(--tema-background-escuro);
+    color: var(--tema-fonte-escuro);
+    
+    .button__info {
+        color: var(--tema-fonte-escuro);
+    };
+
+    .button__seta {
+        color: var(--tema-fonte-escuro);
+    };
+
+    transition: 0.4s;
+}
+
+.tema__claro {
+    background: var(--tema-background-claro);
+    color: var(--tema-fonte-claro);
+
+    .button__info {
+        color: var(--tema-fonte-claro);
+    };
+
+    .button__seta {
+        color: var(--tema-fonte-claro);
+    };
+
+    transition: 0.4s;
+}
+
+#seta-1.mostrar {
+    /* Função do JS para mostrar seta */
+    visibility: visible;
+    opacity: 1;
+}
+
+#svg-sol.svg__switch__mostrar,
+#svg-lua.svg__switch__mostrar {
+    /* Função JS para mostrar icone correspondente do switch */
+    visibility: visible;
+    opacity: 1;
+    transition: 0.4s;
+}
+
+.titulos.mostrar {
+    /* Função no JS para mostrar os titulos aos poucos */
+    opacity: 1;
+    visibility: visible;
+    transition: 1s; /* Transition mudado para 1s e depois voltar ao normal para 0.4s ao ativar switch */
+}
+
+.titulos.fixo {
+    /* Função no JS para normalizar transition para temas e manter visibilidade da 1 pagina */
+    transition: 0s;
+}
+
+.balao__info.mostrar {
+    /* Função do JS para mostrar o balão do icone info */
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s;
+}
+
+#linha-botao.linha-ativada { /* Puxar o id junto por causa de hierarquia */
+    /* Função do JS usada para o transition da linha do botão de informação */
+    width: 90%;
+}
