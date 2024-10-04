@@ -16,14 +16,14 @@
 
     --padding-margin-gap-pequeno: 0.5rem; /* 8px */
     --padding-margin-gap-medio: 1rem; /* 16px */
-    --padding-margin-gap-grande: 3rem; /* 48px */
-    --padding-paginas: 3% 20%;
+    --padding-margin-gap-grande: 2rem; /* 48px */
 }
 
 
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /* Cabeçalho */
@@ -59,19 +59,18 @@
 .paginas {
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
-    height: 110vh;
+    height: 106vh;
+    padding: 4rem 10rem;
+    gap: 3rem;
 }
 
 /* Página 1 */
 
 #pagina-1 {
-    
+    /* padding-top: 9rem; Para celular*/
 }
 
 .container__inicio {
-    
-    /* padding: var(--padding-paginas); */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,7 +100,7 @@
     flex-direction: column;
     align-items: center;
     gap: var(--padding-margin-gap-medio);
-    max-height: 30%;
+    /* max-height: 30%; */
 }
 
 .container__scroll__balao {
@@ -129,7 +128,7 @@
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Página 2 */
+/* ----------- Página 2 ----------- */
 
 #pagina-2 {
     justify-content: space-between; /* Ajusta a seta para baixo */
@@ -139,13 +138,13 @@
     display: flex;
     flex-direction: column;
     align-content: center;
+    gap: 3rem;
 }
 
 .container__conteudo {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    padding: var(--padding-paginas);
     height: auto;
     width: 100%;
     align-items: start;
@@ -154,20 +153,32 @@
 
 .container__conteudo__botoes {
     display: flex;
-    /* flex-wrap: wrap; quebra dos botoes */
     gap: var(--padding-margin-gap-medio);
     align-self: center;
 }
 
 .container__conteudo__paragrafos {
-    box-sizing: border-box;
     width: auto; /* aqui era o problema, agora o container só nao respeita o padding da direita, estava em 100% agora é auto */
     height: auto;
-    padding: 3%;
+    align-self: center;
+    max-width: 70rem;
+    padding: var(--padding-margin-gap-grande);
     font-family: var(--fonte-paragrafo);
     font-size: 1rem;
     border: 1px solid rgb(57, 136, 255, 1);
     box-shadow: 2px 4px 12px 2px rgba(0, 0, 0, 0.4);
+}
+
+.paragrafo__button {
+    display: flex;
+    overflow: hidden;
+    overflow-y: visible;
+}
+
+/* Parágrafo 1 */
+
+#paragrafo-1 {
+    gap: var(--padding-margin-gap-grande);
 }
 
 /* Parágrafo 2 */
@@ -178,30 +189,17 @@
     gap: var(--padding-margin-gap-medio);
 }
 
-.paragrafo__button {
-    display: flex;
-    max-height: 100%;
-    max-width: 100%;
-}
-
-.tabela__texto {
-    border: 1px solid black;
-    padding: 2px;
-    border-spacing: 3px;
-}
-
 /* Parágrafo 3 */
 
 #paragrafo-3 {
     gap: var(--padding-margin-gap-medio);
-    /* flex-wrap: wrap; */
 }
 
 .container__certificados {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #007bff;
+    border: 1px solid rgb(57, 136, 255, 1);
     color: var(--tema-fonte-cabecalho);
     background-color: var(--tema-background-cabecalho);
     padding: var(--padding-margin-gap-pequeno);
@@ -214,7 +212,8 @@
 }
 
 .iframe__inicial {
-    
+    height: 8rem;
+    width: 16rem;
 }
 
 .dialog__certificados {
@@ -263,7 +262,7 @@
     background-color: var(--tema-background-cabecalho);
 }
 
-.borderless {
+.badge__borderless {
     padding-left: 10px;
 }
 
@@ -305,12 +304,6 @@
     scale: 0.95;
 }
 
-#img-gmail,
-#img-discord {
-    fill: white;
-    z-index: 1;
-}
-
 #botao-gmail {
     padding-left: 6px;
     background-color: #EA4335;
@@ -322,11 +315,9 @@
     white-space: nowrap;
 }
 
-
-
 #foto-discord {
     position: absolute;
-    left: -78px;
+    left: -62px;
     height: 60px;
     border: 6px solid #5865F2;
     border-radius: 100%;
@@ -334,7 +325,7 @@
     width: fit-content;
 }
 
-/* Página 3*/
+/* ---------- Página 3 -------------*/
 
 #pagina-3 {
     height: auto;
@@ -350,9 +341,8 @@
 
 .container__projetos {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* fazer função no js para aumentar para 2fr o respectivo projeto */
+    grid-template-columns: 1fr 1fr; /* fazer função no js para aumentar para 2fr o respectivo projeto */
     justify-items: center;
-    padding: 3rem 10rem;
     gap: 3rem;
 }
 
@@ -376,7 +366,7 @@
 }
 
 #img-lista-consulta {
-    width: 14rem;
+    width: 24rem;
     height: auto;
 }
 
@@ -398,7 +388,7 @@
 }
 
 #img-lista-paciente {
-    width: 14rem;
+    width: 24rem;
     height: auto;
 }
 

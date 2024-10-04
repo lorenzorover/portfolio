@@ -46,7 +46,7 @@ button {
 .button__info {
     font-size: 1.2rem;
     font-style: italic;
-    /* white-space: nowrap; Não quebra a linha dos botões */
+    white-space: nowrap;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -78,12 +78,18 @@ button {
     border-top-left-radius: 0;
     border-left: 0;
     margin: 15px;
-    right: -60px;
+    right: -47px;
     height: fit-content;
     background-color: #5865F2;
 }
 
 /* Tables e Listas */
+
+.tabela__texto {
+    border: 1px solid black;
+    padding: 2px;
+    border-spacing: 3px;
+}
 
 li {
     list-style-position: inside;
@@ -93,6 +99,8 @@ th,
 td {
     border: 1px solid black;
     padding: var(--padding-margin-gap-pequeno);
+    font-size: 1rem;
+    height: 3.2rem;
 }
 
 /* Setas de Scroll */
@@ -103,11 +111,11 @@ td {
 }
 
 .button__seta__normal {
-    margin-bottom: 4.5rem;
+    
 }
 
 .button__seta__invertida {
-    margin-top: 4.5rem;
+    
 }
 
 .seta {
@@ -190,7 +198,7 @@ input:checked + .span__slider:before {
 /* Imagens e SVGs Gerais */
 
 .icones__badges {
-    height: 30px;
+    height: 1.5rem;
     width: auto;
 }
 
@@ -234,4 +242,17 @@ input:checked + .span__slider:before {
 #img-discord {
     height: 38px;
     width: auto;
+}
+
+#img-gmail,
+#img-discord {
+    fill: white;
+    z-index: 1;
+}
+
+#foto-linkedin {
+    align-self: center;
+    height: 10rem;
+    width: auto;
+    border: 3px solid rgb(57, 136, 255, 1);
 }

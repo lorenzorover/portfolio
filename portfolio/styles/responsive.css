@@ -1,0 +1,36 @@
+@media /*(min-width: 768px) and */(max-width: 1024px) {
+
+    .paginas {
+        padding: 3rem 5rem;
+    }
+
+    /* Página 1 */
+
+    /* Página 2 */
+
+    .container__conteudo__paragrafos {
+        
+        width: fit-content;
+    }
+
+    .button__info {
+        font-size: 1rem;
+    }
+
+    .paragrafo__button {
+        font-size: 0.9rem;
+    }
+
+    #paragrafo-3 {
+        flex-wrap: wrap;
+    }
+
+    .iframe__inicial {
+        height: 6rem;
+        width: 12rem;
+    }
+
+
+
+
+}
