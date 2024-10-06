@@ -24,7 +24,7 @@ button {
     align-items: center;
     color: var(--tema-fonte-cabecalho);
     font-weight: bold;
-    font-size: 1rem;
+    font-size: var(--tamanho-fonte-texto);
     padding: var(--padding-margin-gap-pequeno);
     gap: var(--padding-margin-gap-pequeno);
 }
@@ -44,7 +44,7 @@ button {
 /* Botões da página 2 */
 
 .button__info {
-    font-size: 1.2rem;
+    font-size: var(--tamanho-fonte-subtitulos);
     font-style: italic;
     white-space: nowrap;
     display: flex;
@@ -83,39 +83,19 @@ button {
     background-color: #5865F2;
 }
 
-/* Tables e Listas */
+/* Botões da página 3 */
 
-.tabela__texto {
-    border: 1px solid black;
-    padding: 2px;
-    border-spacing: 3px;
+.button__projeto {
+    align-self: flex-end;
+    font-size: var(--fonte-paragrafo);
+    color: blue;
 }
 
-li {
-    list-style-position: inside;
-}
-
-th,
-td {
-    border: 1px solid black;
-    padding: var(--padding-margin-gap-pequeno);
-    font-size: 1rem;
-    height: 3.2rem;
-}
-
-/* Setas de Scroll */
+/* Botões e Setas de Scroll */
 
 .button__seta {
     width: fit-content;
     align-self: center;
-}
-
-.button__seta__normal {
-    
-}
-
-.button__seta__invertida {
-    
 }
 
 .seta {
@@ -146,6 +126,30 @@ td {
 .seta__contraria:hover {
     transform: scale(1.25);
     opacity: 1;
+}
+
+/* Tables e Listas */
+
+.tabela__texto {
+    border: 1px solid black;
+    padding: 2px;
+    border-spacing: 3px;
+}
+
+li {
+    list-style-position: inside;
+}
+
+th {
+    white-space: nowrap;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: var(--padding-margin-gap-pequeno);
+    font-size: var(--tamanho-fonte-texto);
+    height: auto;
 }
 
 /* Switch */
@@ -240,7 +244,7 @@ input:checked + .span__slider:before {
 #img-gmail,
 #img-github,
 #img-discord {
-    height: 38px;
+    height: 1.8rem;
     width: auto;
 }
 
@@ -255,4 +259,32 @@ input:checked + .span__slider:before {
     height: 10rem;
     width: auto;
     border: 3px solid rgb(57, 136, 255, 1);
+}
+
+/* Imagens dos projetos */
+
+#img-lista-consulta-exemplo {
+    width: 26rem;
+    height: auto;
+    align-self: center;
+}
+
+#img-lista-consulta {
+    width: 26rem;
+    height: auto;
+}
+
+#img-cadastro-consulta {
+    width: 14rem;
+    height: auto;
+}
+
+#img-lista-paciente {
+    width: 26rem;
+    height: auto;
+}
+
+#img-informacoes-adicionais {
+    width: 12rem;
+    height: auto;
 }

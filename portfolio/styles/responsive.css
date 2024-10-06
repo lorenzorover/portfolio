@@ -1,4 +1,25 @@
-@media /*(min-width: 768px) and */(max-width: 1024px) {
+@media (max-width: 1460px) {
+    #img-lista-consulta-exemplo {
+        width: 20rem;
+        height: auto;
+        align-self: center;
+    }
+
+    th {
+        white-space: wrap;
+    }
+}
+
+@media /*(min-width: 768px) and */(max-width: 1100px) {
+
+    :root {
+        --padding-margin-gap-pequeno: 0.5rem; /* 8px */
+        --padding-margin-gap-medio: 1rem; /* 16px */
+        --padding-margin-gap-grande: 2rem; /* 48px */
+
+        --tamanho-fonte-texto: 0.9rem;
+        --tamanho-fonte-subtitulos: 1.1rem
+    }
 
     .paginas {
         padding: 3rem 5rem;
@@ -30,7 +51,25 @@
         width: 12rem;
     }
 
+    /* Pagina 3 */
 
+    .dialog__modal {
+        height: 70%;
+        width: 70%;
+    }
 
+    .container__imagens__projeto {
+        flex-wrap: wrap;
+    }
+    
+    .container__projetos__links {
+        flex-wrap: wrap;
+    }
 
+}
+
+@media (max-width: 768px) {
+    .button__info {
+        white-space: wrap;
+    }
 }

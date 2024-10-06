@@ -3,7 +3,6 @@ let botaoAnterior = document.getElementById('button-info-1');
 let paginas = document.querySelectorAll('.paginas');
 let titulos = document.querySelectorAll('.titulos');
 let seta1 = document.getElementById('seta-1');
-let dialogCertificado;
 const paragrafoDiscord = document.getElementById("paragrafo-discord");
 
 const tituloInicial1 = document.getElementById('titulo-1');
@@ -85,26 +84,34 @@ function mostrarParagrafo(valor) {
     }
 }
 
-function mostrarDialog(valor) {
-    dialogCertificado = document.getElementById('dialog-certificado-' + valor);
+function mostrarDialogCertificado(valor) {
+    dialogModal = document.getElementById('dialog-certificado-' + valor);
 
     if (valor > 0 && valor < 4) {
-        dialogCertificado.showModal();
+        dialogModal.showModal();
+        document.body.classList.add('scroll')
+    }
+}
+
+function mostrarDialogProjeto(valor) {
+    dialogModal = document.getElementById('dialog-projeto-' + valor);
+
+    if (valor > 0 && valor < 4) {
+        dialogModal.showModal();
+        document.body.classList.add('scroll')
     }
 }
 
 function fecharDialog() {
-    dialogCertificado.close();
+    dialogModal.close();
+    document.body.classList.remove('scroll');
 }
 
-/* travar Scroll do mouse para o dialog */
-window.addEventListener('wheel', function(event) {
-    if (dialogCertificado.open === true) {
-        event.preventDefault();
-    }
-}, {
-    passive: false 
+dialogModal.addEventListener('close', function() {
+    console.log('Evento cancel acionado.');
+    document.body.classList.remove('scroll');
 });
+
 
 checkBox.addEventListener('change', function() {
 
