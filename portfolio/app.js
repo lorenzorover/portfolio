@@ -98,19 +98,18 @@ function mostrarDialogProjeto(valor) {
 
     if (valor > 0 && valor < 4) {
         dialogModal.showModal();
-        document.body.classList.add('scroll')
+        // document.body.classList.add('scroll')
     }
 }
 
 function fecharDialog() {
     dialogModal.close();
-    document.body.classList.remove('scroll');
+    // document.body.classList.remove('scroll');
 }
 
-dialogModal.addEventListener('close', function() {
-    console.log('Evento cancel acionado.');
-    document.body.classList.remove('scroll');
-});
+// dialogModal.addEventListener('close', function() {
+//     document.body.classList.remove('scroll');
+// });
 
 
 checkBox.addEventListener('change', function() {

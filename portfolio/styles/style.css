@@ -341,15 +341,15 @@ body.scroll {
 #titulo-pagina-3 {
     font-size: 2.5rem;
     font-family: var(--fonte-titulo);
-    padding: 3% 10%;
     align-self: center;
+    margin-bottom: var(--padding-margin-gap-grande);
 }
 
 .container__projetos {
     display: grid;
     grid-template-columns: 1fr 1fr; /* fazer função no js para aumentar para 2fr o respectivo projeto */
     justify-items: center;
-    gap: 3rem;
+    gap: var(--padding-margin-gap-grande);
 }
 
 .container__projetos__projeto {
@@ -369,7 +369,6 @@ body.scroll {
 .titulo__projetos {
     font-family: var(--fonte-titulo);
     font-size: var(--tamanho-fonte-subtitulos);
-    align-self: center;
 }
 
 .container__expandir__projeto {
