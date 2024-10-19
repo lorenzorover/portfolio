@@ -255,10 +255,12 @@ input:checked + .span__slider:before {
 }
 
 #foto-linkedin {
-    align-self: center;
     height: 10rem;
     width: auto;
     border: 3px solid rgb(57, 136, 255, 1);
+    float: right;
+    margin-left: var(--padding-margin-gap-medio);
+    margin-bottom: var(--padding-margin-gap-medio);
 }
 
 /* Imagens dos projetos */

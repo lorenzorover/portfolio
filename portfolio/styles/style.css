@@ -184,14 +184,17 @@ body.scroll {
 
 /* Parágrafo 1 */
 
-#paragrafo-1 {
+/* #paragrafo-1 {
     gap: var(--padding-margin-gap-grande);
 }
+
+#texto-1 {
+
+} */
 
 /* Parágrafo 2 */
 
 #paragrafo-2 {
-    display: flex;
     flex-direction: column;
     gap: var(--padding-margin-gap-medio);
 }
