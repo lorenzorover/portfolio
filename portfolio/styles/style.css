@@ -402,4 +402,13 @@ body.scroll {
     padding: 5px;
 }
 
-/* Cuidar para mexer no fitcontent do projetos-projeto e também no tamanho dos rem das imagens*/
+.rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--padding-margin-gap-medio);
+    font-family: var(--fonte-rodape);
+    font-size: var(--tamanho-fonte-texto);
+    color: var(--tema-fonte-cabecalho);
+    background-color: var(--tema-background-cabecalho);
+}
