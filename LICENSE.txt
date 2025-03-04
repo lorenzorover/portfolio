@@ -1,3 +1,28 @@
-This code is provided for viewing purposes only. You are not permitted to copy, modify, distribute, or use any part of this code without explicit permission from the author.
----
-Este código é fornecido apenas para visualização. Você não está autorizado a copiar, modificar, distribuir ou usar qualquer parte deste código sem permissão explícita do autor.
+Licença de Uso - Portfólio de Lorenzo Rover
+
+---------------------------------------
+
+Atenção: Este código é protegido por direitos autorais. Ao acessar e/ou usar este código, você concorda com as condições abaixo.
+
+**Permissões**:
+1. O código pode ser utilizado **apenas para fins educacionais**, como estudo e aprendizado. 
+2. É permitido visualizar e explorar o código para entender sua estrutura e lógica, desde que **não seja utilizado para fins comerciais**.
+
+**Restrições**:
+1. **Não é permitido modificar, distribuir, sublicenciar ou redistribuir o código** de qualquer forma, seja em sua totalidade ou partes dele.
+2. **Não é permitido revender ou usar o código em projetos comerciais ou para qualquer benefício financeiro.**
+3. **Não é permitido criar versões derivadas ou bases de código alteradas a partir deste código.**
+
+**Atribuição**:
+- Você deve dar **crédito adequado ao autor** deste código (seu nome ou pseudônimo) ao utilizá-lo ou mencioná-lo publicamente.
+
+**Isenção de Responsabilidade**:
+- Este código é fornecido **"no estado em que se encontra"**, sem garantias de qualquer tipo. O autor **não se responsabiliza por danos diretos ou indiretos** decorrentes do uso do código.
+
+**Uso Restrito**:
+- O uso deste código é **estritamente limitado** às permissões listadas nesta licença. O não cumprimento das condições acima pode resultar em ações legais.
+
+Para mais informações sobre esta licença, consulte o arquivo LICENSE no repositório.
+
+---------------------------------------
+Copyright (c) Lorenzo Rover ago/2024.
