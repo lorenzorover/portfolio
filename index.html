@@ -1,4 +1,8 @@
-<!-- Fontes de icones tiradas do Heroicons, Simpleicons e Devicons -->
+<!-- 
+Ícones fornecidos por Heroicons - Licença MIT: https://github.com/tailwindlabs/heroicons/blob/master/LICENSE
+Ícones fornecidos por Devicons - Licença MIT: https://github.com/devicons/devicon/blob/master/LICENSE
+Ícones fornecidos por SimpleIcons - Licença ISC: https://github.com/simple-icons/simple-icons/blob/master/LICENSE
+-->
 
 <!DOCTYPE html>
 <html>
@@ -7,6 +11,9 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Portfólio - Lorenzo Rover</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS normal -->
     <link rel='stylesheet' type='text/css' media='screen' href='./portfolio/styles/style.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./portfolio/styles/funcoes-js.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./portfolio/styles/components.css'>
@@ -96,13 +103,8 @@
                         <!-- Painel de botões-->
                         <button onclick="mostrarParagrafo(1)" class="button__info" id="button-info-1">Sobre mim</button>
                         <button onclick="mostrarParagrafo(2)" class="button__info" id="button-info-2">Formação</button>
-                        <!-- 
-                        <button onclick="mostrarParagrafo(3)" class="button__info" id="button-info-3">Certificados</button>
-                         -->
+                        <button onclick="mostrarParagrafo(3)" class="button__info" id="button-info-3">Conhecimento</button> <!--Escrever aqui o que eu conheço, como grid layout-->
                         <button onclick="mostrarParagrafo(4)" class="button__info" id="button-info-4">Habilidades técnicas</button>
-                        <!-- 
-                        <button onclick="mostrarParagrafo(5)" class="button__info" id="button-info-5">Experiência profissional</button> 
-                        -->
                         <button onclick="mostrarParagrafo(6)" class="button__info" id="button-info-6">Contato</button>
                     </div>
                     <div class="container__conteudo__paragrafos">
@@ -110,185 +112,139 @@
                         <div class="paragrafo__button" id="paragrafo-1">
                             <div id="texto-1">
                                 <img id="foto-linkedin" src="./portfolio/source/foto.jfif" alt="minha foto do linkedin">
-                                <li>Meu nome é Lorenzo Rover.</li>
-                                <li>Tenho 24 anos (2024).</li>
-                                <li>Atualmente, resido em Florianópolis - SC.</li>
-                                <li>Tenho foco principal em linguagens e frameworks relacionados ao <em>back-end</em>.</li>
-                                <li>Possuo conhecimento básico em <em>front-end</em>.</li>
-                                <li>Meu objetivo é conseguir um estágio ou emprego que me permita consolidar minhas habilidades em desenvolvimento de software e continuar aprimorando meu conhecimento.</li>
-                                <li>Sou uma pessoa focada e responsável quando o assunto é trabalho.</li>
+                                <p>Atualmente, resido em Florianópolis - SC e sou um desenvolvedor com foco principal em linguagens, bibliotecas e frameworks voltados para o back-end, além de possuir conhecimento intermediário em front-end. Meu objetivo é conquistar uma oportunidade que me permita consolidar minhas habilidades em desenvolvimento de software e continuar aprimorando meu conhecimento na área.</p>
+                                <p>Sou uma pessoa focada e responsável quando se trata de trabalho, sempre buscando novos desafios e evolução contínua. Para mais detalhes sobre minha formação, certificações e currículo, acesse meu <a href="https://www.linkedin.com/in/lorenzo-rover/" target="_blank" class="links">LinkedIn</a>.</p>
+                                <p>Caso queira dar uma olhada nos meus projetos, você pode encontrar nesse portfólio mesmo ou acessando meu <a href="https://github.com/lorenzorover" target="_blank" class="links">Github</a>. Meus projetos são os repositórios com Pin.</p>
                             </div>
                         </div>
                         <div class="paragrafo__button" id="paragrafo-2">
                             <p>Essas são as formações que considero mais importantes dentre os cursos que realizei:</p>
-
-                            <table class="tabela__texto">
-                                <tr>
-                                    <th>Nome</th>
-                                    <th>Instituição</th>
-                                    <th>Ano de início/término</th>
-                                    <th>Tipo de ensino</th>
-                                </tr>
-                                <tr>
-                                    <td>Técnico em Informática</td>
-                                    <td>IFSC</td>
-                                    <td>Ago 2018 - Dez 2020</td>
-                                    <td>Presencial</td>
-                                </tr>
-                                <tr>
-                                    <td>Jovem Programador</th>
-                                    <td>Senac</td>
-                                    <td>Mar 2024 - Dez 2024</td>
-                                    <td>Híbrido</td>
-                                </tr>
-                                <tr>
-                                    <td>Oracle Next Education</td>
-                                    <td>Alura</td>
-                                    <td>Jun 2024 - Jan 2025</td>
-                                    <td>EAD</td>
-                                </tr>
-                            </table>
+                            <div class="container__tabela">
+                                <table class="tabela__texto">
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Instituição</th>
+                                        <th>Ano de início/término</th>
+                                        <th>Tipo de ensino</th>
+                                        <th>Nível de formação</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Técnico em Informática</td>
+                                        <td>IFSC</td>
+                                        <td>Ago 2018 - Dez 2020</td>
+                                        <td>Presencial</td>
+                                        <td>Técnico</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jovem Programador</th>
+                                        <td>Senac</td>
+                                        <td>Mar 2024 - Dez 2024</td>
+                                        <td>Híbrido</td>
+                                        <td>Curso Profissionalizante</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Oracle Next Education</td>
+                                        <td>Alura</td>
+                                        <td>Jun 2024 - Jan 2025</td>
+                                        <td>EAD</td>
+                                        <td>Curso Online</td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
 
-                        <!-- <div class="paragrafo__button" id="paragrafo-3">
-                            
-                            
-                            <div class="container__certificados">
-                                <p class="paragrafo__certificados">IFSC</p>
-                                <iframe loading="lazy" class="iframe__inicial" src="./portfolio/source/Certificado_TI_IFSC.pdf" frameborder="0"></iframe>
-                                <svg onclick="mostrarDialogCertificado(1)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon__expand">
-                                    <path fill-rule="evenodd" d="M15 3.75a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0V5.56l-3.97 3.97a.75.75 0 1 1-1.06-1.06l3.97-3.97h-2.69a.75.75 0 0 1-.75-.75Zm-12 0A.75.75 0 0 1 3.75 3h4.5a.75.75 0 0 1 0 1.5H5.56l3.97 3.97a.75.75 0 0 1-1.06 1.06L4.5 5.56v2.69a.75.75 0 0 1-1.5 0v-4.5Zm11.47 11.78a.75.75 0 1 1 1.06-1.06l3.97 3.97v-2.69a.75.75 0 0 1 1.5 0v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1 0-1.5h2.69l-3.97-3.97Zm-4.94-1.06a.75.75 0 0 1 0 1.06L5.56 19.5h2.69a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 1 1.5 0v2.69l3.97-3.97a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                            <dialog class="dialog__modal" id="dialog-certificado-1">
-                                <section class="dialog__modal__ampliados">
-                                    <svg onclick="fecharDialog()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon__close">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                                    </svg>
-                                    <iframe loading="lazy" class="iframe__ampliado" src="./portfolio/source/Certificado_TI_IFSC.pdf#navpanes=0&#view=Fit" frameborder="0"></iframe>
-                                </section>
-                            </dialog>
-
-                            
-                            <div class="container__certificados">
-                                <p class="paragrafo__certificados">Senac</p>
-                                <iframe loading="lazy" class="iframe__inicial" src="./portfolio/source/Certificado_Senac_Desenvolvimento_de_Sistemas.pdf" frameborder="0"></iframe>
-                                <svg onclick="mostrarDialogCertificado(2)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon__expand">
-                                    <path fill-rule="evenodd" d="M15 3.75a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0V5.56l-3.97 3.97a.75.75 0 1 1-1.06-1.06l3.97-3.97h-2.69a.75.75 0 0 1-.75-.75Zm-12 0A.75.75 0 0 1 3.75 3h4.5a.75.75 0 0 1 0 1.5H5.56l3.97 3.97a.75.75 0 0 1-1.06 1.06L4.5 5.56v2.69a.75.75 0 0 1-1.5 0v-4.5Zm11.47 11.78a.75.75 0 1 1 1.06-1.06l3.97 3.97v-2.69a.75.75 0 0 1 1.5 0v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1 0-1.5h2.69l-3.97-3.97Zm-4.94-1.06a.75.75 0 0 1 0 1.06L5.56 19.5h2.69a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 1 1.5 0v2.69l3.97-3.97a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                            <dialog class="dialog__modal" id="dialog-certificado-2">
-                                <section class="dialog__modal__ampliados">
-                                    <svg onclick="fecharDialog()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon__close">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                                    </svg>
-                                    <iframe loading="lazy" class="iframe__ampliado" src="./portfolio/source/Certificado_Senac_Desenvolvimento_de_Sistemas.pdf#navpanes=0&#view=Fit" frameborder="0"></iframe>
-                                </section>
-                            </dialog>
-
-                            
-                            <div class="container__certificados">
-                                <p class="paragrafo__certificados">Alura</p>
-                                <iframe loading="lazy" class="iframe__inicial" src="./portfolio/source/Certificado Alura.pdf" frameborder="0"></iframe>
-                                <svg onclick="mostrarDialogCertificado(3)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon__expand">
-                                    <path fill-rule="evenodd" d="M15 3.75a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0V5.56l-3.97 3.97a.75.75 0 1 1-1.06-1.06l3.97-3.97h-2.69a.75.75 0 0 1-.75-.75Zm-12 0A.75.75 0 0 1 3.75 3h4.5a.75.75 0 0 1 0 1.5H5.56l3.97 3.97a.75.75 0 0 1-1.06 1.06L4.5 5.56v2.69a.75.75 0 0 1-1.5 0v-4.5Zm11.47 11.78a.75.75 0 1 1 1.06-1.06l3.97 3.97v-2.69a.75.75 0 0 1 1.5 0v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1 0-1.5h2.69l-3.97-3.97Zm-4.94-1.06a.75.75 0 0 1 0 1.06L5.56 19.5h2.69a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 1 1.5 0v2.69l3.97-3.97a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                            <dialog class="dialog__modal" id="dialog-certificado-3">
-                                <section class="dialog__modal__ampliados">
-                                    <svg onclick="fecharDialog()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon__close">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                                    </svg>                                  
-                                    <iframe loading="lazy" class="iframe__ampliado" src="./portfolio/source/Certificado Alura.pdf#navpanes=0&#view=Fit" frameborder="0"></iframe>
-                                </section>
-                            </dialog>
-
-                        </div> -->
+                        <div class="paragrafo__button" id="paragrafo-3">
+                            <p>Trabalhei com Java e Spring Boot em projetos de back-end, especialmente na criação de APIs RESTful e integração com banco de dados. Já utilizei várias bibliotecas do Spring, como Security, Lombok, DevTools, JPA, entre outros.</p>
+                            <p>Além disso, possuo experiência com o padrão DAO (Data Access Object) e com a utilização do modelo de dados do Spring, facilitando a integração entre as camadas da aplicação e garantindo uma comunicação eficiente entre o banco de dados e o sistema.</p>
+                            <p>Adquiri conhecimento sólido em SQL, criando consultas complexas e estruturando banco de dados relacionais com ambos PostgreSQL e MySQL. Também integrei o banco de dados com aplicações Java, garantindo que os dados fossem manipulados de maneira eficiente.</p>
+                            <p>Utilizei APIs externas, como uma API de conversão de moedas, para integrar dados de forma dinâmica em meus projetos. Essa experiência me permitiu entender a comunicação entre sistemas e o uso de JSON.</p>
+                            <p>Tenho experiência tanto trabalhando de forma independente quanto em equipe, adaptando-me facilmente a diferentes ambientes de trabalho.</p>
+                            <p>Embora meu foco seja o back-end, desenvolvi conhecimentos intermediários em HTML, CSS e JavaScript.</p>
+                        </div>
                         
                         <div class="paragrafo__button" id="paragrafo-4">
-                            <table class="tabela__texto">
-                                <tr>
-                                    <th>Categoria</th>
-                                    <th>Ferramentas/Tecnologias</th>
-                                </tr>
-                                <tr>
-                                    <th>Linguagens de Programação</th>
-                                    <td class="linha__badges">
-                                        <span class="badges">
-                                            <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" class="icones__badges"/>
-                                            Java
-                                        </span>
-                                        <span class="badges badge__borderless">
-                                            <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" class="icones__badges"/>
-                                            Javascript
-                                        </span>
-                                        <span class="badges">
-                                            <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" class="icones__badges"/>
-                                            SQL
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Linguagens de Marcação e Estilização</th>
-                                    <td class="linha__badges">
-                                        <span class="badges badge__borderless">
-                                            <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" class="icones__badges"/>
-                                            HTML
-                                        </span>
-                                        <span class="badges badge__borderless">
-                                            <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" class="icones__badges"/>
-                                            CSS
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Bibliotecas/ Frameworks</th>
-                                    <td class="linha__badges">
-                                        <span class="badges">
-                                            <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" class="icones__badges"/>
-                                            Springboot
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Ferramentas</th>
-                                    <td class="linha__badges">
-                                        <span class="badges">
-                                            <img loading="lazy" lazyloading src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" class="icones__badges"/>
-                                            Postman
-                                        </span>
-                                        <span class="badges">
-                                            <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" class="icones__badges"/>
-                                            Git
-                                        </span>
-                                        <span class="badges">
-                                            <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="icones__badges"/>
-                                            Github
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>IDEs</th>
-                                    <td class="linha__badges">
-                                        <span class="badges">
-                                            <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" class="icones__badges"/>
-                                            VSCode
-                                        </span>
-                                        <span class="badges">
-                                            <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/eclipse/eclipse-original.svg" class="icones__badges"/>
-                                            Eclipse
-                                        </span>
-                                        <span class="badges badge__borderless">
-                                            <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" class="icones__badges"/>
-                                            MySQL
-                                        </span>
-                                    </td>
-                                </tr>
-                            </table>
+                            <div class="container__tabela">
+                                <table class="tabela__texto">
+                                    <tr>
+                                        <th>Categoria</th>
+                                        <th>Ferramentas/Tecnologias</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Linguagens de Programação</th>
+                                        <td class="linha__badges">
+                                            <span class="badges">
+                                                <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" class="icones__badges"/>
+                                                Java
+                                            </span>
+                                            <span class="badges badge__borderless">
+                                                <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" class="icones__badges"/>
+                                                Javascript
+                                            </span>
+                                            <span class="badges">
+                                                <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" class="icones__badges"/>
+                                                SQL
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Linguagens de Marcação e Estilização</th>
+                                        <td class="linha__badges">
+                                            <span class="badges badge__borderless">
+                                                <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" class="icones__badges"/>
+                                                HTML
+                                            </span>
+                                            <span class="badges badge__borderless">
+                                                <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" class="icones__badges"/>
+                                                CSS
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Bibliotecas/ Frameworks</th>
+                                        <td class="linha__badges">
+                                            <span class="badges">
+                                                <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" class="icones__badges"/>
+                                                Springboot
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Ferramentas</th>
+                                        <td class="linha__badges">
+                                            <span class="badges">
+                                                <img loading="lazy" lazyloading src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" class="icones__badges"/>
+                                                Postman
+                                            </span>
+                                            <span class="badges">
+                                                <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" class="icones__badges"/>
+                                                Git
+                                            </span>
+                                            <span class="badges">
+                                                <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="icones__badges"/>
+                                                Github
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>IDEs</th>
+                                        <td class="linha__badges">
+                                            <span class="badges">
+                                                <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" class="icones__badges"/>
+                                                VSCode
+                                            </span>
+                                            <span class="badges">
+                                                <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/eclipse/eclipse-original.svg" class="icones__badges"/>
+                                                Eclipse
+                                            </span>
+                                            <span class="badges badge__borderless">
+                                                <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" class="icones__badges"/>
+                                                MySQL
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
-                        <!-- 
-                        <div class="paragrafo__button" id="paragrafo-5"><li>e</li></div> 
-                        -->
                         <div class="paragrafo__button" id="paragrafo-6">
                             <p>Abaixo estão links para contato e redes sociais onde você pode visualizar meus projetos e poder conversar comigo.</p>
 
@@ -307,7 +263,7 @@
                                 </a>
                                 
                             </div>
-
+<!-- 
                             <p>Para falar comigo no discord, clique no botão abaixo para copiar meu nick e me adicione.</p>
 
                             <div class="container__discord">
@@ -317,7 +273,7 @@
                                     <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="img-discord"><title>Discord</title><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
                                     <p id="paragrafo-discord">Nick: Rakard</p>
                                 </button>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -343,79 +299,58 @@
 
             <h1 id="titulo-pagina-3">Projetos e Aplicações</h1>
 
-            <div class="container__projetos">
+            <div class="container__projetos accordion" id="accordion">
                 <div class="container__projetos__projeto">
                     <!-- Projeto 1 -->
-                    <h2 class="titulo__projetos">Controle de consultório<br>(Aplicação - Desktop)</h2>
-                    <p>Projeto integrador desenvolvido durante o curso <i>Jovem Programador - Programador de Sistemas</i> - <strong><i>Senac</i></strong></p>
-                    <p>A proposta do projeto é aumentar a agilidade e funcionalidade na organização e consulta de dados importantes pelo usuário.</p>
-                    <img loading="lazy" src="./portfolio/source/lista-de-consulta.png" id="img-lista-consulta-exemplo" alt="Lista de consultas do programa">
-                    <button onclick="mostrarDialogProjeto(1)" class="button__projeto">Mostrar mais</button>
-                </div>
-                <dialog class="dialog__modal" id="dialog-projeto-1">
-                    <section class="dialog__modal__ampliados">
-                        <svg onclick="fecharDialog()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon__close">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                        </svg>
-                        <div class="container__expandir__projeto">
-                            <h2 class="titulo__projetos">Controle de consultório<br>(Aplicação - Desktop)</h2>
-                            <p>Projeto integrador desenvolvido durante o curso <i>Jovem Programador - Programador de Sistemas</i> - <strong><i>Senac</i></strong>.</p>
-                            <p>A proposta do projeto é aumentar a agilidade e funcionalidade na organização e consulta de dados importantes pelo usuário.</p>
-                            <table>
-                                <tr>
-                                    <th>Tempo de desenvolvimento</th>
-                                    <td>Um mês e meio (junho/julho de 2024)</td>
-                                </tr>
-                                <tr>
-                                    <th>Linguagens e ferramentas utilizadas</th>
-                                    <td>Java, Java-Swing, Eclipse IDE, SQL, MySQL Workbench</td>
-                                </tr>
-                                <tr>
-                                    <th>Principais funcionalidades</th>
-                                    <td>
-                                        <ul>
-                                            <li>Cadastrar, listar, deletar e alterar pacientes, tratamentos e consultas;</li>
-                                            <li>Paciente pode ter opção de possuir responsável ou não no cadastro.</li>
-                                            <li>Conferir informações adicionais do paciente listado, podendo ser endereço ou informações do responsável do mesmo;</li>
-                                            <li>Mostrar consultas agendadas ou passadas;</li>
-                                            <li>Marcar/Desmarcar comparecimento do paciente referente à consulta;</li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Implementações Futuras</th>
-                                    <td>Desenvolver um controle de estoque de materiais junto do programa de controle do consultório.
-                                        O tratamento terá uma nova opção para registrar produtos utilizados no tratamento e sua quantia.
-                                        Quando a consulta for passada na agenda e for marcado comparecido, dependendo do tratamento realizado é automaticamente
-                                        removido a quantia do produto do estoque.<br>
-                                        O usuário poderá controlar o estoque manualmente também.
-                                    </td>
-                                </tr>
-                            </table>
-                            <p><strong>Nota:</strong> Encontrei dificuldades ao associar o ID correto em listas dinâmicas ao buscar dados do banco de dados. Resolvi esse problema utilizando um Map para armazenar e recuperar os IDs, garantindo a integridade dos dados, mesmo com atualizações frequentes na lista.<br><br>
-                                        Alem disso, minha ideia foi focar mais em funcionalidades do programa do que o próprio design, tanto que foi feito no próprio Java-Swing.</p>
-                            <div class="container__imagens__projeto">
-                                <img loading="lazy" src="./portfolio/source/lista-de-paciente.png" id="img-lista-paciente" alt="Lista de pacientes do programa">
-                                <img loading="lazy" src="./portfolio/source/informacoes-paciente.png" id="img-informacoes-adicionais" alt="Informações adicionais do paciente escolhido">
-                                <img loading="lazy" src="./portfolio/source/cadastro-de-consulta.png" id="img-cadastro-consulta" alt="Imagem de cadastro de uma consulta do programa">
-                                <img loading="lazy" src="./portfolio/source/lista-de-consulta.png" id="img-lista-consulta" alt="Lista de consultas do programa">
-                            </div>
-    
-                            <p>Mais imagens e informações na documentação.</p>
-    
-                            <div class="container__projetos__links">
-                                <a class="link__projetos" href="https://github.com/lorenzorover/PI" target="_blank">Github do Projeto</a>
-                                <a class="link__projetos" href="https://github.com/lorenzorover/PI/raw/main/Projeto-Integrador.pdf" download="Controle-Consultorio.pdf">Baixar Documentação(PDF)</a>
+                    <div class="card">
+                        <div class="card-header">
+                          <h4 class="card-title">Controle de consultório<br>(Aplicação - Desktop)</h4>
+                        </div>
+                        <div class="card-body">
+                            <p>Projeto integrador desenvolvido durante o curso <i>Jovem Programador - Programador de Sistemas</i> - <strong><i>Senac</i></strong></p>
+                            <a class="btn btn-primary" data-toggle="collapse" href="#content1" role="button" aria-expanded="false" aria-controls="content1">Mostrar Mais</a>
+                            <div class="collapse" id="content1" data-parent="#accordion">
+                                <div class="card card-body mt-3">
+                                    <p>Desenvolvimento de um sistema de controle de consultório com um CRUD básico para gerenciar pacientes, tratamentos e consultas. A comunicação com o banco de dados é feita utilizando o padrão DAO. O sistema permite cadastrar, listar, editar e excluir registros, além de fornecer informações adicionais sobre pacientes e consultas.</p>
+                                    <table>
+                                        <tr>
+                                            <th>Ferramentas e Linguagens:</th>
+                                            <td>Java, Java Swing, MySQL, Banco de Dados.</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Outros:</th>
+                                            <td>MySQL Workbench, Eclipse IDE</td>
+                                        </tr>
+                                    </table>
+                                    <p>Imagem ilustrativa:</p>
+                                    <img loading="lazy" src="./portfolio/source/lista-de-consulta.png" id="img-lista-consulta-exemplo" alt="Lista de consultas do programa">
+                                    <div class="container__projetos__links">
+                                        <a class="link__projetos" href="https://github.com/lorenzorover/PI" target="_blank">Github do Projeto</a>
+                                        <a class="link__projetos" href="https://github.com/lorenzorover/PI/raw/main/Projeto-Integrador.pdf" download="Controle-Consultorio.pdf">Baixar Documentação(PDF)</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </section>
-                </dialog>
+                    </div>
+                </div>
+                
                 
                 <div class="container__projetos__projeto">
                     <!-- Projeto 2 -->
-                    <h2 class="titulo__projetos">Em desenvolvimento!</h2>
-                    <p></p>
-                    <a href="" download=""></a>
+                    <div class="card">
+                        <div class="card-header">
+                          <h4 class="card-title">Projeto</h4>
+                        </div>
+                        <div class="card-body">
+                          <p>Em desenvolvimento</p>
+                          <a class="btn btn-primary" data-toggle="collapse" href="#content2" role="button" aria-expanded="false" aria-controls="content2">Mostrar Mais</a>
+                          <div class="collapse" id="content2" data-parent="#accordion">
+                            <div class="card card-body mt-3">
+                              <p>Em desenvolvimento</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                 </div>
                 <div class="container__projetos__projeto">
                     <!-- Projeto 3 -->
@@ -435,6 +370,12 @@
         <p>Todos os direitos reservados.</p>
     </footer>
 
+<!-- Javascript portfólio -->
 <script src='./portfolio/app.js'></script>
+<!-- Javascript Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>

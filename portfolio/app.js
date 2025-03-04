@@ -18,7 +18,7 @@ const iconeLua = document.getElementById('svg-lua');
 
 let balaoMouse = false;
 
-// Linha dos botoes de "Sobre mim"
+// Linha azul sublinhada dos botoes de "Sobre mim"
 const linha = document.createElement("span");
 linha.id = "linha-botao";
 
@@ -89,7 +89,7 @@ function mostrarDialogCertificado(valor) {
 
     if (valor > 0 && valor < 4) {
         dialogModal.showModal();
-        document.body.classList.add('scroll')
+        // document.body.classList.add('scroll')
     }
 }
 
@@ -175,6 +175,7 @@ function direcionarPagina(numeroPagina){
     });
 }
 
+//Página 1
 function mostrarTitulo() {
 
     setTimeout(function() {
@@ -199,20 +200,20 @@ function mostrarTitulo() {
         });
 
     }, 4000);
-
 }
 
-function copiarMensagem() {
-    navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
-        if (result.state === "granted" || result.state === "prompt") {
-            navigator.clipboard.writeText("Rakard");
+//Função copiar nick do discord
+// function copiarMensagem() {
+//     navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
+//         if (result.state === "granted" || result.state === "prompt") {
+//             navigator.clipboard.writeText("Rakard");
 
-            paragrafoDiscord.innerText = "Copiado!";
+//             paragrafoDiscord.innerText = "Copiado!";
 
-            setTimeout(function() {
-                paragrafoDiscord.innerText = "Nick: Rakard";
-            }, 2500);
-        }
-      });
-}
+//             setTimeout(function() {
+//                 paragrafoDiscord.innerText = "Nick: Rakard";
+//             }, 2500);
+//         }
+//       });
+// }
 

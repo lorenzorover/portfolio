@@ -7,6 +7,15 @@
 _________________________________
 */
 
+.links {
+    color: rgb(57, 136, 255, 1);
+    text-decoration: none;
+}
+
+.links:visited {
+    color: rgb(57, 136, 255, 1);
+}
+
 /* Botões */
 
 button {
@@ -14,7 +23,7 @@ button {
     border: none;
     cursor: pointer;
     width: auto;
-    padding: var(--padding-margin-gap-pequeno);
+    padding: 0.3rem;
     border-radius: 8px;
     font-family: var(--fonte-paragrafo);
 }
@@ -25,7 +34,6 @@ button {
     color: var(--tema-fonte-cabecalho);
     font-weight: bold;
     font-size: var(--tamanho-fonte-texto);
-    padding: var(--padding-margin-gap-pequeno);
     gap: var(--padding-margin-gap-pequeno);
 }
 
@@ -130,10 +138,19 @@ button {
 
 /* Tables e Listas */
 
+.container__tabela {
+    overflow-x: auto; /* Alterado de 'scroll' para 'auto' */
+    display: block; /* Impede conflitos com flexbox */
+    max-width: 65vw;
+    padding-bottom: 1rem; /* Evita que o scroll fique escondido */
+    box-sizing: border-box;
+}
+
 .tabela__texto {
     border: 1px solid black;
     padding: 2px;
-    border-spacing: 3px;
+    border-collapse: collapse;
+    width: 100%; /* A tabela se ajusta até o limite do container */
 }
 
 li {
