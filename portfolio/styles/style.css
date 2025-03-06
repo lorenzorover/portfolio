@@ -9,6 +9,8 @@
     --tema-background-claro: linear-gradient(to right bottom, #F5F5F5, #D9D9D9);
     --tema-fonte-claro: #3D3B3C;
 
+    --tema-background-projetos-escuro: linear-gradient(to right bottom, #3E3C3B, #545150);
+
     --fonte-titulo: "Montserrat", sans-serif;
     --fonte-paragrafo: "Open Sans", sans-serif;
     --fonte-rodape: "Roboto", sans-serif;
@@ -29,37 +31,11 @@
     box-sizing: border-box;
 }
 
-body.scroll {
+/* body.scroll {
     overflow: hidden;
-}
+} */
 
-/* Cabeçalho */
 
-.cabecalho {
-    display: flex;
-    box-sizing: border-box;
-    background-color: var(--tema-background-cabecalho);
-    color: var(--tema-fonte-cabecalho);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100; /* para a seta com transform nao atrapalhar */
-    height: auto;
-    padding: var(--padding-margin-gap-pequeno);
-    justify-content: space-between;
-    gap: var(--padding-margin-gap-grande);
-}
-
-.container__cabecalho__botoes {
-    display: flex;
-    gap: var(--padding-margin-gap-medio);
-}
-
-.container__cabecalho__switch {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
 
 /* Páginas */
 
@@ -314,12 +290,13 @@ body.scroll {
     font-size: 2.5rem;
     font-family: var(--fonte-titulo);
     align-self: center;
-    margin-bottom: var(--padding-margin-gap-grande);
+    margin-top: 0;
+    text-align: center;
 }
 
 .container__projetos {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* fazer função no js para aumentar para 2fr o respectivo projeto */
+    grid-template-columns: 1fr 1fr;
     justify-items: center;
     gap: var(--padding-margin-gap-grande);
 }
@@ -329,13 +306,15 @@ body.scroll {
     width: fit-content;
     background-color: var(--tema-background-cabecalho);
     border: 1px solid rgb(57, 136, 255, 1);
+    border-radius: 0.5rem;
     font-family: var(--fonte-paragrafo);
     font-size: var(--tamanho-fonte-texto);
     color: var(--tema-fonte-cabecalho);
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    padding: 1rem;
+}
+
+.card {
+    font-family: var(--fonte-paragrafo);
 }
 
 .titulo__projetos {
@@ -362,22 +341,3 @@ body.scroll {
     gap: var(--padding-margin-gap-medio);
 }
 
-.link__projetos {
-    background-color: black;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    border: 1px solid rgb(57, 136, 255, 1);
-    padding: 5px;
-}
-
-.rodape {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: var(--padding-margin-gap-medio);
-    font-family: var(--fonte-rodape);
-    font-size: var(--tamanho-fonte-texto);
-    color: var(--tema-fonte-cabecalho);
-    background-color: var(--tema-background-cabecalho);
-}

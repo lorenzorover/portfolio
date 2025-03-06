@@ -1,35 +1,3 @@
-/* Temas das páginas */
-
-.tema__escuro {
-    background: var(--tema-background-escuro);
-    color: var(--tema-fonte-escuro);
-    
-    .button__info {
-        color: var(--tema-fonte-escuro);
-    };
-
-    .button__seta {
-        color: var(--tema-fonte-escuro);
-    };
-
-    transition: 0.4s;
-}
-
-.tema__claro {
-    background: var(--tema-background-claro);
-    color: var(--tema-fonte-claro);
-
-    .button__info {
-        color: var(--tema-fonte-claro);
-    };
-
-    .button__seta {
-        color: var(--tema-fonte-claro);
-    };
-
-    transition: 0.4s;
-}
-
 #seta-1.mostrar {
     /* Função do JS para mostrar seta */
     visibility: visible;

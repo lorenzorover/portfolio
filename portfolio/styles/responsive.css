@@ -68,20 +68,22 @@
 }
 
 @media (max-width: 768px) {
+    .button__cabecalho {
+        display: flex;
+        flex-direction: column;
+    }
+
     .button__info {
         white-space: wrap;
     }
 
+    .container__projetos {
+        grid-template-columns: 1fr;
+    }
+
+    
+
     /* .th {
         word-wrap: break-word;
     } */
-}
-
-@media (max-width: 620px) {
-    /* Quebrar os projetos em 1 coluna apenas*/
-    .container__projetos {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
 }

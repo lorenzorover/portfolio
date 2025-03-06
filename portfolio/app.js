@@ -4,6 +4,7 @@ let paginas = document.querySelectorAll('.paginas');
 let titulos = document.querySelectorAll('.titulos');
 let seta1 = document.getElementById('seta-1');
 const paragrafoDiscord = document.getElementById("paragrafo-discord");
+let botoesProjeto = document.querySelectorAll(".botoes__projeto");
 
 const tituloInicial1 = document.getElementById('titulo-1');
 const tituloInicial2 = document.getElementById('titulo-2');
@@ -217,3 +218,16 @@ function mostrarTitulo() {
 //       });
 // }
 
+// Mudar conteúdo do botão de expandir projeto
+function mudarBotaoProjeto(valor) {
+    const botao = document.getElementById('botao-projeto-mostrar-' + valor);
+
+    const conteudo = document.getElementById('content' + valor);
+
+    botoesProjeto.forEach(function(botao) {
+        botao.textContent = "Expandir";
+    });
+
+    // Retornos invertidos devido ao delay de aplicação do "show" do bootstrap
+    conteudo.classList.contains('show') ? botao.textContent = "Expandir" : botao.textContent = "Esconder";
+}

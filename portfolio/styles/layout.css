@@ -1,0 +1,40 @@
+/* Cabeçalho */
+
+.cabecalho {
+    display: flex;
+    box-sizing: border-box;
+    background-color: var(--tema-background-cabecalho);
+    color: var(--tema-fonte-cabecalho);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100; /* para a seta com transform nao atrapalhar */
+    height: auto;
+    padding: var(--padding-margin-gap-pequeno);
+    justify-content: space-between;
+    gap: var(--padding-margin-gap-grande);
+}
+
+.container__cabecalho__botoes {
+    display: flex;
+    gap: var(--padding-margin-gap-medio);
+}
+
+.container__cabecalho__switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Rodapé */
+
+.rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--padding-margin-gap-medio);
+    font-family: var(--fonte-rodape);
+    font-size: var(--tamanho-fonte-texto);
+    color: var(--tema-fonte-cabecalho);
+    background-color: var(--tema-background-cabecalho);
+}

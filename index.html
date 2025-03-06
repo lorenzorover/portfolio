@@ -13,11 +13,15 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- CSS normal -->
+    <!-- Reset CSS -->
+    <link rel='stylesheet' type='text/css' media='screen' href="./portfolio/styles/normalizer.css">
+    <!-- CSS -->
     <link rel='stylesheet' type='text/css' media='screen' href='./portfolio/styles/style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./portfolio/styles/layout.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./portfolio/styles/funcoes-js.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./portfolio/styles/components.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./portfolio/styles/responsive.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./portfolio/styles/themes.css'>
 </head>
 <body>
     <header class="cabecalho">
@@ -28,19 +32,23 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="imgs__cabecalho">
                 <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
                 <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
-            </svg>Home</button>
+            </svg>
+            <p class="mb-0">Home</p>
+            </button>
 
             <button class="button__cabecalho" onclick="direcionarPagina(2)">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="imgs__cabecalho">
                 <path fill-rule="evenodd" d="M4.5 3.75a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V6.75a3 3 0 0 0-3-3h-15Zm4.125 3a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Zm-3.873 8.703a4.126 4.126 0 0 1 7.746 0 .75.75 0 0 1-.351.92 7.47 7.47 0 0 1-3.522.877 7.47 7.47 0 0 1-3.522-.877.75.75 0 0 1-.351-.92ZM15 8.25a.75.75 0 0 0 0 1.5h3.75a.75.75 0 0 0 0-1.5H15ZM14.25 12a.75.75 0 0 1 .75-.75h3.75a.75.75 0 0 1 0 1.5H15a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5h3.75a.75.75 0 0 0 0-1.5H15Z" clip-rule="evenodd" />
               </svg>
-              Sobre</button>
+              <p class="mb-0">Sobre</p>
+              </button>
 
             <button class="button__cabecalho" onclick="direcionarPagina(3)">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="imgs__cabecalho">
                 <path d="M19.5 21a3 3 0 0 0 3-3v-4.5a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3V18a3 3 0 0 0 3 3h15ZM1.5 10.146V6a3 3 0 0 1 3-3h5.379a2.25 2.25 0 0 1 1.59.659l2.122 2.121c.14.141.331.22.53.22H19.5a3 3 0 0 1 3 3v1.146A4.483 4.483 0 0 0 19.5 9h-15a4.483 4.483 0 0 0-3 1.146Z" />
             </svg>
-            Projetos</button>
+            <p class="mb-0">Projetos</p>
+            </button>
             
         </div>
         
@@ -67,7 +75,7 @@
             <div class="container__inicio">
                 <h1 class="titulos" id="titulo-1">Seja bem vindo</h1>
                 <h2 class="titulos" id="titulo-2">Sou Lorenzo Rover</h2>
-                <h2 class="titulos" id="titulo-3">Programador Full-stack/Back-end</h2>
+                <h2 class="titulos" id="titulo-3">Programador Back-end & Full-stack</h2>
             </div>
             
             <div class="container__scroll">
@@ -212,8 +220,12 @@
                                         <th>Ferramentas</th>
                                         <td class="linha__badges">
                                             <span class="badges">
-                                                <img loading="lazy" lazyloading src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" class="icones__badges"/>
+                                                <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" class="icones__badges"/>
                                                 Postman
+                                            </span>
+                                            <span class="badges">
+                                                <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg" class="icones__badges"/>
+                                                Swagger
                                             </span>
                                             <span class="badges">
                                                 <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" class="icones__badges"/>
@@ -239,6 +251,10 @@
                                             <span class="badges badge__borderless">
                                                 <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" class="icones__badges"/>
                                                 MySQL
+                                            </span>
+                                            <span class="badges badge__borderless">
+                                                <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" class="icones__badges"/>
+                                                Postgre
                                             </span>
                                         </td>
                                     </tr>
@@ -304,15 +320,15 @@
                     <!-- Projeto 1 -->
                     <div class="card">
                         <div class="card-header">
-                          <h4 class="card-title">Controle de consultório<br>(Aplicação - Desktop)</h4>
+                          <h4 class="card-title">Controle de Consultório<br>(Aplicação - Desktop)</h4>
                         </div>
                         <div class="card-body">
-                            <p>Projeto integrador desenvolvido durante o curso <i>Jovem Programador - Programador de Sistemas</i> - <strong><i>Senac</i></strong></p>
-                            <a class="btn btn-primary" data-toggle="collapse" href="#content1" role="button" aria-expanded="false" aria-controls="content1">Mostrar Mais</a>
+                            <p>Projeto integrador desenvolvido em dupla durante o curso <i>Jovem Programador - Programador de Sistemas</i> - <strong><i>Senac</i></strong>.</p>
                             <div class="collapse" id="content1" data-parent="#accordion">
                                 <div class="card card-body mt-3">
-                                    <p>Desenvolvimento de um sistema de controle de consultório com um CRUD básico para gerenciar pacientes, tratamentos e consultas. A comunicação com o banco de dados é feita utilizando o padrão DAO. O sistema permite cadastrar, listar, editar e excluir registros, além de fornecer informações adicionais sobre pacientes e consultas.</p>
-                                    <table>
+                                    <p>Desenvolvimento de um sistema de controle de consultório com CRUD básico para gerenciar pacientes, tratamentos e consultas, além de possuir uma consulta dinâmica.</p>
+                                    <p>A comunicação com o banco de dados é feita utilizando o padrão DAO. O sistema permite cadastrar, listar, editar e excluir registros, além de fornecer informações adicionais sobre pacientes e consultas.</p>
+                                    <table class="mb-3">
                                         <tr>
                                             <th>Ferramentas e Linguagens:</th>
                                             <td>Java, Java Swing, MySQL, Banco de Dados.</td>
@@ -323,12 +339,17 @@
                                         </tr>
                                     </table>
                                     <p>Imagem ilustrativa:</p>
-                                    <img loading="lazy" src="./portfolio/source/lista-de-consulta.png" id="img-lista-consulta-exemplo" alt="Lista de consultas do programa">
+                                    <img loading="lazy" src="./portfolio/source/lista-de-consulta.png" class="mb-3" id="img-lista-consulta-exemplo" alt="Lista de consultas do programa">
+                                    <p>Mais informações na documentação(PDF). Você pode baixar aqui, ou acessar o arquivo PDF pelo próprio Github.</p>
                                     <div class="container__projetos__links">
                                         <a class="link__projetos" href="https://github.com/lorenzorover/PI" target="_blank">Github do Projeto</a>
                                         <a class="link__projetos" href="https://github.com/lorenzorover/PI/raw/main/Projeto-Integrador.pdf" download="Controle-Consultorio.pdf">Baixar Documentação(PDF)</a>
                                     </div>
+                                    
                                 </div>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <a id="botao-projeto-mostrar-1" class="btn btn-primary botoes__projeto mt-3" data-toggle="collapse" href="#content1" role="button" aria-expanded="false" aria-controls="content1" onclick="mudarBotaoProjeto(1)">Expandir</a>
                             </div>
                         </div>
                     </div>
@@ -343,14 +364,16 @@
                         </div>
                         <div class="card-body">
                           <p>Em desenvolvimento</p>
-                          <a class="btn btn-primary" data-toggle="collapse" href="#content2" role="button" aria-expanded="false" aria-controls="content2">Mostrar Mais</a>
                           <div class="collapse" id="content2" data-parent="#accordion">
                             <div class="card card-body mt-3">
                               <p>Em desenvolvimento</p>
                             </div>
                           </div>
+                          <div class="d-flex justify-content-end">
+                            <a id="botao-projeto-mostrar-2" class="btn btn-primary botoes__projeto mt-3" data-toggle="collapse" href="#content2" role="button" aria-expanded="false" aria-controls="content2" onclick="mudarBotaoProjeto(2)">Expandir</a>
+                            </div>
                         </div>
-                      </div>
+                    </div>
                 </div>
                 <div class="container__projetos__projeto">
                     <!-- Projeto 3 -->

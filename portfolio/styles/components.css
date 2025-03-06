@@ -99,6 +99,15 @@ button {
     color: blue;
 }
 
+.link__projetos {
+    background-color: #111111;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid rgb(57, 136, 255, 1);
+    padding: 5px;
+}
+
 /* Botões e Setas de Scroll */
 
 .button__seta {
