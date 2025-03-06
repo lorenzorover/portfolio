@@ -9,4 +9,4 @@ https://lorenzorover.github.io/portfolio/
 
 - **Heroicons**: Ícones gratuitos, licenciado sob a [Licença MIT](https://github.com/tailwindlabs/heroicons/blob/master/LICENSE).
 - **Devicons**: Ícones gratuitos para desenvolvedores, licenciado sob a [Licença MIT](https://github.com/devicons/devicon/blob/master/LICENSE).
-- **SimpleIcons**: Ícones de marcas, licenciado sob a [Licença ISC](https://github.com/simple-icons/simple-icons/blob/master/LICENSE).
+- **SimpleIcons**: Ícones de marcas.
