@@ -291,28 +291,23 @@ input:checked + .span__slider:before {
 
 /* Imagens dos projetos */
 
-#img-lista-consulta-exemplo {
-    width: 26rem;
-    height: auto;
-    align-self: center;
+.container__imagem__projeto {
+    overflow-x: auto; /* Alterado de 'scroll' para 'auto' */
+    display: block; /* Impede conflitos com flexbox */
+    max-width: 65vw;
+    padding-bottom: 1rem; /* Evita que o scroll fique escondido */
+    box-sizing: border-box;
+    justify-self: center;
 }
 
-#img-lista-consulta {
-    width: 26rem;
-    height: auto;
-}
+.container__imagem__projeto::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cinza claro */
+    border-radius: 30px;
+  }
 
-#img-cadastro-consulta {
-    width: 14rem;
-    height: auto;
-}
-
-#img-lista-paciente {
-    width: 26rem;
-    height: auto;
-}
-
-#img-informacoes-adicionais {
-    width: 12rem;
-    height: auto;
+.imagens__projeto {
+    border: 1px solid black;
+    padding: 2px;
+    border-collapse: collapse;
+    width: 35rem;
 }

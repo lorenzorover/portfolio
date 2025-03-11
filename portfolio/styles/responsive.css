@@ -1,13 +1,15 @@
 @media (max-width: 1460px) {
-    #img-lista-consulta-exemplo {
+    /* #img-lista-consulta-exemplo {
         width: 20rem;
         height: auto;
         align-self: center;
-    }
+    } */
 
+    /* Está bugando o TD do habilidades técnicas
+    
     th {
         white-space: wrap;
-    }
+    } */
 }
 
 @media /*(min-width: 768px) and */(max-width: 1100px) {
