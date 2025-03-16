@@ -4,6 +4,11 @@
     opacity: 1;
 }
 
+#seta-1.reduzir__delay,
+.icone__info.reduzir__delay {
+    transition: 0s;
+}
+
 #svg-sol.svg__switch__mostrar,
 #svg-lua.svg__switch__mostrar {
     /* Função JS para mostrar icone correspondente do switch */

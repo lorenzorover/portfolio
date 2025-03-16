@@ -25,8 +25,8 @@ linha.id = "linha-botao";
 
 balaoInfo.style.display = 'none';
 
-paginaInicio();
-mostrarTitulo();
+iniciarElementosPaginas();
+carregarEfeitosPagina1();
 
 function esconderParagrafos() {
     document.querySelectorAll('.paragrafo__button').forEach(paragrafo => {
@@ -34,9 +34,9 @@ function esconderParagrafos() {
     });
 }
 
-function paginaInicio() {
+function iniciarElementosPaginas() {
     const paginaInicial = document.getElementById('pagina-1');
-    paginaInicial.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // paginaInicial.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Sempre que der F5 na página, ela começara no inicio
     esconderParagrafos();
     valorAnterior.style.display = 'flex';
     botaoAnterior.appendChild(linha);
@@ -63,9 +63,7 @@ function mostrarParagrafo(valor) {
             linha.classList.remove('linha-ativada'); //remove a linha para aplicar o transition
 
             if (valorAnterior !== undefined) {
-                
                 valorAnterior.style.display = 'none';
-                
             }
     
             if (botaoAnterior !== undefined) {
@@ -113,8 +111,8 @@ function fecharDialog() {
 // });
 
 
+//Mudança de Temas Escuro e Claro
 checkBox.addEventListener('change', function() {
-
     if (checkBox.checked) {
         paginas.forEach(pagina => {
             pagina.classList.add('tema__escuro');
@@ -154,17 +152,6 @@ balaoInfo.addEventListener('mouseleave', function() {
     balaoInfo.classList.remove('mostrar');
 });
 
-//Mostrar o balao após determinado tempo
-setTimeout(function() {
-    balaoInfo.classList.add('mostrar');
-}, 6000);
-
-setTimeout(function() {
-    if (balaoMouse === false) {
-        balaoInfo.classList.remove('mostrar');
-    }
-}, 13000);
-
 //Direcionamento da página pelas setas
 function direcionarPagina(numeroPagina){
     paginas.forEach(pagina => {
@@ -176,9 +163,7 @@ function direcionarPagina(numeroPagina){
     });
 }
 
-//Página 1
-function mostrarTitulo() {
-
+function mostrarTitulos() {
     setTimeout(function() {
         tituloInicial1.classList.add('mostrar');
     }, 1000);
@@ -188,6 +173,31 @@ function mostrarTitulo() {
     setTimeout(function() {
         tituloInicial3.classList.add('mostrar');
     }, 3000);
+
+    setTimeout(function() {
+        titulos.forEach(titulo => {
+            titulo.classList.add('fixo');
+        });
+    }, 4000);
+}
+
+//Carregamento Página 1 
+function carregarEfeitosPagina1() {
+
+    // Após a primeira vez, já é salvo o balão, a seta e os titulos
+    if (localStorage.getItem("animacao-exibida") === "true") {
+        seta1.classList.add('mostrar');
+        balaoInfo.style.display = 'block';
+        iconeInfo.classList.add('mostrar');
+        mostrarTitulos();
+        seta1.classList.add('reduzir__delay');
+        iconeInfo.classList.add('reduzir__delay');
+
+        return;
+    }
+
+    mostrarTitulos();
+    
     setTimeout(function() {
         seta1.classList.add('mostrar');
         balaoInfo.style.display = 'block';
@@ -198,9 +208,23 @@ function mostrarTitulo() {
     setTimeout(function() {
         titulos.forEach(titulo => {
             titulo.classList.add('fixo');
-        });
+            seta1.classList.add('reduzir__delay');
+            iconeInfo.classList.add('reduzir__delay');
 
+            localStorage.setItem("animacao-exibida", "true");
+        });
     }, 4000);
+
+    //Mostrar o balao após determinado tempo
+    setTimeout(function() {
+        balaoInfo.classList.add('mostrar');
+    }, 6000);
+
+    setTimeout(function() {
+        if (balaoMouse === false) {
+            balaoInfo.classList.remove('mostrar');
+        }
+    }, 13000);
 }
 
 //Função copiar nick do discord

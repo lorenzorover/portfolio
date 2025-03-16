@@ -289,6 +289,12 @@ input:checked + .span__slider:before {
     margin-bottom: var(--padding-margin-gap-medio);
 }
 
+/* Projetos */
+
+.tabelas__projeto {
+    width: fit-content;
+}
+
 /* Imagens dos projetos */
 
 .container__imagem__projeto {
