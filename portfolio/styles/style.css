@@ -106,7 +106,7 @@
     color: var(--tema-fonte-cabecalho);
     font-size: var(--tamanho-fonte-texto);
     font-family: var(--fonte-paragrafo);
-    width: 140px;
+    width: 17rem;
     padding: var(--padding-margin-gap-pequeno);
     transition: 0.4s;
     border: #655743 2px solid;
@@ -143,7 +143,7 @@
     width: auto; /* mudei aqui, era auto, caso de problema */
     height: auto;
     align-self: center;
-    max-width: 70rem;
+    max-width: 60rem;
     padding: var(--padding-margin-gap-grande);
     font-family: var(--fonte-paragrafo);
     font-size: var(--tamanho-fonte-texto);
@@ -213,13 +213,13 @@
     padding-right: 10px;
     border-radius: 15px;
     border: 3px solid rgb(57, 136, 255, 1);
-    width: min-content;
     background-color: var(--tema-background-cabecalho);
 }
 
 .badge__borderless {
     padding-left: 10px;
 }
+
 
 /* Parágrafo 6 */
 

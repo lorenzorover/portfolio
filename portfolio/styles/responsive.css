@@ -1,26 +1,9 @@
-@media (max-width: 1460px) {
-    /* #img-lista-consulta-exemplo {
-        width: 20rem;
-        height: auto;
-        align-self: center;
-    } */
-
-    /* Está bugando o TD do habilidades técnicas
-    
-    th {
-        white-space: wrap;
-    } */
-}
-
 @media /*(min-width: 768px) and */(max-width: 1100px) {
 
     :root {
         --padding-margin-gap-pequeno: 0.5rem; /* 8px */
         --padding-margin-gap-medio: 1rem; /* 16px */
         --padding-margin-gap-grande: 2rem; /* 48px */
-
-        --tamanho-fonte-texto: 0.9rem;
-        --tamanho-fonte-subtitulos: 1.1rem
     }
 
     .paginas {
@@ -41,15 +24,6 @@
 
     .paragrafo__button {
         font-size: 0.9rem;
-    }
-
-    #paragrafo-3 {
-        flex-wrap: wrap;
-    }
-
-    .iframe__inicial {
-        height: 6rem;
-        width: 12rem;
     }
 
     /* Pagina 3 */
@@ -82,8 +56,6 @@
     .container__projetos {
         grid-template-columns: 1fr;
     }
-
-    
 
     /* .th {
         word-wrap: break-word;

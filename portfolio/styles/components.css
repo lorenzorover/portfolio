@@ -162,20 +162,15 @@ button {
     width: 100%; /* A tabela se ajusta até o limite do container */
 }
 
-li {
+/* li {
     list-style-position: inside;
-}
-
-th {
-    white-space: nowrap;
-}
+} */
 
 th,
 td {
     border: 1px solid black;
     padding: var(--padding-margin-gap-pequeno);
     font-size: var(--tamanho-fonte-texto);
-    height: auto;
 }
 
 /* Switch */
@@ -298,22 +293,19 @@ input:checked + .span__slider:before {
 /* Imagens dos projetos */
 
 .container__imagem__projeto {
-    overflow-x: auto; /* Alterado de 'scroll' para 'auto' */
-    display: block; /* Impede conflitos com flexbox */
-    max-width: 65vw;
-    padding-bottom: 1rem; /* Evita que o scroll fique escondido */
+    overflow-x: auto;
+    display: block;
+    max-width: 40vw;
     box-sizing: border-box;
-    justify-self: center;
 }
 
 .container__imagem__projeto::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Cinza claro */
+    background: #f1f1f1;
     border-radius: 30px;
   }
 
 .imagens__projeto {
     border: 1px solid black;
-    padding: 2px;
     border-collapse: collapse;
-    width: 35rem;
+    width: 40rem;
 }
