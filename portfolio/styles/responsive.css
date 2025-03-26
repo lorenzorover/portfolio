@@ -60,11 +60,19 @@
 
 @media (max-width: 590px) {
     .paginas {
-        padding: 3rem 3rem;
+        padding: 1rem 1rem;
     }
 
     .balao__info {
         width: 10rem;
+    }
+
+    .container__conteudo__paragrafos {
+        max-width: 93vw;
+    }
+
+    .card {
+        max-width: 84vw;
     }
 }
 
