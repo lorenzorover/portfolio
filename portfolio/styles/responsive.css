@@ -10,38 +10,30 @@
         padding: 3rem 5rem;
     }
 
-    /* Página 1 */
-
-    /* Página 2 */
-
     .container__conteudo__paragrafos {
-        width: fit-content;
-    }
-
-    .button__info {
-        font-size: 1rem;
-    }
-
-    .paragrafo__button {
-        font-size: 0.9rem;
-    }
-
-    /* Pagina 3 */
-
-    .dialog__modal {
-        height: 70%;
-        width: 70%;
-    }
-
-    .container__imagens__projeto {
-        flex-wrap: wrap;
+        max-width: 58vw;
     }
     
     .container__projetos__links {
         flex-wrap: wrap;
     }
 
+    .card {
+        max-width: 45vw;
+    }
+
+    .imagens__projeto {
+        max-height: 20rem;
+    }
 }
+
+ @media (max-width: 950px) {
+    .container__conteudo__paragrafos {
+        max-width: 65vw;
+    }
+}
+
+/* Tablets */
 
 @media (max-width: 768px) {
     .button__cabecalho {
@@ -53,11 +45,30 @@
         white-space: wrap;
     }
 
+    .container__conteudo__paragrafos {
+        max-width: 75vw;
+    }
+
     .container__projetos {
         grid-template-columns: 1fr;
     }
 
-    /* .th {
-        word-wrap: break-word;
-    } */
+    .card {
+        max-width: 60vw;
+    }
 }
+
+@media (max-width: 590px) {
+    .paginas {
+        padding: 3rem 3rem;
+    }
+
+    .balao__info {
+        width: 10rem;
+    }
+}
+
+/* Celulares */
+/* @media (max-width: ) {
+    
+} */

@@ -190,7 +190,7 @@ Normalize.css - Licença MIT: https://github.com/necolas/normalize.css/blob/mast
                                                     <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" class="icones__badges"/>
                                                     Java
                                                 </span>
-                                                <span class="badges badge__borderless">
+                                                <span class="badges ps-2">
                                                     <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" class="icones__badges"/>
                                                     Javascript
                                                 </span>
@@ -205,11 +205,11 @@ Normalize.css - Licença MIT: https://github.com/necolas/normalize.css/blob/mast
                                         <th>Linguagens de Marcação e Estilização</th>
                                         <td>
                                             <div class="linha__badges">
-                                                <span class="badges badge__borderless">
+                                                <span class="badges ps-1">
                                                     <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" class="icones__badges"/>
                                                     HTML
                                                 </span>
-                                                <span class="badges badge__borderless">
+                                                <span class="badges ps-1">
                                                     <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" class="icones__badges"/>
                                                     CSS
                                                 </span>
@@ -223,6 +223,10 @@ Normalize.css - Licença MIT: https://github.com/necolas/normalize.css/blob/mast
                                                 <span class="badges">
                                                     <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" class="icones__badges"/>
                                                     Springboot
+                                                </span>
+                                                <span class="badges">
+                                                    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" class="icones__badges"/>
+                                                    Bootstrap
                                                 </span>
                                             </div>
                                         </td>
@@ -262,11 +266,11 @@ Normalize.css - Licença MIT: https://github.com/necolas/normalize.css/blob/mast
                                                     <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/eclipse/eclipse-original.svg" class="icones__badges"/>
                                                     Eclipse
                                                 </span>
-                                                <span class="badges badge__borderless">
+                                                <span class="badges ps-2">
                                                     <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" class="icones__badges"/>
                                                     MySQL
                                                 </span>
-                                                <span class="badges badge__borderless">
+                                                <span class="badges ps-2">
                                                     <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" class="icones__badges"/>
                                                     Postgre
                                                 </span>
@@ -343,16 +347,18 @@ Normalize.css - Licença MIT: https://github.com/necolas/normalize.css/blob/mast
                                 <div class="card card-body mt-3">
                                     <p>Desenvolvimento de um sistema de controle de consultório com CRUD básico para gerenciar pacientes, tratamentos e consultas, além de possuir uma consulta dinâmica.</p>
                                     <p>A comunicação com o banco de dados é feita utilizando o padrão DAO. O sistema permite cadastrar, listar, editar e excluir registros, além de fornecer informações adicionais sobre pacientes e consultas.</p>
-                                    <table class="mb-3 tabelas__projeto">
-                                        <tr>
-                                            <th>Ferramentas e Linguagens:</th>
-                                            <td>Java, Java Swing, SQL</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Outros:</th>
-                                            <td>MySQL Workbench, Eclipse IDE</td>
-                                        </tr>
-                                    </table>
+                                    <div class="container__tabela">
+                                        <table class="mb-3 tabelas__projeto">
+                                            <tr>
+                                                <th>Ferramentas e Linguagens:</th>
+                                                <td>Java, Java Swing, SQL</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Outros:</th>
+                                                <td>MySQL Workbench, Eclipse IDE</td>
+                                            </tr>
+                                        </table>
+                                    </div>
                                     <p>Imagem ilustrativa:</p>
                                     <div class="container__imagem__projeto mb-3">
                                         <img loading="lazy" src="./portfolio/source/lista-de-consulta.png" class="imagens__projeto" alt="Lista de Consultas">
@@ -386,16 +392,18 @@ Normalize.css - Licença MIT: https://github.com/necolas/normalize.css/blob/mast
                                 <p>Conversor de moedas desenvolvido durante o curso One da Alura, utilizando a API <a class="links" href="https://www.exchangerate-api.com" target="_blank">ExchangeRate-API</a> para obter taxas de câmbio em tempo real.</p>
                                 <p>O programa permite converter valores entre diversas moedas, escolhendo manualmente ou utilizando opções predefinidas.</p>
                                 <p>A aplicação é executada pelo terminal de comando do IntelliJ.</p>
-                                <table class="mb-3 tabelas__projeto">
-                                    <tr>
-                                        <th>Ferramentas e Linguagens:</th>
-                                        <td>Java, Gson</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Outros:</th>
-                                        <td>IntelliJ IDEA</td>
-                                    </tr>
-                                </table>
+                                <div class="container__tabela">
+                                    <table class="mb-3 tabelas__projeto">
+                                        <tr>
+                                            <th>Ferramentas e Linguagens:</th>
+                                            <td>Java, Gson</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Outros:</th>
+                                            <td>IntelliJ IDEA</td>
+                                        </tr>
+                                    </table>
+                                </div>
                                 <p>Imagem ilustrativa:</p>
                                 <div class="container__imagem__projeto mb-3">
                                     <img loading="lazy" src="https://raw.githubusercontent.com/lorenzorover/conversor-de-moedas/main/conversor-de-moedas/images/exemplo-01.png" class="imagens__projeto" alt="Conversor de Moedas">
@@ -425,24 +433,26 @@ Normalize.css - Licença MIT: https://github.com/necolas/normalize.css/blob/mast
                             <div class="card card-body mt-3">
                                 <p>Sistema de gerenciamento de estoque para farmácias, permitindo o cadastro, edição, exclusão e consulta de produtos. Organiza itens por categorias, marcas e departamentos, e inclui uma busca dinâmica para rápida localização. Futuramente, será possível adicionar imagens aos produtos e criar contas de usuários.</p>
                                 <p>A estrutura do projeto é dividida em camadas que gerenciam dados, lógica de negócios, requisições HTTP e segurança, enquanto os templates e arquivos estáticos cuidam da interface e experiência do usuário.</p>
-                                <table class="mb-3 tabelas__projeto">
-                                    <tr>
-                                        <th>Linguagens e Frameworks:</th>
-                                        <td>Java, SQL, Spring Framework, Bootstrap</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Linguagens de Marcação e Estilização:</th>
-                                        <td>HTML, CSS</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Bibliotecas:</th>
-                                        <td>Spring Data JPA, Spring Web, Spring Boot Devtools, MySQL Driver, Lombok, Thymeleaf, Spring Security, Validation</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Outros:</th>
-                                        <td>IntelliJ IDEA, VS Code, MySQL Workbench</td>
-                                    </tr>
-                                </table>
+                                <div class="container__tabela">
+                                    <table class="mb-3 tabelas__projeto">
+                                        <tr>
+                                            <th>Linguagens e Frameworks:</th>
+                                            <td>Java, SQL, Spring Framework, Bootstrap</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Linguagens de Marcação e Estilização:</th>
+                                            <td>HTML, CSS</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Bibliotecas:</th>
+                                            <td>Spring Data JPA, Spring Web, Spring Boot Devtools, MySQL Driver, Lombok, Thymeleaf, Spring Security, Validation</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Outros:</th>
+                                            <td>IntelliJ IDEA, VS Code, MySQL Workbench</td>
+                                        </tr>
+                                    </table>
+                                </div>
                                 <p>Imagens ilustrativas:</p>
                                 <div class="container__imagem__projeto mb-3">
                                     <img loading="lazy" src="https://raw.githubusercontent.com/lorenzorover/pi-farmacia/main/Projeto%20Web%20Senac%20Farmacia/Docs/Assets%20do%20Projeto/Pagina%20Principal.png" class="imagens__projeto" alt="Página inicial aplicativo">
@@ -478,12 +488,14 @@ Normalize.css - Licença MIT: https://github.com/necolas/normalize.css/blob/mast
                                 <p>Durante o desenvolvimento, foi criada uma matriz CSD para organizar as certezas, suposições e dúvidas, ajudando a guiar as decisões do time.</p>
                                 <p>O sistema proposto visa tornar o processo mais transparente, garantindo que as gorjetas sejam corretamente registradas e repassadas, além de facilitar o cumprimento das obrigações legais.</p>
                                 <p>Ao longo do projeto, realizamos entrevistas com restaurantes para entender o processo de controle de gorjetas na prática, além de pesquisarmos sobre a Lei Nº 13.419 (Lei da Gorjeta). Também discutimos e refinamos nossas ideias com a ajuda de mentorias, garantindo que o sistema fosse eficiente e atendesse às regulamentações legais, promovendo transparência tanto para os funcionários quanto para os clientes.</p>
-                                <table class="mb-3 tabelas__projeto">
-                                    <tr>
-                                        <th>Ferramentas utilizadas:</th>
-                                        <td>Trello, Figma, Canva</td>
-                                    </tr>
-                                </table>
+                                <div class="container__tabela">
+                                    <table class="mb-3 tabelas__projeto">
+                                        <tr>
+                                            <th>Ferramentas utilizadas:</th>
+                                            <td>Trello, Figma, Canva</td>
+                                        </tr>
+                                    </table>
+                                </div>
                                 <p><strong>Apresentação:</strong> Você pode assistir à apresentação do nosso trabalho no YouTube clicando <a class="links" href="https://youtu.be/DTnDxHgJiDI?t=6991" target="_blank">aqui</a>. A apresentação foi realizada pelo nosso colega de equipe Lucas Lentz, que também está mencionado no repositório do projeto no GitHub.</p>
                                 <p>Ao finalizar o projeto, conseguimos alcançar o Top 10, competindo junto de outros 60 times.</p>
                                 <p>Para mais informações sobre o desenvolvimento e a concepção do projeto, consulte a apresentação em PDF, que inclui imagens e detalhes visuais do protótipo, e também o repositório do projeto, que contém as pesquisas realizadas durante o processo.</p>
@@ -521,20 +533,22 @@ Normalize.css - Licença MIT: https://github.com/necolas/normalize.css/blob/mast
                                     <li>Listagem e contagem de livros por idioma;</li>
                                     <li>Exibição estruturada no terminal, garantindo uma navegação intuitiva.</li>
                                 </ul>
-                                <table class="mb-3 tabelas__projeto">
-                                    <tr>
-                                        <th>Linguagens e Frameworks:</th>
-                                        <td>Java, SQL, Spring Framework</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Bibliotecas:</th>
-                                        <td>Spring Data JPA, PostgreSQL Driver, Gson</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Outros</th>
-                                        <td>PostgreSQL, IntelliJ</td>
-                                    </tr>
-                                </table>
+                                <div class="container__tabela">
+                                    <table class="mb-3 tabelas__projeto">
+                                        <tr>
+                                            <th>Linguagens e Frameworks:</th>
+                                            <td>Java, SQL, Spring Framework</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Bibliotecas:</th>
+                                            <td>Spring Data JPA, PostgreSQL Driver, Gson</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Outros</th>
+                                            <td>PostgreSQL, IntelliJ</td>
+                                        </tr>
+                                    </table>
+                                </div>
                                 <p>Mais informações no repositório do projeto.</p>
                                 <div class="container__projetos__links">
                                     <a class="link__projetos" href="https://github.com/lorenzorover/liter-alura" target="_blank">GitHub do Projeto</a>
@@ -569,20 +583,22 @@ Normalize.css - Licença MIT: https://github.com/necolas/normalize.css/blob/mast
                                 </ul>
                                 <p>Além dessas funcionalidades, a aplicação implementa um sistema de autenticação baseado em tokens JWT. Após o login do usuário, um token é gerado e utilizado para validar requisições nas rotas protegidas, garantindo maior segurança e controle de acesso às funcionalidades da API.</p>
                                 <p>Para facilitar o teste da aplicação, foi utilizada a especificação OpenAPI (Swagger). Isso proporciona uma interface interativa para manuseio das requisições, incluindo a autenticação via token JWT, tornando o processo de interação com a API mais simples e direto.</p>
-                                <table class="mb-3 tabelas__projeto">
-                                    <tr>
-                                        <th>Linguagens e Frameworks:</th>
-                                        <td>Java, SQL, Spring Framework</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Bibliotecas:</th>
-                                        <td>Lombok, Spring Web, Spring Boot Devtools, Flyway Migration, Spring Data JPA, MySQL Driver, Validation, Spring Security.</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Outros</th>
-                                        <td>MySQL, IntelliJ, OpenAPI (Swagger)</td>
-                                    </tr>
-                                </table>
+                                <div class="container__tabela">
+                                    <table class="mb-3 tabelas__projeto">
+                                        <tr>
+                                            <th>Linguagens e Frameworks:</th>
+                                            <td>Java, SQL, Spring Framework</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Bibliotecas:</th>
+                                            <td>Lombok, Spring Web, Spring Boot Devtools, Flyway Migration, Spring Data JPA, MySQL Driver, Validation, Spring Security.</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Outros</th>
+                                            <td>MySQL, IntelliJ, OpenAPI (Swagger)</td>
+                                        </tr>
+                                    </table>
+                                </div>
                                 <p>Imagens ilustrativas:</p>
                                 <div class="container__imagem__projeto mb-3">
                                     <img loading="lazy" src="https://raw.githubusercontent.com/lorenzorover/forum-hub/main/example%20create%20topico.png" class="imagens__projeto" alt="Criação do tópico Postman">

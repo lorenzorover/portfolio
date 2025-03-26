@@ -116,7 +116,7 @@ button {
 }
 
 .seta {
-    width: 125px;
+    width: 8rem;
     height: 100%;
     transition: 0.4s;
     opacity: 0.6;
@@ -134,7 +134,7 @@ button {
 }
 
 .seta__contraria {
-    width: 75px;
+    width: 5rem;
     height: 100%;
     transition: 0.4s;
     opacity: 0.6;
@@ -150,16 +150,16 @@ button {
 .container__tabela {
     overflow-x: auto; /* Alterado de 'scroll' para 'auto' */
     display: block; /* Impede conflitos com flexbox */
-    max-width: 65vw;
+    
     padding-bottom: 1rem; /* Evita que o scroll fique escondido */
-    box-sizing: border-box;
 }
 
-.tabela__texto {
+.tabela__texto,
+.tabelas__projeto {
     border: 1px solid black;
     padding: 2px;
     border-collapse: collapse;
-    width: 100%; /* A tabela se ajusta até o limite do container */
+    width: fit-content;
 }
 
 /* li {
@@ -286,17 +286,14 @@ input:checked + .span__slider:before {
 
 /* Projetos */
 
-.tabelas__projeto {
-    width: fit-content;
-}
+
 
 /* Imagens dos projetos */
 
 .container__imagem__projeto {
     overflow-x: auto;
     display: block;
-    max-width: 40vw;
-    box-sizing: border-box;
+    padding-bottom: 3px;
 }
 
 .container__imagem__projeto::-webkit-scrollbar-track {
@@ -307,5 +304,9 @@ input:checked + .span__slider:before {
 .imagens__projeto {
     border: 1px solid black;
     border-collapse: collapse;
-    width: 40rem;
+    max-height: 25rem;
+}
+
+.card {
+    max-width: 30rem;
 }
