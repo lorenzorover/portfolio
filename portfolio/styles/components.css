@@ -148,7 +148,7 @@ button {
 /* Tables e Listas */
 
 .container__tabela {
-    overflow-x: auto; /* Alterado de 'scroll' para 'auto' */
+    overflow-x: auto;
     display: block; /* Impede conflitos com flexbox */
     
     padding-bottom: 1rem; /* Evita que o scroll fique escondido */
@@ -161,10 +161,6 @@ button {
     border-collapse: collapse;
     width: fit-content;
 }
-
-/* li {
-    list-style-position: inside;
-} */
 
 th,
 td {
@@ -285,8 +281,6 @@ input:checked + .span__slider:before {
 }
 
 /* Projetos */
-
-
 
 /* Imagens dos projetos */
 
