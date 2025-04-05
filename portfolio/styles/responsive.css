@@ -10,6 +10,10 @@
         padding: 3rem 5rem;
     }
 
+    .container__paragrafo__inicial {
+        width: auto;
+    }
+
     .container__conteudo__paragrafos {
         max-width: 58vw;
     }

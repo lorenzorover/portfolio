@@ -24,8 +24,18 @@
     transition: 1s; /* Transition mudado para 1s e depois voltar ao normal para 0.4s ao ativar switch */
 }
 
+#paragrafo-inicial.mostrar {
+    opacity: 1;
+    visibility: visible;
+    transition: 1s;
+}
+
 .titulos.fixo {
     /* Função no JS para normalizar transition para temas e manter visibilidade da 1 pagina */
+    transition: 0s;
+}
+
+#paragrafo-inicial.fixo {
     transition: 0s;
 }
 

@@ -9,6 +9,7 @@ let botoesProjeto = document.querySelectorAll(".botoes__projeto");
 const tituloInicial1 = document.getElementById('titulo-1');
 const tituloInicial2 = document.getElementById('titulo-2');
 const tituloInicial3 = document.getElementById('titulo-3');
+const paragrafoInicial = document.getElementById('paragrafo-inicial');
 
 // 
 const checkBox = document.getElementById('trocar-tema');
@@ -173,11 +174,15 @@ function mostrarTitulos() {
     setTimeout(function() {
         tituloInicial3.classList.add('mostrar');
     }, 3000);
+    setTimeout(function() {
+        paragrafoInicial.classList.add('mostrar');
+    }, 3850);
 
     setTimeout(function() {
         titulos.forEach(titulo => {
             titulo.classList.add('fixo');
         });
+        paragrafoInicial.classList.add('fixo');
     }, 4000);
 }
 

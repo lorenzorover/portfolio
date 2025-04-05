@@ -45,6 +45,10 @@
 
 /* ---------- Página 1 -------------*/
 
+#pagina-1 {
+    align-items: center;
+}
+
 .container__inicio {
     margin-top: 55px;
     display: flex;
@@ -69,6 +73,17 @@
 #titulo-2,
 #titulo-3 {
     font-size: 2.5rem;
+}
+
+.container__paragrafo__inicial {
+    width: 60%;
+}
+
+#paragrafo-inicial {
+    opacity: 0;
+    font-size: var(--tamanho-fonte-subtitulos);
+    font-family: var(--fonte-titulo);
+    text-align: justify;
 }
 
 .container__scroll {
@@ -138,6 +153,7 @@
     padding: var(--padding-margin-gap-grande);
     font-family: var(--fonte-paragrafo);
     font-size: var(--tamanho-fonte-texto);
+    text-align: justify;
     border: 1px solid rgb(57, 136, 255, 1);
     box-shadow: 2px 4px 12px 2px rgba(0, 0, 0, 0.4);
 }

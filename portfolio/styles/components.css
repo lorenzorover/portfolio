@@ -271,13 +271,19 @@ input:checked + .span__slider:before {
     z-index: 1;
 }
 
-#foto-linkedin {
-    height: 10rem;
-    width: auto;
-    border: 3px solid rgb(57, 136, 255, 1);
+.container__foto {
     float: right;
+    justify-items: center;
     margin-left: var(--padding-margin-gap-medio);
     margin-bottom: var(--padding-margin-gap-medio);
+}
+
+#foto-linkedin {
+    height: 12rem;
+    width: auto;
+    border: 3px solid rgb(57, 136, 255, 1);
+    border-radius: 5%;
+    margin-bottom: 0.5rem;
 }
 
 /* Projetos */
