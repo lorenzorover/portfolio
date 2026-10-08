@@ -1,6 +1,19 @@
 // ==========================================
-// Portfólio Lorenzo Rover - app.js
+// Portfólio Lorenzo Rover - app.js (v2.1)
 // ==========================================
+
+const VERSAO_APP = '2.1';
+
+// Reset de versão: garante que visitantes recebam configurações limpas da versão atualizada
+function verificarResetVersao() {
+    const versaoSalva = localStorage.getItem('portfolio_versao');
+    if (versaoSalva !== VERSAO_APP) {
+        localStorage.clear();
+        localStorage.setItem('portfolio_versao', VERSAO_APP);
+        localStorage.setItem('portfolio-theme', 'escuro');
+    }
+}
+verificarResetVersao();
 
 document.addEventListener('DOMContentLoaded', () => {
     inicializarTema();
