@@ -452,10 +452,60 @@
 
                     <!-- Projeto 2: Farmácia Web -->
                     <div class="project-card">
-                        <div class="project-thumbnail-wrapper" onclick="abrirLightbox('https://raw.githubusercontent.com/lorenzorover/pi-farmacia/main/Projeto%20Web%20Senac%20Farmacia/Docs/Assets%20do%20Projeto/Pagina%20Principal.png', 'Gerenciamento de Estoque Farmácia - Tela Principal')">
-                            <img src="https://raw.githubusercontent.com/lorenzorover/pi-farmacia/main/Projeto%20Web%20Senac%20Farmacia/Docs/Assets%20do%20Projeto/Pagina%20Principal.png" alt="Farmácia Web" class="project-thumbnail" loading="lazy">
-                            <div class="project-thumbnail-overlay">
-                                <span class="overlay-zoom-text">🔍 Clique para expandir</span>
+                        <!-- Carrossel Farmácia Web (Leve, Fluido e Lazy Loading) -->
+                        <div class="project-carousel" id="carousel-farmacia" data-current-slide="0">
+                            <div class="carousel-track">
+                                <!-- Slide 1: Tela Principal -->
+                                <div class="carousel-slide active" data-index="0" onclick="abrirLightbox('./portfolio/source/farmacia-principal.png', 'Gerenciamento de Estoque Farmácia - Tela Principal e Tabela de Medicamentos')">
+                                    <img src="./portfolio/source/farmacia-principal.png" alt="Farmácia Web - Tela Principal" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">1/4 • Tela Principal (Estoque)</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir tela</span>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 2: Fluxograma de Arquitetura Full-Stack -->
+                                <div class="carousel-slide" data-index="1" onclick="abrirLightbox('./portfolio/source/farmacia-fluxograma-arquitetura.jpg', 'Farmácia Web - Arquitetura Full-Stack e Fluxo de Requisição (Controller, Service, DTO, Mapper, Repository)')">
+                                    <img src="./portfolio/source/farmacia-fluxograma-arquitetura.jpg" alt="Fluxograma de Arquitetura e Requisição" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">2/4 • Arquitetura & Fluxo Full-Stack</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir tela</span>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 3: Modelagem Relacional do BD -->
+                                <div class="carousel-slide" data-index="2" onclick="abrirLightbox('./portfolio/source/farmacia-modelagem-bd.png', 'Farmácia Web - Diagrama Entidade-Relacionamento e Modelagem Relacional (MySQL)')">
+                                    <img src="./portfolio/source/farmacia-modelagem-bd.png" alt="Modelagem Relacional do Banco de Dados" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">3/4 • Modelagem Relacional (MySQL)</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir tela</span>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 4: Modal de Cadastro de Medicamentos -->
+                                <div class="carousel-slide" data-index="3" onclick="abrirLightbox('./portfolio/source/farmacia-cadastro-modal.png', 'Farmácia Web - Modal de Cadastro de Medicamento com Validações e Selects Dinâmicos')">
+                                    <img src="./portfolio/source/farmacia-cadastro-modal.png" alt="Modal de Cadastro de Medicamentos" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">4/4 • Cadastro de Medicamentos (Modal)</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir tela</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Botões de Navegação Suave -->
+                            <button type="button" class="carousel-arrow carousel-arrow-prev" onclick="navegarCarrossel('carousel-farmacia', -1, event)" aria-label="Imagem anterior" title="Imagem anterior">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                            </button>
+                            <button type="button" class="carousel-arrow carousel-arrow-next" onclick="navegarCarrossel('carousel-farmacia', 1, event)" aria-label="Próxima imagem" title="Próxima imagem">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                            </button>
+
+                            <!-- Indicadores / Bolinhas de Navegação -->
+                            <div class="carousel-dots">
+                                <button type="button" class="carousel-dot active" onclick="irParaSlide('carousel-farmacia', 0, event)" aria-label="Slide 1"></button>
+                                <button type="button" class="carousel-dot" onclick="irParaSlide('carousel-farmacia', 1, event)" aria-label="Slide 2"></button>
+                                <button type="button" class="carousel-dot" onclick="irParaSlide('carousel-farmacia', 2, event)" aria-label="Slide 3"></button>
+                                <button type="button" class="carousel-dot" onclick="irParaSlide('carousel-farmacia', 3, event)" aria-label="Slide 4"></button>
                             </div>
                         </div>
                         <div class="project-content">
@@ -671,8 +721,65 @@
 
                     <!-- Projeto 6: Controle de Gorjetas -->
                     <div class="project-card">
-                        <div class="project-content" style="padding-top: 2rem;">
-                            <span class="project-tag">Hackathon · Inovação · Top 10</span>
+                        <!-- Carrossel FlexTip / Hackathon (Leve, Fluido e Lazy Loading) -->
+                        <div class="project-carousel" id="carousel-hackathon" data-current-slide="0">
+                            <div class="carousel-track">
+                                <!-- Slide 1: Capa Oficial do Pitch Deck -->
+                                <div class="carousel-slide active" data-index="0" onclick="abrirLightbox('./portfolio/source/flextip-slide-1.png', 'FlexTip (Pepe Devs) - Apresentação Pitch Deck Oficial do Hackathon 2024')">
+                                    <img src="./portfolio/source/flextip-slide-1.png" alt="Capa Pitch Deck FlexTip Hackathon" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">1/4 • Pitch Deck (Capa)</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir slide</span>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 2: Protótipo das Telas -->
+                                <div class="carousel-slide" data-index="1" onclick="abrirLightbox('./portfolio/source/flextip-slide-8.png', 'FlexTip - Protótipo das Telas do Sistema (Balanço Financeiro, Histórico e Setor de Serviços)')">
+                                    <img src="./portfolio/source/flextip-slide-8.png" alt="Protótipo das Telas da Aplicação" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">2/4 • Protótipo das Telas</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir slide</span>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 3: Arquitetura da Solução -->
+                                <div class="carousel-slide" data-index="2" onclick="abrirLightbox('./portfolio/source/flextip-slide-7.png', 'FlexTip - Fluxograma da Solução e Integração com API Externa')">
+                                    <img src="./portfolio/source/flextip-slide-7.png" alt="Fluxograma e Arquitetura da Solução" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">3/4 • Fluxo & Integração API</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir slide</span>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 4: A Equipe do Hackathon -->
+                                <div class="carousel-slide" data-index="3" onclick="abrirLightbox('./portfolio/source/flextip-slide-16.png', 'Equipe Pepe Devs - Lorenzo Rover e Integrantes no Hackathon 2024')">
+                                    <img src="./portfolio/source/flextip-slide-16.png" alt="Equipe do Hackathon 2024" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">4/4 • Equipe do Projeto</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir slide</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Botões de Navegação Suave -->
+                            <button type="button" class="carousel-arrow carousel-arrow-prev" onclick="navegarCarrossel('carousel-hackathon', -1, event)" aria-label="Slide anterior" title="Slide anterior">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                            </button>
+                            <button type="button" class="carousel-arrow carousel-arrow-next" onclick="navegarCarrossel('carousel-hackathon', 1, event)" aria-label="Próximo slide" title="Próximo slide">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                            </button>
+
+                            <!-- Indicadores / Bolinhas de Navegação -->
+                            <div class="carousel-dots">
+                                <button type="button" class="carousel-dot active" onclick="irParaSlide('carousel-hackathon', 0, event)" aria-label="Slide 1"></button>
+                                <button type="button" class="carousel-dot" onclick="irParaSlide('carousel-hackathon', 1, event)" aria-label="Slide 2"></button>
+                                <button type="button" class="carousel-dot" onclick="irParaSlide('carousel-hackathon', 2, event)" aria-label="Slide 3"></button>
+                                <button type="button" class="carousel-dot" onclick="irParaSlide('carousel-hackathon', 3, event)" aria-label="Slide 4"></button>
+                            </div>
+                        </div>
+
+                        <div class="project-content">
+                            <span class="project-tag">Hackathon · Inovação</span>
                             <h3 class="project-title">Controle de Gorjetas (Hackathon)</h3>
                             <p class="project-description">
                                 Solução tecnológica desenvolvida em equipe durante o <strong>Hackathon Jovem Programador 2024</strong>, premiada no <strong>Top 10 entre 60 equipes concorrentes</strong>.
@@ -695,6 +802,16 @@
                                 </a>
                                 <a href="https://youtu.be/DTnDxHgJiDI?t=6991" target="_blank" rel="noopener noreferrer" class="btn-project">
                                     <span>Assistir Pitch</span>
+                                </a>
+                                <a href="./portfolio/source/flextip-pitch-deck.pdf" target="_blank" rel="noopener noreferrer" class="btn-project" title="Abrir apresentação completa em PDF">
+                                    <span>Ver Pitch Deck (PDF)</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                                        <polyline points="10 9 9 9 8 9"></polyline>
+                                    </svg>
                                 </a>
                             </div>
                         </div>
