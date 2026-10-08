@@ -168,11 +168,6 @@ img {
   background-color: var(--border-subtle);
 }
 
-.navbar-brand:hover .brand-dot {
-  transform: scale(1.25);
-  box-shadow: 0 0 16px var(--accent-primary);
-}
-
 .navbar-brand:hover .brand-tag {
   background-color: var(--badge-bg);
   border-color: var(--accent-primary);
@@ -1444,18 +1439,31 @@ body.tema__claro .icon-moon { display: none; }
     padding: 4rem 0;
   }
 
+  .hero-avatar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+
   .avatar-frame {
     width: 220px;
     height: 260px;
+    margin: 0 auto;
+  }
+
+  .hero-badge-card {
+    position: static;
+    margin-top: 1rem;
+    width: auto;
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .project-carousel {
     height: 205px;
-  }
-
-  .hero-badge-card {
-    right: 0;
-    bottom: -15px;
   }
 
   .contact-card {
@@ -1476,6 +1484,28 @@ body.tema__claro .icon-moon { display: none; }
     display: none;
   }
 
+  .hero-avatar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .avatar-frame {
+    width: 200px;
+    height: 240px;
+    margin: 0 auto;
+  }
+
+  .hero-badge-card {
+    position: static;
+    margin-top: 1rem;
+    width: auto;
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .hero-title {
     font-size: 1.95rem;
   }
@@ -1493,13 +1523,6 @@ body.tema__claro .icon-moon { display: none; }
   .btn-secondary {
     width: 100%;
     justify-content: center;
-  }
-
-  .hero-badge-card {
-    position: static;
-    margin-top: 1.25rem;
-    max-width: 100%;
-    width: 100%;
   }
 
   .about-card {
