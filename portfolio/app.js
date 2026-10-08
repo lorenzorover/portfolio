@@ -7,9 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarScrollSpy();
     configurarMenuMobile();
     configurarTeclado();
-    configurarScrollDinamico();
-    configurarRevealOnScroll();
-    configurarSmoothWheelScroll();
+    configurarNavegacaoSuave();
+    configurarBarraProgresso();
 });
 
 // ------------------------------------------
@@ -19,12 +18,14 @@ function inicializarTema() {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const temaSalvo = localStorage.getItem('portfolio-theme');
 
+    // O portfólio sempre inicia no modo escuro por padrão para qualquer usuário
     if (temaSalvo === 'claro') {
         document.body.classList.add('tema__claro');
-    } else if (temaSalvo === 'escuro') {
+    } else {
         document.body.classList.remove('tema__claro');
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-        document.body.classList.add('tema__claro');
+        if (!temaSalvo) {
+            localStorage.setItem('portfolio-theme', 'escuro');
+        }
     }
 
     if (themeToggleBtn) {
@@ -45,7 +46,7 @@ function configurarScrollSpy() {
 
     function destacarLinkAtivo() {
         let scrollY = window.pageYOffset || document.documentElement.scrollTop;
-        const offset = 140;
+        const offset = 80;
 
         secoes.forEach(secao => {
             const topo = secao.offsetTop - offset;
@@ -226,145 +227,176 @@ function irParaSlide(carouselId, index, event) {
 }
 
 // ------------------------------------------
-// 7. Scroll Dinâmico (Barra de Progresso, Header & Botão Topo)
+// 7. Navegação e Scroll Snap com Trava Booleana por Subtítulo
 // ------------------------------------------
-function configurarScrollDinamico() {
-    const progressBar = document.getElementById('scroll-progress-bar');
-    const header = document.querySelector('.navbar-header');
-    const btnScrollTop = document.getElementById('btn-scroll-top');
+let isAnimatingScroll = false;
+let snapTimer = null;
+let secaoBloqueadaId = null;
+let ultimoScrollPos = window.pageYOffset || document.documentElement.scrollTop;
+let direcaoScroll = 'down';
 
-    function atualizarScroll() {
-        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+// Booleano para cada seção: se true, o snap está BLOQUEADO para ela (não re-dispara nela mesma)
+const snapState = {
+    hero: false,
+    sobre: false,
+    competencias: false,
+    tecnologias: false,
+    projetos: false,
+    formacao: false,
+    contato: false
+};
 
-        // Barra de progresso de leitura
-        if (progressBar && totalHeight > 0) {
-            const progresso = (scrollY / totalHeight) * 100;
-            progressBar.style.width = `${Math.min(100, Math.max(0, progresso))}%`;
-        }
-
-        // Header com efeito de elevação dinâmica ao rolar
-        if (header) {
-            if (scrollY > 20) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        }
-
-        // Botão flutuante Voltar ao Topo
-        if (btnScrollTop) {
-            if (scrollY > 350) {
-                btnScrollTop.classList.add('visible');
-            } else {
-                btnScrollTop.classList.remove('visible');
-            }
-        }
+// Quando dá trigger em uma seção: ela vira TRUE (travada) e todas as outras viram FALSE (liberadas)
+function travarSecao(id) {
+    for (const key in snapState) {
+        snapState[key] = false;
     }
-
-    window.addEventListener('scroll', atualizarScroll, { passive: true });
-    atualizarScroll();
-
-    if (btnScrollTop) {
-        btnScrollTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+    if (id && snapState.hasOwnProperty(id)) {
+        snapState[id] = true;
     }
+    secaoBloqueadaId = id;
 }
 
-// ------------------------------------------
-// 8. Revelação Suave de Elementos ao Rolar (Scroll Reveal)
-// ------------------------------------------
-function configurarRevealOnScroll() {
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        return;
+function animarScrollPara(alvoY, duracao = 333, idSecaoAlvo = null) {
+    if (idSecaoAlvo) {
+        travarSecao(idSecaoAlvo);
     }
+    isAnimatingScroll = true;
+    const inicioY = window.pageYOffset || document.documentElement.scrollTop;
+    const distancia = alvoY - inicioY;
+    let tempoInicial = null;
 
-    const elementos = document.querySelectorAll(
-        '.section-header, .about-card, .competency-card, .tech-category, .project-card, .timeline-card, .contact-card'
-    );
+    function animacao(tempoAtual) {
+        if (!tempoInicial) tempoInicial = tempoAtual;
+        const decorrido = tempoAtual - tempoInicial;
+        const progresso = Math.min(decorrido / duracao, 1);
 
-    if (!('IntersectionObserver' in window)) {
-        elementos.forEach(el => el.classList.add('is-revealed'));
-        return;
-    }
+        // Curva suave e rápida (easeInOutCubic)
+        const ease = progresso < 0.5
+            ? 4 * progresso * progresso * progresso
+            : 1 - Math.pow(-2 * progresso + 2, 3) / 2;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-revealed');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.08,
-        rootMargin: '0px 0px -30px 0px'
-    });
+        window.scrollTo(0, inicioY + (distancia * ease));
 
-    elementos.forEach((el, index) => {
-        el.classList.add('reveal-on-scroll');
-        const delay = (index % 3) * 0.08;
-        el.style.transitionDelay = `${delay}s`;
-        observer.observe(el);
-    });
-}
-
-// ------------------------------------------
-// 9. Smooth Wheel Inertia Scroll (Rolagem Macia e Fluida)
-// ------------------------------------------
-function configurarSmoothWheelScroll() {
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        return;
-    }
-    // Preservar comportamento nativo em dispositivos touch puros
-    if ('ontouchstart' in window && !window.matchMedia('(pointer: fine)').matches) {
-        return;
-    }
-
-    let targetY = window.pageYOffset || document.documentElement.scrollTop;
-    let currentY = targetY;
-    let isScrolling = false;
-    const ease = 0.1;
-
-    window.addEventListener('wheel', (e) => {
-        const lightbox = document.getElementById('lightbox-modal');
-        if (lightbox && lightbox.classList.contains('active')) return;
-        if (e.ctrlKey || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
-
-        e.preventDefault();
-
-        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-        targetY = Math.max(0, Math.min(targetY + e.deltaY, maxScroll));
-
-        if (!isScrolling) {
-            isScrolling = true;
-            requestAnimationFrame(passoScroll);
-        }
-    }, { passive: false });
-
-    function passoScroll() {
-        const delta = targetY - currentY;
-        currentY += delta * ease;
-
-        window.scrollTo(0, Math.round(currentY));
-
-        if (Math.abs(delta) > 0.6) {
-            requestAnimationFrame(passoScroll);
+        if (progresso < 1) {
+            requestAnimationFrame(animacao);
         } else {
-            currentY = targetY;
-            window.scrollTo(0, targetY);
-            isScrolling = false;
+            setTimeout(() => {
+                isAnimatingScroll = false;
+            }, 60);
         }
     }
 
-    window.addEventListener('scroll', () => {
-        if (!isScrolling) {
-            targetY = window.pageYOffset || document.documentElement.scrollTop;
-            currentY = targetY;
+    requestAnimationFrame(animacao);
+}
+
+function configurarNavegacaoSuave() {
+    const secoes = Array.from(document.querySelectorAll('section[id]'));
+    const headerOffset = 76;
+
+    // Inicializa a seção onde o usuário já está no carregamento
+    const scrollInicial = window.pageYOffset || document.documentElement.scrollTop;
+    for (const secao of secoes) {
+        const topo = secao.offsetTop - headerOffset;
+        const fundo = topo + secao.offsetHeight;
+        if (scrollInicial >= topo && scrollInicial < fundo) {
+            travarSecao(secao.id);
+            break;
         }
+    }
+    if (!secaoBloqueadaId && secoes.length > 0) {
+        travarSecao(secoes[0].id);
+    }
+
+    // Cliques em links do menu: navega em 333ms e trava o subtítulo de destino
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#' || targetId === '') return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                animarScrollPara(offsetPosition, 333, targetElement.id);
+            }
+        });
+    });
+
+    // Encaixe magnético inteligente com trava booleana
+    window.addEventListener('scroll', () => {
+        const atual = window.pageYOffset || document.documentElement.scrollTop;
+        if (atual > ultimoScrollPos + 3) {
+            direcaoScroll = 'down';
+        } else if (atual < ultimoScrollPos - 3) {
+            direcaoScroll = 'up';
+        }
+        ultimoScrollPos = atual;
+
+        if (isAnimatingScroll) return;
+
+        // Se o usuário está navegando no meio do corpo de uma seção, garante que ela continue travada
+        for (const secao of secoes) {
+            const topo = secao.offsetTop - headerOffset;
+            const fundo = topo + secao.offsetHeight;
+            if (atual >= topo && atual < fundo) {
+                if (secaoBloqueadaId !== secao.id && atual > topo + 140) {
+                    travarSecao(secao.id);
+                }
+            }
+        }
+
+        clearTimeout(snapTimer);
+        snapTimer = setTimeout(() => {
+            const scrollAtual = window.pageYOffset || document.documentElement.scrollTop;
+            const threshold = 130;
+
+            for (const secao of secoes) {
+                const id = secao.id;
+
+                // REGRA 1: Se este subtítulo já deu trigger (boolean === true), PULA! NUNCA re-dispara nela!
+                if (snapState[id] === true || secaoBloqueadaId === id) {
+                    continue;
+                }
+
+                const topo = secao.offsetTop - headerOffset;
+                const distancia = Math.abs(scrollAtual - topo);
+
+                // REGRA 2: Só dispara se o usuário estiver rolando na direção daquela seção
+                const secaoAbaixo = topo > scrollAtual;
+                const secaoAcima = topo < scrollAtual;
+                const direcaoValida = (direcaoScroll === 'down' && secaoAbaixo) || (direcaoScroll === 'up' && secaoAcima);
+
+                if (direcaoValida && distancia > 15 && distancia < threshold) {
+                    // Dá trigger em outra seção: ela vira TRUE (travada) e a anterior vira FALSE (liberada)
+                    animarScrollPara(topo, 333, id);
+                    break;
+                }
+            }
+        }, 75);
     }, { passive: true });
 }
 
+// ------------------------------------------
+// 8. Barra de Progresso de Rolagem (Scroll)
+// ------------------------------------------
+function configurarBarraProgresso() {
+    const progressBar = document.getElementById('scroll-progress-bar');
+    if (!progressBar) return;
+
+    function atualizarBarra() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+        if (scrollHeight > 0) {
+            const progresso = (scrollTop / scrollHeight) * 100;
+            progressBar.style.width = `${Math.min(Math.max(progresso, 0), 100)}%`;
+        } else {
+            progressBar.style.width = '0%';
+        }
+    }
+
+    window.addEventListener('scroll', atualizarBarra, { passive: true });
+    window.addEventListener('resize', atualizarBarra, { passive: true });
+    atualizarBarra();
+}

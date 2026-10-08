@@ -81,8 +81,7 @@ body.tema__claro {
 }
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 76px;
 }
 
 body {
@@ -124,19 +123,9 @@ img {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border-subtle);
-  transition: background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition), border-color var(--transition);
 }
 
-.navbar-header.scrolled {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
-  border-bottom-color: var(--border-medium);
-}
-
-body.tema__claro .navbar-header.scrolled {
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-}
-
-/* Barra de Progresso Dinâmica de Leitura / Scroll */
 .scroll-progress-bar {
   position: absolute;
   bottom: 0;
@@ -144,9 +133,10 @@ body.tema__claro .navbar-header.scrolled {
   height: 2.5px;
   width: 0%;
   background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  box-shadow: 0 0 10px var(--accent-glow), 0 0 4px var(--accent-primary);
   z-index: 1002;
   transition: width 0.08s ease-out;
-  box-shadow: 0 0 10px var(--accent-glow);
+  pointer-events: none;
 }
 
 .navbar-container {
@@ -296,7 +286,10 @@ body.tema__claro .icon-moon { display: none; }
    Hero Section
    ========================================= */
 .hero-section {
-  padding: 8.5rem 0 5rem;
+  min-height: calc(100vh - 76px);
+  padding: 6.5rem 0 4rem;
+  display: flex;
+  align-items: center;
   position: relative;
   overflow: hidden;
 }
@@ -475,32 +468,6 @@ body.tema__claro .icon-moon { display: none; }
 .social-icon-btn img {
   width: 20px;
   height: 20px;
-}
-
-/* =========================================
-   Ícones e Cores de Alto Contraste (GitHub)
-   ========================================= */
-.github-svg-icon {
-  fill: #f3f4f6 !important; /* Branco / claro no modo escuro */
-  color: #f3f4f6 !important;
-  transition: fill var(--transition), color var(--transition), transform var(--transition);
-}
-
-body.tema__claro .github-svg-icon {
-  fill: #181717 !important; /* Preto de alto contraste no modo claro */
-  color: #181717 !important;
-}
-
-.social-icon-btn.github-social-btn:hover .github-svg-icon,
-.contact-github-btn:hover .github-svg-icon {
-  fill: var(--accent-primary) !important;
-  color: var(--accent-primary) !important;
-}
-
-.contact-github-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
 }
 
 /* Imagem Hero */
@@ -1594,81 +1561,5 @@ body.tema__claro .github-svg-icon {
   .copy-email-btn {
     width: 100%;
     justify-content: center;
-  }
-}
-
-/* =========================================
-   Scroll Dinâmico & Efeitos Visuais ao Rolar
-   ========================================= */
-
-/* Revelação Suave de Elementos ao Rolar (Scroll Reveal) */
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-.reveal-on-scroll.is-revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal-on-scroll {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-}
-
-/* Botão Flutuante Voltar ao Topo Dinâmico */
-.btn-scroll-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-full);
-  background-color: var(--bg-surface-elevated);
-  border: 1px solid var(--border-medium);
-  color: var(--text-main);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 990;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(12px) scale(0.9);
-  transition: opacity var(--transition), transform var(--transition), visibility var(--transition), background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
-  box-shadow: var(--shadow-md);
-}
-
-.btn-scroll-top.visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0) scale(1);
-}
-
-.btn-scroll-top:hover {
-  background-color: var(--accent-primary);
-  border-color: var(--accent-primary);
-  color: #ffffff;
-  transform: translateY(-3px) scale(1.08);
-  box-shadow: 0 6px 20px var(--accent-glow);
-}
-
-.btn-scroll-top svg {
-  width: 20px;
-  height: 20px;
-}
-
-@media (max-width: 640px) {
-  .btn-scroll-top {
-    bottom: 1.25rem;
-    right: 1.25rem;
-    width: 40px;
-    height: 40px;
   }
 }
