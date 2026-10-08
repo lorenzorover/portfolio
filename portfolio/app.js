@@ -1,262 +1,370 @@
-let valorAnterior = document.getElementById('paragrafo-1');
-let botaoAnterior = document.getElementById('button-info-1');
-let paginas = document.querySelectorAll('.paginas');
-let titulos = document.querySelectorAll('.titulos');
-let seta1 = document.getElementById('seta-1');
-const paragrafoDiscord = document.getElementById("paragrafo-discord");
-let botoesProjeto = document.querySelectorAll(".botoes__projeto");
+// ==========================================
+// Portfólio Lorenzo Rover - app.js
+// ==========================================
 
-const tituloInicial1 = document.getElementById('titulo-1');
-const tituloInicial2 = document.getElementById('titulo-2');
-const tituloInicial3 = document.getElementById('titulo-3');
-const paragrafoInicial = document.getElementById('paragrafo-inicial');
+document.addEventListener('DOMContentLoaded', () => {
+    inicializarTema();
+    configurarScrollSpy();
+    configurarMenuMobile();
+    configurarTeclado();
+    configurarScrollDinamico();
+    configurarRevealOnScroll();
+    configurarSmoothWheelScroll();
+});
 
-// 
-const checkBox = document.getElementById('trocar-tema');
-const iconeInfo = document.querySelector('.icone__info');
-const balaoInfo = document.querySelector('.balao__info');
-const iconeSol = document.getElementById('svg-sol');
-const iconeLua = document.getElementById('svg-lua');
+// ------------------------------------------
+// 1. Gerenciamento de Tema (Escuro / Claro)
+// ------------------------------------------
+function inicializarTema() {
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const temaSalvo = localStorage.getItem('portfolio-theme');
 
-let balaoMouse = false;
+    if (temaSalvo === 'claro') {
+        document.body.classList.add('tema__claro');
+    } else if (temaSalvo === 'escuro') {
+        document.body.classList.remove('tema__claro');
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.body.classList.add('tema__claro');
+    }
 
-// Linha azul sublinhada dos botoes de "Sobre mim"
-const linha = document.createElement("span");
-linha.id = "linha-botao";
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('tema__claro');
+            const ehClaro = document.body.classList.contains('tema__claro');
+            localStorage.setItem('portfolio-theme', ehClaro ? 'claro' : 'escuro');
+        });
+    }
+}
 
-balaoInfo.style.display = 'none';
+// ------------------------------------------
+// 2. Navegação Suave & ScrollSpy
+// ------------------------------------------
+function configurarScrollSpy() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const secoes = document.querySelectorAll('section[id]');
 
-iniciarElementosPaginas();
-carregarEfeitosPagina1();
+    function destacarLinkAtivo() {
+        let scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        const offset = 140;
 
-function esconderParagrafos() {
-    document.querySelectorAll('.paragrafo__button').forEach(paragrafo => {
-        paragrafo.style.display = 'none';
+        secoes.forEach(secao => {
+            const topo = secao.offsetTop - offset;
+            const altura = secao.offsetHeight;
+            const id = secao.getAttribute('id');
+
+            if (scrollY >= topo && scrollY < topo + altura) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+
+    window.addEventListener('scroll', destacarLinkAtivo, { passive: true });
+    destacarLinkAtivo();
+}
+
+// ------------------------------------------
+// 3. Menu Mobile
+// ------------------------------------------
+function configurarMenuMobile() {
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const navLinksList = document.getElementById('navbar-links');
+
+    if (menuToggle && navLinksList) {
+        menuToggle.addEventListener('click', () => {
+            navLinksList.classList.toggle('mobile-active');
+        });
+
+        // Fechar ao clicar em qualquer link
+        navLinksList.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinksList.classList.remove('mobile-active');
+            });
+        });
+    }
+}
+
+// ------------------------------------------
+// 4. Copiar E-mail com Feedback
+// ------------------------------------------
+function copiarEmail() {
+    const email = 'lorenzo.rover66@gmail.com';
+    const label = document.getElementById('copy-email-label');
+
+    navigator.clipboard.writeText(email).then(() => {
+        mostrarToast('E-mail copiado para a área de transferência!');
+        if (label) {
+            const textoOriginal = label.innerText;
+            label.innerText = 'Copiado com sucesso!';
+            setTimeout(() => {
+                label.innerText = textoOriginal;
+            }, 3000);
+        }
+    }).catch(() => {
+        // Fallback caso clipboard API falhe
+        const input = document.createElement('input');
+        input.value = email;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+        mostrarToast('E-mail copiado para a área de transferência!');
     });
 }
 
-function iniciarElementosPaginas() {
-    const paginaInicial = document.getElementById('pagina-1');
-    // paginaInicial.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Sempre que der F5 na página, ela começara no inicio
-    esconderParagrafos();
-    valorAnterior.style.display = 'flex';
-    botaoAnterior.appendChild(linha);
-    linha.classList.add('linha-ativada');
+function mostrarToast(mensagem) {
+    const toast = document.getElementById('toast-notification');
+    const msgElem = document.getElementById('toast-message');
 
-    // Aplica o tema do switch manualmente
-    paginas.forEach(pagina => {
-        pagina.classList.add('tema__escuro');
-        pagina.classList.remove('tema__claro');
-    });
+    if (!toast) return;
 
-    // Aplica o icone correspondente manualmente
-    iconeLua.classList.add('svg__switch__mostrar');
-    iconeSol.classList.remove('svg__switch__mostrar');
+    if (msgElem && mensagem) {
+        msgElem.innerText = mensagem;
+    }
+
+    toast.classList.add('show');
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3500);
 }
 
-//Mostrar o parágrafo do texto de informações sobre mim correspondente
-function mostrarParagrafo(valor) {
-    const valorAtual = document.getElementById('paragrafo-' + valor);
-    const botaoAtual = document.getElementById('button-info-' + valor);
-    
-    if (valorAnterior !== valorAtual) {
-        if (valor > 0 && valor < 7) {
-            linha.classList.remove('linha-ativada'); //remove a linha para aplicar o transition
+// ------------------------------------------
+// 5. Lightbox para Visualização de Imagens
+// ------------------------------------------
+function abrirLightbox(src, caption) {
+    const modal = document.getElementById('lightbox-modal');
+    const img = document.getElementById('lightbox-image');
+    const cap = document.getElementById('lightbox-caption');
 
-            if (valorAnterior !== undefined) {
-                valorAnterior.style.display = 'none';
+    if (!modal || !img) return;
+
+    img.src = src;
+    if (cap) cap.innerText = caption || '';
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function fecharLightbox(event) {
+    const modal = document.getElementById('lightbox-modal');
+    if (!modal) return;
+
+    // Fechar ao clicar no backdrop ou botão
+    if (event.target === modal || event.target.closest('.lightbox-close-btn')) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+function configurarTeclado() {
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const modal = document.getElementById('lightbox-modal');
+            if (modal && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
             }
-    
-            if (botaoAnterior !== undefined) {
-                botaoAnterior.removeChild(linha);
+        }
+    });
+}
+
+// ------------------------------------------
+// 6. Carrossel de Imagens em Projetos
+// ------------------------------------------
+function navegarCarrossel(carouselId, direcao, event) {
+    if (event) {
+        event.stopPropagation();
+        event.preventDefault();
+    }
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    if (!slides.length) return;
+
+    let currentIndex = parseInt(carousel.getAttribute('data-current-slide') || '0', 10);
+    let nextIndex = currentIndex + direcao;
+
+    if (nextIndex < 0) nextIndex = slides.length - 1;
+    if (nextIndex >= slides.length) nextIndex = 0;
+
+    irParaSlide(carouselId, nextIndex, event);
+}
+
+function irParaSlide(carouselId, index, event) {
+    if (event) {
+        event.stopPropagation();
+        event.preventDefault();
+    }
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    if (!slides.length || index < 0 || index >= slides.length) return;
+
+    carousel.setAttribute('data-current-slide', index);
+
+    slides.forEach((slide, i) => {
+        if (i === index) {
+            slide.classList.add('active');
+        } else {
+            slide.classList.remove('active');
+        }
+    });
+
+    dots.forEach((dot, i) => {
+        if (i === index) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
+
+// ------------------------------------------
+// 7. Scroll Dinâmico (Barra de Progresso, Header & Botão Topo)
+// ------------------------------------------
+function configurarScrollDinamico() {
+    const progressBar = document.getElementById('scroll-progress-bar');
+    const header = document.querySelector('.navbar-header');
+    const btnScrollTop = document.getElementById('btn-scroll-top');
+
+    function atualizarScroll() {
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+        // Barra de progresso de leitura
+        if (progressBar && totalHeight > 0) {
+            const progresso = (scrollY / totalHeight) * 100;
+            progressBar.style.width = `${Math.min(100, Math.max(0, progresso))}%`;
+        }
+
+        // Header com efeito de elevação dinâmica ao rolar
+        if (header) {
+            if (scrollY > 20) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
+        }
 
-            valorAtual.style.display = 'flex'; // ou flex
-            botaoAtual.appendChild(linha);
-            
-            setTimeout(() => { // timeout para aplicar corretamente o transition
-                linha.classList.add('linha-ativada');
-            }, 10);
-
-            botaoAnterior = botaoAtual;
-            valorAnterior = valorAtual;
+        // Botão flutuante Voltar ao Topo
+        if (btnScrollTop) {
+            if (scrollY > 350) {
+                btnScrollTop.classList.add('visible');
+            } else {
+                btnScrollTop.classList.remove('visible');
+            }
         }
     }
-}
 
-function mostrarDialogCertificado(valor) {
-    dialogModal = document.getElementById('dialog-certificado-' + valor);
+    window.addEventListener('scroll', atualizarScroll, { passive: true });
+    atualizarScroll();
 
-    if (valor > 0 && valor < 4) {
-        dialogModal.showModal();
-        // document.body.classList.add('scroll')
-    }
-}
-
-function mostrarDialogProjeto(valor) {
-    dialogModal = document.getElementById('dialog-projeto-' + valor);
-
-    if (valor > 0 && valor < 4) {
-        dialogModal.showModal();
-        // document.body.classList.add('scroll')
-    }
-}
-
-function fecharDialog() {
-    dialogModal.close();
-    // document.body.classList.remove('scroll');
-}
-
-// dialogModal.addEventListener('close', function() {
-//     document.body.classList.remove('scroll');
-// });
-
-
-//Mudança de Temas Escuro e Claro
-checkBox.addEventListener('change', function() {
-    if (checkBox.checked) {
-        paginas.forEach(pagina => {
-            pagina.classList.add('tema__escuro');
-            pagina.classList.remove('tema__claro');
-
-            iconeLua.classList.add('svg__switch__mostrar');
-            iconeSol.classList.remove('svg__switch__mostrar');
-        });
-    } else {
-        paginas.forEach(pagina => {
-            pagina.classList.add('tema__claro');
-            pagina.classList.remove('tema__escuro');
-
-            iconeSol.classList.add('svg__switch__mostrar');
-            iconeLua.classList.remove('svg__switch__mostrar');
+    if (btnScrollTop) {
+        btnScrollTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     }
-});
-
-//Mostrar o balao ao passar o mouse sobre o icone
-iconeInfo.addEventListener('mouseenter', function() {
-    balaoInfo.classList.add('mostrar');
-    balaoMouse = true;
-});
-
-iconeInfo.addEventListener('mouseleave', function() {
-    balaoInfo.classList.remove('mostrar');
-});
-
-//Mostrar o balao ao passar o mouse sobre o balao
-balaoInfo.addEventListener('mouseenter', function() {
-    balaoInfo.classList.add('mostrar');
-    balaoMouse = true;
-});
-
-balaoInfo.addEventListener('mouseleave', function() {
-    balaoInfo.classList.remove('mostrar');
-});
-
-//Direcionamento da página pelas setas
-function direcionarPagina(numeroPagina){
-    paginas.forEach(pagina => {
-        const paginaConferir = 'pagina-' + String(numeroPagina);
-
-        if (pagina.id === paginaConferir) {
-            pagina.scrollIntoView({ behavior: 'smooth', block: 'start' }); //end para centralizar a página começando por baixo
-        }
-    });
 }
 
-function mostrarTitulos() {
-    setTimeout(function() {
-        tituloInicial1.classList.add('mostrar');
-    }, 1000);
-    setTimeout(function() {
-        tituloInicial2.classList.add('mostrar');
-    }, 2000);
-    setTimeout(function() {
-        tituloInicial3.classList.add('mostrar');
-    }, 3000);
-    setTimeout(function() {
-        paragrafoInicial.classList.add('mostrar');
-    }, 3850);
-
-    setTimeout(function() {
-        titulos.forEach(titulo => {
-            titulo.classList.add('fixo');
-        });
-        paragrafoInicial.classList.add('fixo');
-    }, 4000);
-}
-
-//Carregamento Página 1 
-function carregarEfeitosPagina1() {
-
-    // Após a primeira vez, já é salvo o balão, a seta e os titulos
-    if (localStorage.getItem("animacao-exibida") === "true") {
-        seta1.classList.add('mostrar');
-        balaoInfo.style.display = 'block';
-        iconeInfo.classList.add('mostrar');
-        mostrarTitulos();
-        seta1.classList.add('reduzir__delay');
-        iconeInfo.classList.add('reduzir__delay');
-
+// ------------------------------------------
+// 8. Revelação Suave de Elementos ao Rolar (Scroll Reveal)
+// ------------------------------------------
+function configurarRevealOnScroll() {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         return;
     }
 
-    mostrarTitulos();
-    
-    setTimeout(function() {
-        seta1.classList.add('mostrar');
-        balaoInfo.style.display = 'block';
-        iconeInfo.classList.add('mostrar');
-        iconeInfo.classList.add('icone__info__opacidade:hover');
-    }, 3700);
+    const elementos = document.querySelectorAll(
+        '.section-header, .about-card, .competency-card, .tech-category, .project-card, .timeline-card, .contact-card'
+    );
 
-    setTimeout(function() {
-        titulos.forEach(titulo => {
-            titulo.classList.add('fixo');
-            seta1.classList.add('reduzir__delay');
-            iconeInfo.classList.add('reduzir__delay');
+    if (!('IntersectionObserver' in window)) {
+        elementos.forEach(el => el.classList.add('is-revealed'));
+        return;
+    }
 
-            localStorage.setItem("animacao-exibida", "true");
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-revealed');
+                observer.unobserve(entry.target);
+            }
         });
-    }, 4000);
-
-    //Mostrar o balao após determinado tempo
-    setTimeout(function() {
-        balaoInfo.classList.add('mostrar');
-    }, 6000);
-
-    setTimeout(function() {
-        if (balaoMouse === false) {
-            balaoInfo.classList.remove('mostrar');
-        }
-    }, 13000);
-}
-
-//Função copiar nick do discord
-// function copiarMensagem() {
-//     navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
-//         if (result.state === "granted" || result.state === "prompt") {
-//             navigator.clipboard.writeText("Rakard");
-
-//             paragrafoDiscord.innerText = "Copiado!";
-
-//             setTimeout(function() {
-//                 paragrafoDiscord.innerText = "Nick: Rakard";
-//             }, 2500);
-//         }
-//       });
-// }
-
-// Mudar conteúdo do botão de expandir projeto
-function mudarBotaoProjeto(valor) {
-    const botao = document.getElementById('botao-projeto-mostrar-' + valor);
-
-    const conteudo = document.getElementById('content' + valor);
-
-    botoesProjeto.forEach(function(botao) {
-        botao.textContent = "Expandir";
+    }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -30px 0px'
     });
 
-    // Retornos invertidos devido ao delay de aplicação do "show" do bootstrap
-    conteudo.classList.contains('show') ? botao.textContent = "Expandir" : botao.textContent = "Esconder";
+    elementos.forEach((el, index) => {
+        el.classList.add('reveal-on-scroll');
+        const delay = (index % 3) * 0.08;
+        el.style.transitionDelay = `${delay}s`;
+        observer.observe(el);
+    });
 }
+
+// ------------------------------------------
+// 9. Smooth Wheel Inertia Scroll (Rolagem Macia e Fluida)
+// ------------------------------------------
+function configurarSmoothWheelScroll() {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+    }
+    // Preservar comportamento nativo em dispositivos touch puros
+    if ('ontouchstart' in window && !window.matchMedia('(pointer: fine)').matches) {
+        return;
+    }
+
+    let targetY = window.pageYOffset || document.documentElement.scrollTop;
+    let currentY = targetY;
+    let isScrolling = false;
+    const ease = 0.1;
+
+    window.addEventListener('wheel', (e) => {
+        const lightbox = document.getElementById('lightbox-modal');
+        if (lightbox && lightbox.classList.contains('active')) return;
+        if (e.ctrlKey || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+
+        e.preventDefault();
+
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        targetY = Math.max(0, Math.min(targetY + e.deltaY, maxScroll));
+
+        if (!isScrolling) {
+            isScrolling = true;
+            requestAnimationFrame(passoScroll);
+        }
+    }, { passive: false });
+
+    function passoScroll() {
+        const delta = targetY - currentY;
+        currentY += delta * ease;
+
+        window.scrollTo(0, Math.round(currentY));
+
+        if (Math.abs(delta) > 0.6) {
+            requestAnimationFrame(passoScroll);
+        } else {
+            currentY = targetY;
+            window.scrollTo(0, targetY);
+            isScrolling = false;
+        }
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!isScrolling) {
+            targetY = window.pageYOffset || document.documentElement.scrollTop;
+            currentY = targetY;
+        }
+    }, { passive: true });
+}
+

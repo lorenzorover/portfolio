@@ -1,651 +1,844 @@
-<!-- 
-Ícones fornecidos por Heroicons - Licença MIT: https://github.com/tailwindlabs/heroicons/blob/master/LICENSE
-Ícones fornecidos por Devicons - Licença MIT: https://github.com/devicons/devicon/blob/master/LICENSE
-Ícones fornecidos por SimpleIcons - Licença ISC: https://github.com/simple-icons/simple-icons/blob/master/LICENSE
-Normalize.css - Licença MIT: https://github.com/necolas/normalize.css/blob/master/LICENSE
--->
-
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Portfólio - Lorenzo Rover</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Reset CSS -->
-    <link rel='stylesheet' type='text/css' media='screen' href="./portfolio/styles/normalizer.css">
-    <!-- CSS -->
-    <link rel='stylesheet' type='text/css' media='screen' href='./portfolio/styles/style.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='./portfolio/styles/layout.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='./portfolio/styles/funcoes-js.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='./portfolio/styles/components.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='./portfolio/styles/responsive.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='./portfolio/styles/themes.css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfólio profissional de Lorenzo Rover, desenvolvedor back-end e full-stack.">
+    <meta property="og:title" content="Portfólio - Lorenzo Rover">
+    <meta property="og:description" content="Portfólio profissional de Lorenzo Rover, desenvolvedor back-end e full-stack.">
+
+    <!-- CSS Modernizado -->
+    <link rel="stylesheet" type="text/css" href="./portfolio/styles/style.css">
 </head>
 <body>
-    <header class="cabecalho">
-        <!-- Cabeçalho fixo -->
-        <div class="container__cabecalho__botoes">
-            
-            <button class="button__cabecalho" onclick="direcionarPagina(1)">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="imgs__cabecalho">
-                <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
-                <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
-            </svg>
-            <p class="mb-0">Home</p>
-            </button>
 
-            <button class="button__cabecalho" onclick="direcionarPagina(2)">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="imgs__cabecalho">
-                <path fill-rule="evenodd" d="M4.5 3.75a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V6.75a3 3 0 0 0-3-3h-15Zm4.125 3a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Zm-3.873 8.703a4.126 4.126 0 0 1 7.746 0 .75.75 0 0 1-.351.92 7.47 7.47 0 0 1-3.522.877 7.47 7.47 0 0 1-3.522-.877.75.75 0 0 1-.351-.92ZM15 8.25a.75.75 0 0 0 0 1.5h3.75a.75.75 0 0 0 0-1.5H15ZM14.25 12a.75.75 0 0 1 .75-.75h3.75a.75.75 0 0 1 0 1.5H15a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5h3.75a.75.75 0 0 0 0-1.5H15Z" clip-rule="evenodd" />
-              </svg>
-              <p class="mb-0">Sobre</p>
-              </button>
+    <!-- Header Fixo & Navegação -->
+    <header class="navbar-header">
+        <div class="navbar-container">
+            <a href="#hero" class="navbar-brand">
+                <span class="brand-dot"></span>
+                <span>Lorenzo Rover</span>
+                <span class="brand-tag">Back-end & Full-stack</span>
+            </a>
 
-            <button class="button__cabecalho" onclick="direcionarPagina(3)">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="imgs__cabecalho">
-                <path d="M19.5 21a3 3 0 0 0 3-3v-4.5a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3V18a3 3 0 0 0 3 3h15ZM1.5 10.146V6a3 3 0 0 1 3-3h5.379a2.25 2.25 0 0 1 1.59.659l2.122 2.121c.14.141.331.22.53.22H19.5a3 3 0 0 1 3 3v1.146A4.483 4.483 0 0 0 19.5 9h-15a4.483 4.483 0 0 0-3 1.146Z" />
-            </svg>
-            <p class="mb-0">Projetos</p>
-            </button>
-            
+            <nav>
+                <ul class="navbar-nav" id="navbar-links">
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#competencias" class="nav-link">Competências</a></li>
+                    <li><a href="#tecnologias" class="nav-link">Tecnologias</a></li>
+                    <li><a href="#projetos" class="nav-link">Projetos</a></li>
+                    <li><a href="#formacao" class="nav-link">Formação</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="navbar-actions">
+                <!-- Botão Alternar Tema Escuro / Claro -->
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Alternar tema" title="Alternar tema">
+                    <!-- Ícone Lua (Tema Escuro) -->
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+                    </svg>
+                    <!-- Ícone Sol (Tema Claro) -->
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+                    </svg>
+                </button>
+
+                <!-- Botão Menu Mobile -->
+                <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Abrir menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
         </div>
-        
-        <div class="container__cabecalho__switch">
 
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="imgs__cabecalho" id="svg-lua">
-                <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
-            </svg>   
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="imgs__cabecalho" id="svg-sol">
-                <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
-            </svg>  
-
-            <label class="label__switch">
-                <input type="checkbox" id="trocar-tema" checked>
-                <span class="span__slider"></span>
-            </label>
-
-        </div>
+        <!-- Barra de Progresso Dinâmica de Scroll -->
+        <div id="scroll-progress-bar" class="scroll-progress-bar" aria-hidden="true"></div>
     </header>
+
     <main>
-        <section id="pagina-1" class="paginas">
-            <!-- 1ª página: Tela inicial -->
-            <div class="container__inicio">
-                <h1 class="titulos" id="titulo-1">Seja bem vindo</h1>
-                <h2 class="titulos" id="titulo-2">Sou Lorenzo Rover</h2>
-                <h2 class="titulos" id="titulo-3">Programador Back-end & Full-stack</h2>
-            </div>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-background-glow"></div>
+            <div class="container-custom">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            Olá, sou <span class="hero-title-highlight">Lorenzo Rover</span>
+                        </h1>
 
-            <div class="container__paragrafo__inicial">
-                <p id="paragrafo-inicial" class="m-0"> Aqui você encontrará diversas informações sobre mim: as tecnologias que utilizo, minhas formações, formas de contato e, por fim, os projetos que desenvolvi e dos quais participei ao longo da minha trajetória, acompanhados de um breve resumo.</p>
-            </div>
-            
-            <div class="container__scroll">
-                 <!-- Ícone balão -->
-                <div class="container__scroll__balao">
-                    <p class="balao__info">Navegue pelas páginas utilizando os <strong><i>botões</i></strong> que se encontram no cabeçalho, as <strong><i>setas</i></strong> na parte superior e inferior , ou o próprio <strong><i>scroll</i></strong> da aba.</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icone__info">
-                        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 0 1 .67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 1 1-.671-1.34l.041-.022ZM12 9a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
-                      </svg>
+                        <p class="hero-subtitle">Programador Back-end & Full-stack</p>
+
+                        <p class="hero-description">
+                            Desenvolvedor focado em ecossistema Java, Spring Boot, APIs RESTful, segurança e modelagem de bancos de dados relacionais. Apaixonado por construir sistemas escaláveis, organizados e eficientes.
+                        </p>
+
+                        <div class="hero-actions">
+                            <a href="#projetos" class="btn-primary">
+                                <span>Explorar Projetos</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M7 17l9.2-9.2M17 17V7H7"/>
+                                </svg>
+                            </a>
+                            <a href="#contato" class="btn-secondary">Entrar em Contato</a>
+                        </div>
+
+                        <div class="hero-socials">
+                            <a href="https://github.com/lorenzorover" target="_blank" rel="noopener noreferrer" class="social-icon-btn github-social-btn" title="GitHub (lorenzorover)">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="github-svg-icon">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z" />
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/lorenzo-rover/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+                            </a>
+                            <button onclick="copiarEmail()" class="social-icon-btn" title="Copiar E-mail">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M1.5 4.5a3 3 0 0 1 3-3h15a3 3 0 0 1 3 3v15a3 3 0 0 1-3 3h-15a3 3 0 0 1-3-3v-15ZM3 6.879V19.5A1.5 1.5 0 0 0 4.5 21h15a1.5 1.5 0 0 0 1.5-1.5V6.879l-8.47 5.647a1.5 1.5 0 0 1-1.06.274 1.5 1.5 0 0 1-1.06-.274L3 6.879ZM19.243 4.5H4.757l7.243 4.828 7.243-4.828Z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="hero-avatar-wrapper">
+                        <div class="avatar-frame">
+                            <img src="./portfolio/source/foto.jpg" alt="Foto de Lorenzo Rover" class="avatar-image">
+                        </div>
+                        <div class="hero-badge-card">
+                            <div class="hero-badge-icon">☕</div>
+                            <div class="hero-badge-text">
+                                <strong>Java & Spring Boot</strong>
+                                <span>APIs RESTful · JPA · SQL</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Seta com Scroll -->
-                <button class="button__seta button__seta__normal" id="seta-1" onclick="direcionarPagina(2)">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="seta">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5" />
-                      </svg>
-                </button>
-             </div>     
+            </div>
         </section>
-    
-        <section id="pagina-2" class="paginas">
-            <!-- 2ª página: Informações sobre mim -->
-            <div class="container__pagina-2">
-                <button class="button__seta button__seta__invertida" id="seta2" onclick="direcionarPagina(1)">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="seta__contraria">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
-                      </svg>
-                </button>
-    
-                <div class="container__conteudo">
-                    <div class="container__conteudo__botoes">
-                        <!-- Painel de botões-->
-                        <button onclick="mostrarParagrafo(1)" class="button__info" id="button-info-1">Sobre mim</button>
-                        <button onclick="mostrarParagrafo(2)" class="button__info" id="button-info-2">Formação</button>
-                        <button onclick="mostrarParagrafo(3)" class="button__info" id="button-info-3">Competências</button> <!--Escrever aqui o que eu conheço, como grid layout-->
-                        <button onclick="mostrarParagrafo(4)" class="button__info" id="button-info-4">Tecnologias</button>
-                        <button onclick="mostrarParagrafo(6)" class="button__info" id="button-info-6">Contato</button>
+
+        <!-- Seção Sobre -->
+        <section id="sobre" class="section-wrapper bg-surface-alt">
+            <div class="container-custom">
+                <div class="section-header">
+                    <span class="section-kicker">Apresentação</span>
+                    <h2 class="section-title">Sobre Mim</h2>
+                    <p class="section-subtitle">
+                        Trajetória profissional, localização e objetivos na carreira de desenvolvimento de software.
+                    </p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card">
+                        <p>
+                            Atualmente resido em <strong>Florianópolis - SC</strong> e atuo como desenvolvedor com foco principal em linguagens, bibliotecas e frameworks voltados para o <strong>back-end</strong>, além de possuir conhecimentos intermediários em front-end.
+                        </p>
+                        <p>
+                            Meu objetivo é consolidar minhas habilidades em desenvolvimento de software e continuar aprimorando meu conhecimento com foco em boas práticas de arquitetura, código limpo e padrões de projeto.
+                        </p>
                     </div>
-                    <div class="container__conteudo__paragrafos">
-                        <!-- Informações correspondente ao botão selecionado -->
-                        <div class="paragrafo__button" id="paragrafo-1">
-                            <div id="texto-1">
-                                <div class="container__foto">
-                                    <img id="foto-linkedin" src="./portfolio/source/foto.jpg" alt="minha foto do linkedin">
-                                    <p id="legenda-foto-linkedin"><i>Foto tirada do LinkedIn.</i></p>
-                                </div>
-                                
-                                <p>Atualmente, resido em Florianópolis - SC e sou um desenvolvedor com foco principal em linguagens, bibliotecas e frameworks voltados para o back-end, além de possuir conhecimento intermediário em front-end. Meu objetivo é conquistar uma oportunidade que me permita consolidar minhas habilidades em desenvolvimento de software e continuar aprimorando meu conhecimento na área.</p>
-                                <p>Sou uma pessoa focada e responsável quando se trata de trabalho, sempre buscando novos desafios e evolução contínua. Para mais detalhes sobre minha formação, certificações e currículo, acesse meu <a href="https://www.linkedin.com/in/lorenzo-rover/" target="_blank" class="links">LinkedIn</a>.</p>
-                                <p>Você pode conferir meus projetos diretamente neste portfólio ou acessando meu <a href="https://github.com/lorenzorover" target="_blank" class="links">GitHub</a>. Os projetos em destaque estão fixados (Pinned) nos repositórios.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="paragrafo__button" id="paragrafo-2">
-                            <p>Essas são as formações que considero mais importantes dentre os cursos que realizei:</p>
-                            <div class="container__tabela">
-                                <table class="tabela__texto">
-                                    <tr>
-                                        <th>Nome</th>
-                                        <th>Instituição</th>
-                                        <th>Ano de início/término</th>
-                                        <th>Tipo de ensino</th>
-                                        <th>Nível de formação</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Técnico em Informática</td>
-                                        <td>IFSC</td>
-                                        <td>Ago 2018 - Dez 2020</td>
-                                        <td>Presencial</td>
-                                        <td>Técnico</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jovem Programador</th>
-                                        <td>Senac</td>
-                                        <td>Mar 2024 - Dez 2024</td>
-                                        <td>Híbrido</td>
-                                        <td>Curso Profissionalizante</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Oracle Next Education</td>
-                                        <td>Alura</td>
-                                        <td>Jun 2024 - Jan 2025</td>
-                                        <td>EAD</td>
-                                        <td>Curso Online</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
+                    <div class="about-card">
+                        <p>
+                            Sou focado, responsável e apaixonado por resolver problemas técnicos com elegância e consistência. Busco constante evolução profissional e trabalho em equipe.
+                        </p>
+                        <p>
+                            Você pode acompanhar meus projetos diretamente neste portfólio ou conferir meus repositórios no <a href="https://github.com/lorenzorover" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary); font-weight: 600; text-decoration: underline;">GitHub</a> e meu histórico no <a href="https://www.linkedin.com/in/lorenzo-rover/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary); font-weight: 600; text-decoration: underline;">LinkedIn</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                        <div class="paragrafo__button" id="paragrafo-3">
-                            <ul>
-                                <li class="m-2">Desenvolvi back-end com Java e Spring Boot, criando APIs RESTful e integrando com bancos de dados relacionais.</li>
-                                <li class="m-2">Experiência com DAO e Spring Data JPA, utilizando bibliotecas como Spring Security, Lombok e DevTools.</li>
-                                <li class="m-2">Sólido conhecimento em SQL, com consultas diversificadas e modelagem de banco de dados.</li>
-                                <li class="m-2">Integração com APIs externas, como conversores de moedas e outros serviços em tempo real.</li>
-                                <li class="m-2">Implementação de autenticação e requisições por token usando Spring Security.</li>
-                                <li class="m-2">Experiência com paginação e otimização de performance em consultas SQL.</li>
-                                <li class="m-2">Trabalhei de forma independente e em equipe, adaptando-me a diferentes ambientes de trabalho.</li>
-                                <li class="m-2">Conhecimentos intermediários em front-end, utilizando HTML, CSS e JavaScript.</li>
-                                <li class="m-2">Validações de dados e filtragem com expressões regulares (Regex).</li>
-                                <li class="m-2">Familiaridade com ferramentas de testes de APIs, como Postman e Swagger.</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="paragrafo__button" id="paragrafo-4">
-                            <div class="container__tabela">
-                                <table class="tabela__texto">
-                                    <tr>
-                                        <th>Categoria</th>
-                                        <th>Ferramentas/Tecnologias</th>
-                                    </tr>
-                                    <tr>
-                                        <th>Linguagens de Programação</th>
-                                        <td>
-                                            <div class="linha__badges">
-                                                <span class="badges">
-                                                    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" class="icones__badges"/>
-                                                    Java
-                                                </span>
-                                                <span class="badges ps-2">
-                                                    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" class="icones__badges"/>
-                                                    Javascript
-                                                </span>
-                                                <span class="badges">
-                                                    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" class="icones__badges"/>
-                                                    SQL
-                                                </span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Linguagens de Marcação e Estilização</th>
-                                        <td>
-                                            <div class="linha__badges">
-                                                <span class="badges ps-1">
-                                                    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" class="icones__badges"/>
-                                                    HTML
-                                                </span>
-                                                <span class="badges ps-1">
-                                                    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" class="icones__badges"/>
-                                                    CSS
-                                                </span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Bibliotecas/ Frameworks</th>
-                                        <td>
-                                            <div class="linha__badges">
-                                                <span class="badges">
-                                                    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" class="icones__badges"/>
-                                                    Springboot
-                                                </span>
-                                                <span class="badges">
-                                                    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" class="icones__badges"/>
-                                                    Bootstrap
-                                                </span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Ferramentas</th>
-                                        <td>
-                                            <div class="linha__badges">
-                                                <span class="badges">
-                                                    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" class="icones__badges"/>
-                                                    Postman
-                                                </span>
-                                                <span class="badges">
-                                                    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg" class="icones__badges"/>
-                                                    Swagger
-                                                </span>
-                                                <span class="badges">
-                                                    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" class="icones__badges"/>
-                                                    Git
-                                                </span>
-                                                <span class="badges">
-                                                    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="icones__badges"/>
-                                                    GitHub
-                                                </span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>IDEs</th>
-                                        <td>
-                                            <div class="linha__badges">
-                                                <span class="badges">
-                                                    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" class="icones__badges"/>
-                                                    VSCode
-                                                </span>
-                                                <span class="badges">
-                                                    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/eclipse/eclipse-original.svg" class="icones__badges"/>
-                                                    Eclipse
-                                                </span>
-                                                <span class="badges ps-2">
-                                                    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" class="icones__badges"/>
-                                                    MySQL
-                                                </span>
-                                                <span class="badges ps-2">
-                                                    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" class="icones__badges"/>
-                                                    Postgre
-                                                </span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="paragrafo__button" id="paragrafo-6">
-                            <p>Abaixo estão os links para meu GitHub, LinkedIn e Gmail. No GitHub, você pode explorar meus projetos, enquanto no LinkedIn encontrará meus certificados e currículo. Fique à vontade para entrar em contato comigo através do meu Gmail ou LinkedIn.</p>
+        <!-- Seção Competências -->
+        <section id="competencias" class="section-wrapper">
+            <div class="container-custom">
+                <div class="section-header">
+                    <span class="section-kicker">Capacidades Técnicas</span>
+                    <h2 class="section-title">Competências em Destaque</h2>
+                    <p class="section-subtitle">
+                        Pilares fundamentais que aplico no desenvolvimento de soluções e sistemas:
+                    </p>
+                </div>
 
-                            <div class="container__links">
-                                <a href="https://www.linkedin.com/in/lorenzo-rover" target="_blank" class="botao__sites">
-                                    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" id="img-linkedin"/>
-                                    LinkedIn
-                                </a>
-                                <a href="mailto:lorenzo.rover66@gmail.com" class="botao__sites" id="botao-gmail">
-                                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="img-gmail"><title>Gmail</title><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
-                                    Gmail
-                                </a>
-                                <a href="https://github.com/lorenzorover" target="_blank" class="botao__sites">
-                                    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" id="img-github"/>
-                                    GitHub
-                                </a>
-                                
-                            </div>
-<!-- 
-                            <p>Para falar comigo no discord, clique no botão abaixo para copiar meu nick e me adicione.</p>
+                <div class="competencies-grid">
+                    <div class="competency-item">
+                        <div class="competency-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-.778.099-1.533.284-2.253" />
+                            </svg>
+                        </div>
+                        <div class="competency-info">
+                            <h4>APIs RESTful & Spring Boot</h4>
+                            <p>Criação de serviços REST escaláveis com Spring Web, paginação, ordenação, validação de payload (Bean Validation) e arquitetura em camadas (Controller, Service, Repository, DTO).</p>
+                        </div>
+                    </div>
 
-                            <div class="container__discord">
-                                
-                                <button onclick="copiarMensagem()" class="botao__sites" id="botao-discord">
-                                    <img loading="lazy" src="./portfolio/source/maxresdefault.jpg" id="foto-discord" alt="minha foto do discord">
-                                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="img-discord"><title>Discord</title><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
-                                    <p id="paragrafo-discord">Nick: Rakard</p>
-                                </button>
-                            </div> -->
+                    <div class="competency-item">
+                        <div class="competency-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                            </svg>
+                        </div>
+                        <div class="competency-info">
+                            <h4>Segurança & Autenticação JWT</h4>
+                            <p>Implementação de Spring Security, filtros de autenticação por Token JWT stateless, proteção de rotas, criptografia e tratamento global de exceções.</p>
+                        </div>
+                    </div>
+
+                    <div class="competency-item">
+                        <div class="competency-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 5.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                            </svg>
+                        </div>
+                        <div class="competency-info">
+                            <h4>Bancos de Dados & Migrations</h4>
+                            <p>Modelagem relacional em PostgreSQL e MySQL, consultas complexas, otimização de performance, padrão DAO, Spring Data JPA e controle de versionamento com Flyway.</p>
+                        </div>
+                    </div>
+
+                    <div class="competency-item">
+                        <div class="competency-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                        </div>
+                        <div class="competency-info">
+                            <h4>Testes & Documentação Interativa</h4>
+                            <p>Testes de integração e rotas com Postman e Insomnia, além de documentação completa e interativa de contratos via especificação OpenAPI (Swagger UI).</p>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <button class="button__seta button__seta__normal" onclick="direcionarPagina(3)">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="seta">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5" />
-                  </svg>
-            </button>
-    
-        </section>   
-    
-        <section id="pagina-3" class="paginas">
-            <!-- 3ª página: Projetos -->
+        </section>
 
-            <button class="button__seta button__seta__invertida" onclick="direcionarPagina(2)">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="seta__contraria">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
-                  </svg>
-            </button>
+        <!-- Seção Tecnologias -->
+        <section id="tecnologias" class="section-wrapper bg-surface-alt">
+            <div class="container-custom">
+                <div class="section-header">
+                    <span class="section-kicker">Stack Tecnológica</span>
+                    <h2 class="section-title">Tecnologias & Ferramentas</h2>
+                    <p class="section-subtitle">
+                        Ferramentas, linguagens e bibliotecas que utilizo no meu fluxo diário de desenvolvimento:
+                    </p>
+                </div>
 
-            <h1 id="titulo-pagina-3">Projetos e Aplicações</h1>
-
-            <div class="container__projetos accordion" id="accordion">
-                <div class="container__projetos__projeto">
-                    <!-- Projeto 1 -->
-                    <div class="card">
-                        <div class="card-header">
-                          <h4 class="card-title">Controle de Consultório<br>(Aplicação - Desktop)</h4>
+                <div class="tech-categories-grid">
+                    <!-- Categoria 1: Back-end -->
+                    <div class="tech-category-card">
+                        <h3 class="category-title">
+                            <span class="category-title-icon">⚙️</span>
+                            <span>Linguagens & Back-end</span>
+                        </h3>
+                        <div class="badges-container">
+                            <span class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" loading="lazy">
+                                Java
+                            </span>
+                            <span class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring Boot" loading="lazy">
+                                Spring Boot
+                            </span>
+                            <span class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring Security" loading="lazy">
+                                Spring Security
+                            </span>
+                            <span class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring Data JPA" loading="lazy">
+                                Spring Data JPA
+                            </span>
                         </div>
-                        <div class="card-body">
-                            <p>Projeto integrador, desenvolvido em dupla durante o curso: <i>Jovem Programador - 1º Projeto - Programador de Sistemas</i> - <strong><i>Senac</i></strong>.</p>
-                            <div class="collapse" id="content1" data-parent="#accordion">
-                                <div class="card card-body mt-3">
-                                    <p>Desenvolvimento de um sistema de controle de consultório com CRUD básico para gerenciar pacientes, tratamentos e consultas, além de possuir uma consulta dinâmica.</p>
-                                    <p>A comunicação com o banco de dados é feita utilizando o padrão DAO. O sistema permite cadastrar, listar, editar e excluir registros, além de fornecer informações adicionais sobre pacientes e consultas.</p>
-                                    <div class="container__tabela">
-                                        <table class="mb-3 tabelas__projeto">
-                                            <tr>
-                                                <th>Ferramentas e Linguagens:</th>
-                                                <td>Java, Java Swing, SQL</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Outros:</th>
-                                                <td>MySQL Workbench, Eclipse IDE</td>
-                                            </tr>
-                                        </table>
+                    </div>
+
+                    <!-- Categoria 2: Bancos de Dados -->
+                    <div class="tech-category-card">
+                        <h3 class="category-title">
+                            <span class="category-title-icon">🗄️</span>
+                            <span>Bancos de Dados</span>
+                        </h3>
+                        <div class="badges-container">
+                            <span class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" loading="lazy">
+                                PostgreSQL
+                            </span>
+                            <span class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" loading="lazy">
+                                MySQL
+                            </span>
+                            <span class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL" loading="lazy">
+                                SQL
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Categoria 3: Ferramentas & Testes -->
+                    <div class="tech-category-card">
+                        <h3 class="category-title">
+                            <span class="category-title-icon">🛠️</span>
+                            <span>Ferramentas & Qualidade</span>
+                        </h3>
+                        <div class="badges-container">
+                            <span class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" alt="Postman" loading="lazy">
+                                Postman
+                            </span>
+                            <span class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/insomnia/insomnia-original.svg" alt="Insomnia" loading="lazy">
+                                Insomnia
+                            </span>
+                            <span class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg" alt="Swagger" loading="lazy">
+                                Swagger (OpenAPI)
+                            </span>
+                            <span class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" loading="lazy">
+                                Git
+                            </span>
+                            <span class="tech-badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z" />
+                                </svg>
+                                GitHub
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Categoria 4: Front-end & IDEs -->
+                    <div class="tech-category-card">
+                        <h3 class="category-title">
+                            <span class="category-title-icon">💻</span>
+                            <span>Front-end & Ambientes</span>
+                        </h3>
+                        <div class="badges-container">
+                            <span class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" loading="lazy">
+                                HTML5
+                            </span>
+                            <span class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" loading="lazy">
+                                CSS3
+                            </span>
+                            <span class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" loading="lazy">
+                                JavaScript
+                            </span>
+                            <span class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" loading="lazy">
+                                Bootstrap
+                            </span>
+                            <span class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg" alt="IntelliJ IDEA" loading="lazy">
+                                IntelliJ IDEA
+                            </span>
+                            <span class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" loading="lazy">
+                                VS Code
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Projetos -->
+        <section id="projetos" class="section-wrapper">
+            <div class="container-custom">
+                <div class="section-header">
+                    <span class="section-kicker">Trabalhos Selecionados</span>
+                    <h2 class="section-title">Projetos & Aplicações</h2>
+                    <p class="section-subtitle">
+                        Aplicações práticas com foco em regras de negócio, integrações externas, segurança e banco de dados.
+                    </p>
+                    <div class="projects-docs-callout">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        <span>Você pode conferir detalhadamente a documentação, arquitetura e instruções de cada projeto acessando seu respectivo <strong>repositório no GitHub</strong> nos botões de cada card.</span>
+                    </div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Projeto 1: Fórum Hub -->
+                    <div class="project-card">
+                        <!-- Carrossel Fórum Hub (Leve, Fluido e Lazy Loading) -->
+                        <div class="project-carousel" id="carousel-forum-hub" data-current-slide="0">
+                            <div class="carousel-track">
+                                <!-- Slide 1: Swagger UI / OpenAPI -->
+                                <div class="carousel-slide active" data-index="0" onclick="abrirLightbox('./portfolio/source/forum-hub-swagger.png', 'Fórum Hub - Documentação Interativa OpenAPI 3 / Swagger UI')">
+                                    <img src="./portfolio/source/forum-hub-swagger.png" alt="Fórum Hub Swagger UI" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">1/4 • Swagger UI (OpenAPI 3)</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir tela</span>
                                     </div>
-                                    <p>Imagem ilustrativa:</p>
-                                    <div class="container__imagem__projeto mb-3">
-                                        <img loading="lazy" src="./portfolio/source/lista-de-consulta.png" class="imagens__projeto" alt="Lista de Consultas">
+                                </div>
+
+                                <!-- Slide 2: Login e Token JWT -->
+                                <div class="carousel-slide" data-index="1" onclick="abrirLightbox('./portfolio/source/forum-hub-login.png', 'Fórum Hub - Autenticação Stateless e Geração de Token JWT (200 OK)')">
+                                    <img src="./portfolio/source/forum-hub-login.png" alt="Autenticação e Token JWT" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">2/4 • Autenticação & JWT</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir tela</span>
                                     </div>
-                                    
-                                    <p>Mais informações na documentação(PDF). Você pode baixar ela clicando no botão logo abaixo, ou acessar o arquivo PDF pelo próprio GitHub.</p>
-                                    <div class="container__projetos__links">
-                                        <a class="link__projetos" href="https://github.com/lorenzorover/PI/raw/main/Projeto-Integrador.pdf" download="Controle-Consultorio.pdf">Baixar Documentação(PDF)</a>
-                                        <a class="link__projetos" href="https://github.com/lorenzorover/PI" target="_blank">GitHub do Projeto</a>
+                                </div>
+
+                                <!-- Slide 3: Criação de Tópico Autenticada -->
+                                <div class="carousel-slide" data-index="2" onclick="abrirLightbox('./portfolio/source/forum-hub-create-topico.png', 'Fórum Hub - Criação de Tópico via POST com Validações (201 Created)')">
+                                    <img src="./portfolio/source/forum-hub-create-topico.png" alt="Criação de Tópicos e Resposta 201" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">3/4 • Criação de Tópicos (201)</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir tela</span>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 4: Hash BCrypt no MySQL -->
+                                <div class="carousel-slide" data-index="3" onclick="abrirLightbox('./portfolio/source/forum-hub-sql-hash.png', 'Fórum Hub - Criptografia de Senhas com BCrypt no MySQL Workbench')">
+                                    <img src="./portfolio/source/forum-hub-sql-hash.png" alt="Criptografia BCrypt no MySQL" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">4/4 • Criptografia BCrypt (MySQL)</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir tela</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-end">
-                                <a id="botao-projeto-mostrar-1" class="btn btn-primary botoes__projeto mt-3" data-toggle="collapse" href="#content1" role="button" aria-expanded="false" aria-controls="content1" onclick="mudarBotaoProjeto(1)">Expandir</a>
+
+                            <!-- Botões de Navegação Suave -->
+                            <button type="button" class="carousel-arrow carousel-arrow-prev" onclick="navegarCarrossel('carousel-forum-hub', -1, event)" aria-label="Imagem anterior" title="Imagem anterior">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                            </button>
+                            <button type="button" class="carousel-arrow carousel-arrow-next" onclick="navegarCarrossel('carousel-forum-hub', 1, event)" aria-label="Próxima imagem" title="Próxima imagem">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                            </button>
+
+                            <!-- Indicadores / Bolinhas de Navegação -->
+                            <div class="carousel-dots">
+                                <button type="button" class="carousel-dot active" onclick="irParaSlide('carousel-forum-hub', 0, event)" aria-label="Slide 1"></button>
+                                <button type="button" class="carousel-dot" onclick="irParaSlide('carousel-forum-hub', 1, event)" aria-label="Slide 2"></button>
+                                <button type="button" class="carousel-dot" onclick="irParaSlide('carousel-forum-hub', 2, event)" aria-label="Slide 3"></button>
+                                <button type="button" class="carousel-dot" onclick="irParaSlide('carousel-forum-hub', 3, event)" aria-label="Slide 4"></button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">API RESTful · Back-end</span>
+                            <h3 class="project-title">Fórum Hub (API REST)</h3>
+                            <p class="project-description">
+                                API RESTful desenvolvida como desafio final do programa ONE (Oracle Next Education), simulando a gestão de tópicos de um fórum de tecnologia.
+                            </p>
+                            <ul class="project-features">
+                                <li>CRUD completo com validação de regras de negócio;</li>
+                                <li>Autenticação stateless via Token JWT e Spring Security;</li>
+                                <li>Paginação, ordenação e soft delete de tópicos;</li>
+                                <li>Migrations automatizadas com Flyway e documentação interativa via Swagger.</li>
+                            </ul>
+                            <div class="project-stack">
+                                <span class="stack-pill">Java 17</span>
+                                <span class="stack-pill">Spring Boot</span>
+                                <span class="stack-pill">Spring Security</span>
+                                <span class="stack-pill">JWT</span>
+                                <span class="stack-pill">Flyway</span>
+                                <span class="stack-pill">MySQL</span>
+                                <span class="stack-pill">Swagger</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/lorenzorover/forum-hub" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-primary">
+                                    <span>Ver no GitHub</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 2: Farmácia Web -->
+                    <div class="project-card">
+                        <div class="project-thumbnail-wrapper" onclick="abrirLightbox('https://raw.githubusercontent.com/lorenzorover/pi-farmacia/main/Projeto%20Web%20Senac%20Farmacia/Docs/Assets%20do%20Projeto/Pagina%20Principal.png', 'Gerenciamento de Estoque Farmácia - Tela Principal')">
+                            <img src="https://raw.githubusercontent.com/lorenzorover/pi-farmacia/main/Projeto%20Web%20Senac%20Farmacia/Docs/Assets%20do%20Projeto/Pagina%20Principal.png" alt="Farmácia Web" class="project-thumbnail" loading="lazy">
+                            <div class="project-thumbnail-overlay">
+                                <span class="overlay-zoom-text">🔍 Clique para expandir</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">Full-Stack · Aplicação Web</span>
+                            <h3 class="project-title">Gerenciamento de Estoque Farmácia</h3>
+                            <p class="project-description">
+                                Projeto integrador final desenvolvido no Senac (Jovem Programador) para controle de estoque farmacêutico, onde fui responsável pela arquitetura do back-end.
+                            </p>
+                            <ul class="project-features">
+                                <li>Gestão completa de medicamentos, categorias e departamentos;</li>
+                                <li>Filtro dinâmico e busca rápida de produtos;</li>
+                                <li>Arquitetura em camadas com Spring Data JPA, DTOs e validações;</li>
+                                <li>Interface responsiva renderizada via Thymeleaf e Bootstrap.</li>
+                            </ul>
+                            <div class="project-stack">
+                                <span class="stack-pill">Java</span>
+                                <span class="stack-pill">Spring Boot</span>
+                                <span class="stack-pill">Thymeleaf</span>
+                                <span class="stack-pill">Spring Data JPA</span>
+                                <span class="stack-pill">MySQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/lorenzorover/pi-farmacia" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-primary">
+                                    <span>Ver no GitHub</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 3: Controle de Consultório -->
+                    <div class="project-card">
+                        <!-- Carrossel de Imagens Curadas (Leve, Fluido e Lazy Loading) -->
+                        <div class="project-carousel" id="carousel-consultorio" data-current-slide="0">
+                            <div class="carousel-track">
+                                <!-- Slide 1: Gestão de Consultas -->
+                                <div class="carousel-slide active" data-index="0" onclick="abrirLightbox('./portfolio/source/lista-de-consulta.png', 'Controle de Consultório - Gestão de Consultas e Comparecimento')">
+                                    <img src="./portfolio/source/lista-de-consulta.png" alt="Gestão de Consultas e Comparecimento" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">1/4 • Gestão de Consultas</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir tela</span>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 2: Modelagem de Banco de Dados ER -->
+                                <div class="carousel-slide" data-index="1" onclick="abrirLightbox('./portfolio/source/pi-modelagem-banco.png', 'Controle de Consultório - Modelagem de Banco de Dados Relacional (Diagrama ER)')">
+                                    <img src="./portfolio/source/pi-modelagem-banco.png" alt="Modelagem Relacional e Diagrama ER" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">2/4 • Modelagem ER (Banco)</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir tela</span>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 3: Tabela de Pacientes com Busca Dinâmica -->
+                                <div class="carousel-slide" data-index="2" onclick="abrirLightbox('./portfolio/source/pi-tabela-pacientes.png', 'Controle de Consultório - Tabela de Pacientes com Busca Dinâmica por Nome')">
+                                    <img src="./portfolio/source/pi-tabela-pacientes.png" alt="Tabela de Pacientes e Busca Dinâmica" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">3/4 • Tabela de Pacientes</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir tela</span>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 4: Cadastro e Agendamento -->
+                                <div class="carousel-slide" data-index="3" onclick="abrirLightbox('./portfolio/source/pi-cadastro-consulta.png', 'Controle de Consultório - Formulário de Agendamento com Validações')">
+                                    <img src="./portfolio/source/pi-cadastro-consulta.png" alt="Cadastro e Agendamento de Consultas" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">4/4 • Cadastro & Validações</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir tela</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Botões de Navegação Suave -->
+                            <button type="button" class="carousel-arrow carousel-arrow-prev" onclick="navegarCarrossel('carousel-consultorio', -1, event)" aria-label="Imagem anterior" title="Imagem anterior">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                            </button>
+                            <button type="button" class="carousel-arrow carousel-arrow-next" onclick="navegarCarrossel('carousel-consultorio', 1, event)" aria-label="Próxima imagem" title="Próxima imagem">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                            </button>
+
+                            <!-- Indicadores / Bolinhas de Navegação -->
+                            <div class="carousel-dots">
+                                <button type="button" class="carousel-dot active" onclick="irParaSlide('carousel-consultorio', 0, event)" aria-label="Slide 1"></button>
+                                <button type="button" class="carousel-dot" onclick="irParaSlide('carousel-consultorio', 1, event)" aria-label="Slide 2"></button>
+                                <button type="button" class="carousel-dot" onclick="irParaSlide('carousel-consultorio', 2, event)" aria-label="Slide 3"></button>
+                                <button type="button" class="carousel-dot" onclick="irParaSlide('carousel-consultorio', 3, event)" aria-label="Slide 4"></button>
+                            </div>
+                        </div>
+
+                        <div class="project-content">
+                            <span class="project-tag">Desktop · Padrão DAO</span>
+                            <h3 class="project-title">Controle de Consultório Médico</h3>
+                            <p class="project-description">
+                                Aplicação desktop desenvolvida em dupla durante o curso de Programador de Sistemas no Senac para gerenciamento e rotinas operacionais de clínica médica.
+                            </p>
+                            <ul class="project-features">
+                                <li>Cadastro, edição, consulta e cancelamento de consultas;</li>
+                                <li>Estruturação e persistência utilizando o padrão de projeto DAO;</li>
+                                <li>Consultas dinâmicas de pacientes e tratamentos com SQL;</li>
+                                <li>Interface com Java Swing e documentação técnica completa.</li>
+                            </ul>
+                            <div class="project-stack">
+                                <span class="stack-pill">Java</span>
+                                <span class="stack-pill">Java Swing</span>
+                                <span class="stack-pill">Padrão DAO</span>
+                                <span class="stack-pill">MySQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/lorenzorover/pi-dev-desk" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-primary">
+                                    <span>Ver no GitHub</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                                </a>
+                                <a href="https://raw.githubusercontent.com/lorenzorover/pi-dev-desk/main/Projeto-Integrador.pdf" target="_blank" rel="noopener noreferrer" class="btn-project">
+                                    <span>Baixar PDF</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 4: LiterAlura -->
+                    <div class="project-card">
+                        <div class="project-content" style="padding-top: 2rem;">
+                            <span class="project-tag">Back-end · Consumo de API</span>
+                            <h3 class="project-title">LiterAlura (Catálogo de Livros)</h3>
+                            <p class="project-description">
+                                Sistema desenvolvido no programa Alura ONE que consome a API de livros Gutendex para catalogação e análises estatísticas em tempo real.
+                            </p>
+                            <ul class="project-features">
+                                <li>Integração com a API Gutendex e serialização de dados com Gson;</li>
+                                <li>Armazenamento relacional dos dados com Spring Data JPA;</li>
+                                <li>Consultas avançadas por autores vivos em determinado ano;</li>
+                                <li>Estatísticas de obras cadastradas agrupadas por idioma.</li>
+                            </ul>
+                            <div class="project-stack">
+                                <span class="stack-pill">Java</span>
+                                <span class="stack-pill">Spring Boot</span>
+                                <span class="stack-pill">Spring Data JPA</span>
+                                <span class="stack-pill">PostgreSQL</span>
+                                <span class="stack-pill">Gutendex API</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/lorenzorover/liter-alura" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-primary">
+                                    <span>Ver no GitHub</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 5: Conversor de Moedas -->
+                    <div class="project-card">
+                        <!-- Carrossel Conversor de Moedas (Leve, Fluido e Lazy Loading) -->
+                        <div class="project-carousel" id="carousel-conversor" data-current-slide="0">
+                            <div class="carousel-track">
+                                <!-- Slide 1: Conversão Múltipla / Lista Fixa -->
+                                <div class="carousel-slide active" data-index="0" onclick="abrirLightbox('./portfolio/source/conversor-moedas-01.png', 'Conversor de Moedas - Conversão em Lote para Múltiplas Cotações')">
+                                    <img src="./portfolio/source/conversor-moedas-01.png" alt="Conversão Múltipla no Terminal" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">1/2 • Conversão em Lote</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir tela</span>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 2: Conversão Customizada Selecionando Moedas -->
+                                <div class="carousel-slide" data-index="1" onclick="abrirLightbox('./portfolio/source/conversor-moedas-02.png', 'Conversor de Moedas - Conversão Dinâmica Selecionando Moedas Específicas')">
+                                    <img src="./portfolio/source/conversor-moedas-02.png" alt="Conversão Customizada no Terminal" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">2/2 • Cotação Personalizada</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir tela</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Botões de Navegação Suave -->
+                            <button type="button" class="carousel-arrow carousel-arrow-prev" onclick="navegarCarrossel('carousel-conversor', -1, event)" aria-label="Imagem anterior" title="Imagem anterior">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                            </button>
+                            <button type="button" class="carousel-arrow carousel-arrow-next" onclick="navegarCarrossel('carousel-conversor', 1, event)" aria-label="Próxima imagem" title="Próxima imagem">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                            </button>
+
+                            <!-- Indicadores / Bolinhas de Navegação -->
+                            <div class="carousel-dots">
+                                <button type="button" class="carousel-dot active" onclick="irParaSlide('carousel-conversor', 0, event)" aria-label="Slide 1"></button>
+                                <button type="button" class="carousel-dot" onclick="irParaSlide('carousel-conversor', 1, event)" aria-label="Slide 2"></button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">Java · Integração REST</span>
+                            <h3 class="project-title">Conversor de Moedas</h3>
+                            <p class="project-description">
+                                Aplicação desenvolvida para consumo da ExchangeRate-API com cotações cambiais atualizadas em tempo real.
+                            </p>
+                            <ul class="project-features">
+                                <li>Requisições HTTP dinâmicas para a API de câmbio;</li>
+                                <li>Parsing e conversão de JSON utilizando biblioteca Gson;</li>
+                                <li>Histórico e cálculo de taxas de conversão de múltiplas moedas.</li>
+                            </ul>
+                            <div class="project-stack">
+                                <span class="stack-pill">Java</span>
+                                <span class="stack-pill">Gson</span>
+                                <span class="stack-pill">HttpClient</span>
+                                <span class="stack-pill">ExchangeRate-API</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/lorenzorover/conversor-de-moedas" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-primary">
+                                    <span>Ver no GitHub</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 6: Controle de Gorjetas -->
+                    <div class="project-card">
+                        <div class="project-content" style="padding-top: 2rem;">
+                            <span class="project-tag">Hackathon · Inovação · Top 10</span>
+                            <h3 class="project-title">Controle de Gorjetas (Hackathon)</h3>
+                            <p class="project-description">
+                                Solução tecnológica desenvolvida em equipe durante o <strong>Hackathon Jovem Programador 2024</strong>, premiada no <strong>Top 10 entre 60 equipes concorrentes</strong>.
+                            </p>
+                            <ul class="project-features">
+                                <li>Sistema concebido para transparência no repasse da Lei da Gorjeta (Nº 13.419);</li>
+                                <li>Validação de certezas e dúvidas com matriz CSD e entrevistas com restaurantes;</li>
+                                <li>Prototipação de telas no Figma e elaboração de Pitch Deck de negócio.</li>
+                            </ul>
+                            <div class="project-stack">
+                                <span class="stack-pill">Design Thinking</span>
+                                <span class="stack-pill">Figma</span>
+                                <span class="stack-pill">Matriz CSD</span>
+                                <span class="stack-pill">Pitch Deck</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/lorenzorover/pi-hackaton" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-primary">
+                                    <span>Ver no GitHub</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                                </a>
+                                <a href="https://youtu.be/DTnDxHgJiDI?t=6991" target="_blank" rel="noopener noreferrer" class="btn-project">
+                                    <span>Assistir Pitch</span>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                
-                <div class="container__projetos__projeto">
-                    <!-- Projeto 2 -->
-                    <div class="card">
-                        <div class="card-header">
-                          <h4 class="card-title">Conversor de Moedas<br>(Aplicação - Console Terminal)</h4>
-                        </div>
-                        <div class="card-body">
-                          <p>Projeto desenvolvido sozinho durante o curso: <i>ONE (Oracle Next Education) - 2º Desafio</i> - <strong><i>Alura</i></strong>.</p>
-                          <div class="collapse" id="content2" data-parent="#accordion">
-                            <div class="card card-body mt-3">
-                                <p>Conversor de moedas desenvolvido durante o curso One da Alura, utilizando a API <a class="links" href="https://www.exchangerate-api.com" target="_blank">ExchangeRate-API</a> para obter taxas de câmbio em tempo real.</p>
-                                <p>O programa permite converter valores entre diversas moedas, escolhendo manualmente ou utilizando opções predefinidas.</p>
-                                <p>A aplicação é executada pelo terminal de comando do IntelliJ.</p>
-                                <div class="container__tabela">
-                                    <table class="mb-3 tabelas__projeto">
-                                        <tr>
-                                            <th>Ferramentas e Linguagens:</th>
-                                            <td>Java, Gson</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Outros:</th>
-                                            <td>IntelliJ IDEA</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <p>Imagem ilustrativa:</p>
-                                <div class="container__imagem__projeto mb-3">
-                                    <img loading="lazy" src="https://raw.githubusercontent.com/lorenzorover/conversor-de-moedas/main/conversor-de-moedas/images/exemplo-01.png" class="imagens__projeto" alt="Conversor de Moedas">
-                                </div>
-                                <p>Mais informações no repositório do projeto.</p>
-                                <div class="container__projetos__links">
-                                    <a class="link__projetos" href="https://github.com/lorenzorover/conversor-de-moedas" target="_blank">GitHub do Projeto</a>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="d-flex justify-content-end">
-                            <a id="botao-projeto-mostrar-2" class="btn btn-primary botoes__projeto mt-3" data-toggle="collapse" href="#content2" role="button" aria-expanded="false" aria-controls="content2" onclick="mudarBotaoProjeto(2)">Expandir</a>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+        </section>
+
+        <!-- Seção Formação -->
+        <section id="formacao" class="section-wrapper bg-surface-alt">
+            <div class="container-custom">
+                <div class="section-header">
+                    <span class="section-kicker">Educação & Cursos</span>
+                    <h2 class="section-title">Formação Acadêmica</h2>
+                    <p class="section-subtitle">
+                        Principais certificações e formações profissionais concluídas:
+                    </p>
                 </div>
 
-                <div class="container__projetos__projeto">
-                    <!-- Projeto 3 -->
-                    <div class="card">
-                        <div class="card-header">
-                          <h4 class="card-title">Gerenciamento de Estoque Farmácia<br>(Aplicação - Web)</h4>
-                        </div>
-                        <div class="card-body">
-                          <p>Projeto integrador (Final), desenvolvido em grupo de 5 pessoas durante o curso: <i>Jovem Programador - 2º Projeto - Programador Web</i> - <strong><i>Senac</i></strong>.</p>
-                          <div class="collapse" id="content3" data-parent="#accordion">
-                            <div class="card card-body mt-3">
-                                <p>Sistema de gerenciamento de estoque para farmácias, permitindo o cadastro, edição, exclusão e consulta de produtos. Organiza itens por categorias, marcas e departamentos, e inclui uma busca dinâmica para rápida localização. Futuramente, será possível adicionar imagens aos produtos e criar contas de usuários.</p>
-                                <p>A estrutura do projeto é dividida em camadas que gerenciam dados, lógica de negócios, requisições HTTP e segurança, enquanto os templates e arquivos estáticos cuidam da interface e experiência do usuário.</p>
-                                <div class="container__tabela">
-                                    <table class="mb-3 tabelas__projeto">
-                                        <tr>
-                                            <th>Linguagens e Frameworks:</th>
-                                            <td>Java, SQL, Spring Framework, Bootstrap</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Linguagens de Marcação e Estilização:</th>
-                                            <td>HTML, CSS</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Bibliotecas:</th>
-                                            <td>Spring Data JPA, Spring Web, Spring Boot Devtools, MySQL Driver, Lombok, Thymeleaf, Spring Security, Validation</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Outros:</th>
-                                            <td>IntelliJ IDEA, VS Code, MySQL Workbench</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <p>Imagens ilustrativas:</p>
-                                <div class="container__imagem__projeto mb-3">
-                                    <img loading="lazy" src="https://raw.githubusercontent.com/lorenzorover/pi-farmacia/main/Projeto%20Web%20Senac%20Farmacia/Docs/Assets%20do%20Projeto/Pagina%20Principal.png" class="imagens__projeto" alt="Página inicial aplicativo">
-                                </div>
-                                <div class="container__imagem__projeto mb-3">
-                                    <img loading="lazy" src="https://raw.githubusercontent.com/lorenzorover/pi-farmacia/main/Projeto%20Web%20Senac%20Farmacia/Docs/Assets%20do%20Projeto/Adicionando%20um%20produto%20ao%20sistema.png" class="imagens__projeto" alt="Demonstração de utilização aplicativo">
-                                </div>
-                                <p>Fui responsável pelo desenvolvimento do back-end do projeto, trabalhando em conjunto com outro colega. Além disso, também desenvolvi uma boa parte da documentação no README.</p>
-                                <p>Mais informações no repositório do projeto.</p>
-                                <div class="container__projetos__links">
-                                    <a class="link__projetos" href="https://github.com/lorenzorover/pi-farmacia" target="_blank">GitHub do Projeto</a>
-                                </div>
+                <div class="timeline">
+                    <!-- Item 1 -->
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <h3 class="timeline-course">Oracle Next Education (ONE)</h3>
+                                <span class="timeline-date">Jun 2024 - Jan 2025</span>
                             </div>
-                          </div>
-                          <div class="d-flex justify-content-end">
-                            <a id="botao-projeto-mostrar-3" class="btn btn-primary botoes__projeto mt-3" data-toggle="collapse" href="#content3" role="button" aria-expanded="false" aria-controls="content3" onclick="mudarBotaoProjeto(3)">Expandir</a>
-                            </div>
+                            <p class="timeline-institution">Alura + Oracle · Especialização Online</p>
+                            <p class="timeline-details">
+                                Programa intensivo de formação profissional com foco em Java, Spring Boot, Spring Security, bancos de dados relacionais e boas práticas de desenvolvimento de APIs RESTful.
+                            </p>
                         </div>
                     </div>
-                </div>
 
-                <div class="container__projetos__projeto">
-                    <!-- Projeto 4 -->
-                    <div class="card">
-                        <div class="card-header">
-                          <h4 class="card-title">Controle de Gorjetas<br>(Protótipo)</h4>
+                    <!-- Item 2 -->
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <h3 class="timeline-course">Jovem Programador</h3>
+                                <span class="timeline-date">Mar 2024 - Dez 2024</span>
+                            </div>
+                            <p class="timeline-institution">Senac · Híbrido</p>
+                            <p class="timeline-details">
+                                Curso profissionalizante com projetos práticos em equipe cobrindo Programação de Sistemas (Java Desktop / DAO) e Programador Web (Spring Framework, HTML, CSS, Bootstrap e SQL).
+                            </p>
                         </div>
-                        <div class="card-body">
-                          <p>Projeto de protótipo, desenvolvido em grupo de 6 pessoas durante o curso: <i>Jovem Programador - 3º Projeto</i> - <strong><i>Senac</i></strong>.</p>
-                          <div class="collapse" id="content4" data-parent="#accordion">
-                            <div class="card card-body mt-3">
-                                <p>Este protótipo foi desenvolvido durante 6 dias de trabalho no <strong>Hackathon Jovem Programador 2024</strong>, que tinha como base temas fixos. O objetivo foi oferecer uma solução tecnológica para o controle de gorjetas, visando resolver problemas de transparência, justiça e fidelidade no repasse dos valores aos funcionários.</p>
-                                <p>Durante o desenvolvimento, foi criada uma matriz CSD para organizar as certezas, suposições e dúvidas, ajudando a guiar as decisões do time.</p>
-                                <p>O sistema proposto visa tornar o processo mais transparente, garantindo que as gorjetas sejam corretamente registradas e repassadas, além de facilitar o cumprimento das obrigações legais.</p>
-                                <p>Ao longo do projeto, realizamos entrevistas com restaurantes para entender o processo de controle de gorjetas na prática, além de pesquisarmos sobre a Lei Nº 13.419 (Lei da Gorjeta). Também discutimos e refinamos nossas ideias com a ajuda de mentorias, garantindo que o sistema fosse eficiente e atendesse às regulamentações legais, promovendo transparência tanto para os funcionários quanto para os clientes.</p>
-                                <div class="container__tabela">
-                                    <table class="mb-3 tabelas__projeto">
-                                        <tr>
-                                            <th>Ferramentas utilizadas:</th>
-                                            <td>Trello, Figma, Canva</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <p><strong>Apresentação:</strong> Você pode assistir à apresentação do nosso trabalho no YouTube clicando <a class="links" href="https://youtu.be/DTnDxHgJiDI?t=6991" target="_blank">aqui</a>. A apresentação foi realizada pelo nosso colega de equipe Lucas Lentz, que também está mencionado no repositório do projeto no GitHub.</p>
-                                <p>Ao finalizar o projeto, conseguimos alcançar o Top 10, competindo junto de outros 60 times.</p>
-                                <p>Para mais informações sobre o desenvolvimento e a concepção do projeto, consulte a apresentação em PDF, que inclui imagens e detalhes visuais do protótipo, e também o repositório do projeto, que contém as pesquisas realizadas durante o processo.</p>
-                                <div class="container__projetos__links">
-                                    <a class="link__projetos" href="https://github.com/lorenzorover/pi-hackaton/raw/main/Green%20Minimalist%20Professional%20Tech%20Start-Up%20Pitch%20Deck%20Presentation.pdf" download="Controle-de-Gorjetas.pdf">Baixar Apresentação(PDF)</a>
-                                    <a class="link__projetos" href="https://github.com/lorenzorover/pi-hackaton" target="_blank">GitHub do Projeto</a>
-                                </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <h3 class="timeline-course">Técnico em Informática</h3>
+                                <span class="timeline-date">Ago 2018 - Dez 2020</span>
                             </div>
-                          </div>
-                          <div class="d-flex justify-content-end">
-                            <a id="botao-projeto-mostrar-4" class="btn btn-primary botoes__projeto mt-3" data-toggle="collapse" href="#content4" role="button" aria-expanded="false" aria-controls="content4" onclick="mudarBotaoProjeto(4)">Expandir</a>
-                            </div>
+                            <p class="timeline-institution">IFSC · Presencial</p>
+                            <p class="timeline-details">
+                                Formação técnica com sólidos fundamentos em lógica de programação, arquitetura de computadores, redes e introdução ao desenvolvimento de sistemas.
+                            </p>
                         </div>
                     </div>
                 </div>
-    
-                <div class="container__projetos__projeto">
-                    <!-- Projeto 5 -->
-                    <div class="card">
-                        <div class="card-header">
-                          <h4 class="card-title">LiterAlura<br>(Aplicação - Console Terminal)</h4>
-                        </div>
-                        <div class="card-body">
-                          <p>Projeto desenvolvido sozinho durante o curso: <i>ONE (Oracle Next Education) - 3º Desafio</i> - <strong><i>Alura</i></strong>.</p>
-                          <div class="collapse" id="content5" data-parent="#accordion">
-                            <div class="card card-body mt-3">
-                                <p>Projeto desenvolvido durante o curso One da Alura, utilizando a API de livros <a class="links" href="https://gutendex.com" target="_blank">Gutendex</a> para buscar e gerenciar dados sobre livros e autores.</p>
-                                <p>O sistema, executado no terminal da IDE, permite cadastrar livros no banco de dados, listar obras e autores, consultar autores vivos com base em critérios escolhidos e exibir estatísticas sobre os livros por idioma.</p>
-                                <p>A aplicação foi desenvolvida em Java com Spring Boot, utilizando Spring Data JPA para gerenciar a persistência dos dados.</p>
-                                <p>Abaixo estão as funcionalidades da aplicação:</p>
-                                <ul class="mb-4">
-                                    <li>Cadastro de livros com título, autor, idioma (enum) e número de downloads;</li>
-                                    <li>Listagem de livros, exibindo os autores relacionados;</li>
-                                    <li>Consulta de autores vivos, com base em critérios escolhidos;</li>
-                                    <li>Listagem e contagem de livros por idioma;</li>
-                                    <li>Exibição estruturada no terminal, garantindo uma navegação intuitiva.</li>
-                                </ul>
-                                <div class="container__tabela">
-                                    <table class="mb-3 tabelas__projeto">
-                                        <tr>
-                                            <th>Linguagens e Frameworks:</th>
-                                            <td>Java, SQL, Spring Framework</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Bibliotecas:</th>
-                                            <td>Spring Data JPA, PostgreSQL Driver, Gson</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Outros</th>
-                                            <td>PostgreSQL, IntelliJ</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <p>Mais informações no repositório do projeto.</p>
-                                <div class="container__projetos__links">
-                                    <a class="link__projetos" href="https://github.com/lorenzorover/liter-alura" target="_blank">GitHub do Projeto</a>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="d-flex justify-content-end">
-                            <a id="botao-projeto-mostrar-5" class="btn btn-primary botoes__projeto mt-3" data-toggle="collapse" href="#content5" role="button" aria-expanded="false" aria-controls="content5" onclick="mudarBotaoProjeto(5)">Expandir</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="container__projetos__projeto">
-                    <!-- Projeto 6 -->
-                    <div class="card">
-                        <div class="card-header">
-                          <h4 class="card-title">Fórum Hub<br>(Aplicação - BackEnd)</h4>
-                        </div>
-                        <div class="card-body">
-                          <p>Projeto (Final) desenvolvido sozinho durante o curso: <i>ONE (Oracle Next Education) - 4º Desafio</i> - <strong><i>Alura</i></strong>.</p>
-                          <div class="collapse" id="content6" data-parent="#accordion">
-                            <div class="card card-body mt-3">
-                                <p>Este projeto implementa uma API RESTful para o gerenciamento de tópicos, permitindo realizar operações CRUD com as seguintes funcionalidades:</p>
-                                <ul class="p-0 mb-4">
-                                    <li>Cadastro de Tópicos: Permite cadastrar tópicos no banco de dados com informações como título, mensagem, autor, curso relacionado e data de criação;</li>
-                                    <li>Listagem de Tópicos: Exibe todos os tópicos cadastrados, com suporte a paginação e ordenação, além de disponibilizar uma rota específica para listar apenas 10 tópicos por vez;</li>
-                                    <li>Consulta de Tópicos por ID: Permite buscar os detalhes de um tópico específico usando seu ID;</li>
-                                    <li>Atualização de Tópicos: Facilita a atualização de informações dos tópicos, como título, mensagem, curso e estado do tópico;</li>
-                                    <li>Exclusão de Tópicos (Soft Delete): Implementa um soft delete, onde o campo ativo é alterado para false, sem excluir fisicamente os dados no banco;</li>
-                                    <li>Paginação e Ordenação: Suporte completo para paginação e ordenação, melhorando a manipulação de grandes volumes de dados.</li>
-                                </ul>
-                                <p>Além dessas funcionalidades, a aplicação implementa um sistema de autenticação baseado em tokens JWT. Após o login do usuário, um token é gerado e utilizado para validar requisições nas rotas protegidas, garantindo maior segurança e controle de acesso às funcionalidades da API.</p>
-                                <p>Para facilitar o teste da aplicação, foi utilizada a especificação OpenAPI (Swagger). Isso proporciona uma interface interativa para manuseio das requisições, incluindo a autenticação via token JWT, tornando o processo de interação com a API mais simples e direto.</p>
-                                <div class="container__tabela">
-                                    <table class="mb-3 tabelas__projeto">
-                                        <tr>
-                                            <th>Linguagens e Frameworks:</th>
-                                            <td>Java, SQL, Spring Framework</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Bibliotecas:</th>
-                                            <td>Lombok, Spring Web, Spring Boot Devtools, Flyway Migration, Spring Data JPA, MySQL Driver, Validation, Spring Security.</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Outros</th>
-                                            <td>MySQL, IntelliJ, OpenAPI (Swagger)</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <p>Imagens ilustrativas:</p>
-                                <div class="container__imagem__projeto mb-3">
-                                    <img loading="lazy" src="https://raw.githubusercontent.com/lorenzorover/forum-hub/main/example%20create%20topico.png" class="imagens__projeto" alt="Criação do tópico Postman">
-                                </div>
-                                <div class="container__imagem__projeto mb-3">
-                                    <img loading="lazy" src="https://raw.githubusercontent.com/lorenzorover/forum-hub/main/example%20swagger.png" class="imagens__projeto" alt="Uso do Swagger na aplicação">
-                                </div>
-                                <p>Caso você queira testar a aplicação, tem o passo a passo de como utilizá-la no repositório do GitHub, basta clicar no botão abaixo:</p>
-                                <div class="container__projetos__links">
-                                    <a class="link__projetos" href="https://github.com/lorenzorover/forum-hub" target="_blank">GitHub do Projeto</a>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="d-flex justify-content-end">
-                            <a id="botao-projeto-mostrar-6" class="btn btn-primary botoes__projeto mt-3" data-toggle="collapse" href="#content6" role="button" aria-expanded="false" aria-controls="content6" onclick="mudarBotaoProjeto(6)">Expandir</a>
-                            </div>
-                        </div>
+            </div>
+        </section>
+
+        <!-- Seção Contato -->
+        <section id="contato" class="section-wrapper">
+            <div class="container-custom">
+                <div class="contact-card">
+                    <span class="section-kicker">Vamos conversar?</span>
+                    <h2 class="contact-title">Entre em Contato</h2>
+                    <p class="contact-text">
+                        Estou sempre aberto a novas oportunidades profissionais, projetos desafiadores e conexões na área de desenvolvimento de software.
+                    </p>
+
+                    <div class="contact-actions">
+                        <button onclick="copiarEmail()" class="copy-email-btn" id="btn-copy-email">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75" />
+                            </svg>
+                            <span id="copy-email-label">Copiar E-mail (lorenzo.rover66@gmail.com)</span>
+                        </button>
+
+                        <a href="https://www.linkedin.com/in/lorenzo-rover/" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                            <span>Conectar no LinkedIn</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                        </a>
+
+                        <a href="https://github.com/lorenzorover" target="_blank" rel="noopener noreferrer" class="btn-secondary contact-github-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="github-svg-icon">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z" />
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="rodape">
-        <!-- Rodapé normal -->
-        <p>&copy; ago 2024</p>
-        <p>Lorenzo Rover</p>
-        <p>Todos os direitos reservados.</p>
+    <!-- Rodapé -->
+    <footer class="footer-wrapper">
+        <div class="container-custom">
+            <div class="footer-content">
+                <p>&copy; 2025 Lorenzo Rover. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Desenvolvedor Back-end & Full-stack · Florianópolis - SC</p>
+            </div>
+        </div>
     </footer>
 
-<!-- Javascript portfólio -->
-<script src='./portfolio/app.js'></script>
-<!-- Javascript Bootstrap -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Toast de Notificação -->
+    <div id="toast-notification" class="toast-notice">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span id="toast-message">E-mail copiado para a área de transferência!</span>
+    </div>
 
+    <!-- Lightbox Modal para Visualização de Imagens -->
+    <div id="lightbox-modal" class="lightbox-modal" onclick="fecharLightbox(event)">
+        <div class="lightbox-content">
+            <button class="lightbox-close-btn" onclick="fecharLightbox(event)" aria-label="Fechar">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <img id="lightbox-image" src="" alt="Imagem ampliada" class="lightbox-img">
+            <p id="lightbox-caption" class="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- Botão Flutuante Voltar ao Topo Dinâmico -->
+    <button id="btn-scroll-top" class="btn-scroll-top" aria-label="Voltar ao início da página" title="Voltar ao início">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- Script Principal -->
+    <script src="./portfolio/app.js"></script>
 </body>
 </html>
