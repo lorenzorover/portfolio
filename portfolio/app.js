@@ -1,8 +1,8 @@
 // ==========================================
-// Portfólio Lorenzo Rover - app.js (v2.1)
+// Portfólio Lorenzo Rover - app.js (v2.3)
 // ==========================================
 
-const VERSAO_APP = '2.1';
+const VERSAO_APP = '2.3';
 
 // Reset de versão: garante que visitantes recebam configurações limpas da versão atualizada
 function verificarResetVersao() {

@@ -9,8 +9,8 @@
     <meta property="og:title" content="Portfólio - Lorenzo Rover">
     <meta property="og:description" content="Portfólio profissional de Lorenzo Rover, desenvolvedor back-end e full-stack.">
 
-    <!-- CSS Modernizado (Cache Busting v2.1) -->
-    <link rel="stylesheet" type="text/css" href="./portfolio/styles/style.css?v=2.1">
+    <!-- CSS Modernizado (Cache Busting v2.3) -->
+    <link rel="stylesheet" type="text/css" href="./portfolio/styles/style.css?v=2.3">
 </head>
 <body>
 
@@ -535,7 +535,131 @@
                         </div>
                     </div>
 
-                    <!-- Projeto 3: Controle de Consultório -->
+                    <!-- Projeto 3: ProgDonto -->
+                    <div class="project-card">
+                        <!-- Carrossel Progdonto (Leve, Fluido e Lazy Loading) -->
+                        <div class="project-carousel" id="carousel-progdonto" data-current-slide="0">
+                            <div class="carousel-track">
+                                <!-- Slide 1: Painel Clínico -->
+                                <div class="carousel-slide active" data-index="0" onclick="abrirLightbox('./portfolio/source/progdonto-painel.jpg', 'ProgDonto - Painel Clínico, Métricas e Agenda de Consultas')">
+                                    <img src="./portfolio/source/progdonto-painel.jpg" alt="Painel Clínico do Progdonto" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">1/4 • Painel Clínico & Agenda</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir tela</span>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 2: Cadastro de Paciente e Validações -->
+                                <div class="carousel-slide" data-index="1" onclick="abrirLightbox('./portfolio/source/progdonto-cadastro.png', 'ProgDonto - Ficha Cadastral do Paciente com Validação de CPF e Otimização de Bitmaps')">
+                                    <img src="./portfolio/source/progdonto-cadastro.png" alt="Cadastro de Paciente" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">2/4 • Cadastro & Validações</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir tela</span>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 3: Agendamento de Consultas -->
+                                <div class="carousel-slide" data-index="2" onclick="abrirLightbox('./portfolio/source/progdonto-agendamento.jpg', 'ProgDonto - Agendamento de Consultas e Seleção de Procedimentos Odontológicos')">
+                                    <img src="./portfolio/source/progdonto-agendamento.jpg" alt="Agendamento de Consultas" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">3/4 • Agendamento de Consultas</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir tela</span>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 4: Backup e Exportação de Banco -->
+                                <div class="carousel-slide" data-index="3" onclick="abrirLightbox('./portfolio/source/progdonto-backup.jpg', 'ProgDonto - Módulo de Exportação e Backup Estruturado do Banco de Dados')">
+                                    <img src="./portfolio/source/progdonto-backup.jpg" alt="Backup do Banco de Dados" class="project-thumbnail" loading="lazy" decoding="async">
+                                    <div class="carousel-slide-badge">4/4 • Backup & Exportação de BD</div>
+                                    <div class="project-thumbnail-overlay">
+                                        <span class="overlay-zoom-text">🔍 Expandir tela</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Botões de Navegação Suave -->
+                            <button type="button" class="carousel-arrow carousel-arrow-prev" onclick="navegarCarrossel('carousel-progdonto', -1, event)" aria-label="Slide anterior" title="Slide anterior">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                            </button>
+                            <button type="button" class="carousel-arrow carousel-arrow-next" onclick="navegarCarrossel('carousel-progdonto', 1, event)" aria-label="Próximo slide" title="Próximo slide">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                            </button>
+
+                            <!-- Indicadores / Bolinhas de Navegação -->
+                            <div class="carousel-dots">
+                                <button type="button" class="carousel-dot active" onclick="irParaSlide('carousel-progdonto', 0, event)" aria-label="Slide 1"></button>
+                                <button type="button" class="carousel-dot" onclick="irParaSlide('carousel-progdonto', 1, event)" aria-label="Slide 2"></button>
+                                <button type="button" class="carousel-dot" onclick="irParaSlide('carousel-progdonto', 2, event)" aria-label="Slide 3"></button>
+                                <button type="button" class="carousel-dot" onclick="irParaSlide('carousel-progdonto', 3, event)" aria-label="Slide 4"></button>
+                            </div>
+                        </div>
+
+                        <div class="project-content">
+                            <span class="project-tag">🔒 Projeto Comercial · Mobile & Dados</span>
+                            <h3 class="project-title">ProgDonto (Gestão Odontológica)</h3>
+                            <p class="project-description">
+                                Solução móvel completa para consultórios e clínicas odontológicas, focada em gestão de prontuários, fichas clínicas, agendamentos e persistência segura de dados. Código proprietário documentado via Estudo de Caso.
+                            </p>
+                            <ul class="project-features">
+                                <li>Prontuário completo com validação matemática de CPF e prevenção contra duplicidade;</li>
+                                <li>Gestão fotográfica com algoritmo de downsampling para prevenção de vazamento de memória;</li>
+                                <li>Arquitetura em camadas (Domain, Controller, Service, Validators e Database);</li>
+                                <li>Módulo de exportação, backup estruturado e restauração de dados.</li>
+                            </ul>
+                            <div class="project-stack">
+                                <span class="stack-pill">Java 17</span>
+                                <span class="stack-pill">Android SDK 34</span>
+                                <span class="stack-pill">Arquitetura em Camadas</span>
+                                <span class="stack-pill">Validações LGPD</span>
+                                <span class="stack-pill">Persistência</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/lorenzorover/Doc-Progdonto-API" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-primary" title="Ver Documentação e Estudo de Caso no GitHub">
+                                    <span>Ver Documentação (GitHub)</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 4: Organizador Nodewar & Bot Discord -->
+                    <div class="project-card">
+                        <div class="project-thumbnail-wrapper" onclick="abrirLightbox('./portfolio/source/organizador-nodewar-demo.png', 'Organizador Nodewar & Bot Discord - Painel Tático em Tempo Real com Drag & Drop')">
+                            <img src="./portfolio/source/organizador-nodewar-demo.png" alt="Organizador Nodewar & Bot Discord" class="project-thumbnail" loading="lazy">
+                            <div class="project-thumbnail-overlay">
+                                <span class="overlay-zoom-text">🔍 Expandir tela</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">Full-Stack · Realtime & Bot Integration</span>
+                            <h3 class="project-title">Organizador Nodewar & Bot Discord</h3>
+                            <p class="project-description">
+                                Solução tática em tempo real para gerenciamento e montagem de grupos (PTs) de combate em MMOs, integrada a um bot em Python no Discord que automatiza a atualização de classes dos jogadores sem necessidade de recarregar a página.
+                            </p>
+                            <ul class="project-features">
+                                <li>Interface reativa com Drag & Drop e sincronização instantânea em nuvem via Firebase Firestore (onSnapshot);</li>
+                                <li>Bot assíncrono em Python (discord.py) com normalização algorítmica Unicode (NFKD) para fontes estilizadas;</li>
+                                <li>Arquitetura orientada a eventos (Event-Driven) conectando o Discord Gateway diretamente ao Web App;</li>
+                                <li>Inteligência tática de Standby: atualiza o banco de reservas na hora, mas preserva formações ativas em combate.</li>
+                            </ul>
+                            <div class="project-stack">
+                                <span class="stack-pill">Python</span>
+                                <span class="stack-pill">discord.py</span>
+                                <span class="stack-pill">JavaScript</span>
+                                <span class="stack-pill">Firebase Firestore</span>
+                                <span class="stack-pill">Event-Driven</span>
+                                <span class="stack-pill">WebSockets</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/lorenzorover/doc-organizador-node-war" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-primary" title="Ver Documentação e Arquitetura no GitHub">
+                                    <span>Ver Documentação (GitHub)</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 5: Controle de Consultório -->
                     <div class="project-card">
                         <!-- Carrossel de Imagens Curadas (Leve, Fluido e Lazy Loading) -->
                         <div class="project-carousel" id="carousel-consultorio" data-current-slide="0">
@@ -624,7 +748,7 @@
                         </div>
                     </div>
 
-                    <!-- Projeto 4: LiterAlura -->
+                    <!-- Projeto 6: LiterAlura -->
                     <div class="project-card">
                         <div class="project-content" style="padding-top: 2rem;">
                             <span class="project-tag">Back-end · Consumo de API</span>
@@ -654,7 +778,7 @@
                         </div>
                     </div>
 
-                    <!-- Projeto 5: Conversor de Moedas -->
+                    <!-- Projeto 7: Integração de Câmbio (API REST) -->
                     <div class="project-card">
                         <!-- Carrossel Conversor de Moedas (Leve, Fluido e Lazy Loading) -->
                         <div class="project-carousel" id="carousel-conversor" data-current-slide="0">
@@ -693,10 +817,10 @@
                             </div>
                         </div>
                         <div class="project-content">
-                            <span class="project-tag">Java · Integração REST</span>
-                            <h3 class="project-title">Conversor de Moedas</h3>
+                            <span class="project-tag">Back-end · Consumo de API</span>
+                            <h3 class="project-title">Integração de Câmbio (API REST)</h3>
                             <p class="project-description">
-                                Aplicação desenvolvida para consumo da ExchangeRate-API com cotações cambiais atualizadas em tempo real.
+                                Aplicação em Java desenvolvida para consumo e integração direta com a ExchangeRate-API, processando cotações cambiais atualizadas em tempo real via protocolo HTTP.
                             </p>
                             <ul class="project-features">
                                 <li>Requisições HTTP dinâmicas para a API de câmbio;</li>
@@ -718,7 +842,7 @@
                         </div>
                     </div>
 
-                    <!-- Projeto 6: Controle de Gorjetas -->
+                    <!-- Projeto 8: Controle de Gorjetas -->
                     <div class="project-card">
                         <!-- Carrossel FlexTip / Hackathon (Leve, Fluido e Lazy Loading) -->
                         <div class="project-carousel" id="carousel-hackathon" data-current-slide="0">
@@ -883,8 +1007,7 @@
         <section id="contato" class="section-wrapper">
             <div class="container-custom">
                 <div class="contact-card">
-                    <span class="section-kicker">Vamos conversar?</span>
-                    <h2 class="contact-title">Entre em Contato</h2>
+                    <h2 class="contact-title">Formas de Contato</h2>
                     <p class="contact-text">
                         Estou sempre aberto a novas oportunidades profissionais, projetos desafiadores e conexões na área de desenvolvimento de software.
                     </p>
@@ -942,7 +1065,7 @@
         </div>
     </div>
 
-    <!-- Script Principal (Cache Busting v2.1) -->
-    <script src="./portfolio/app.js?v=2.1"></script>
+    <!-- Script Principal (Cache Busting v2.3) -->
+    <script src="./portfolio/app.js?v=2.3"></script>
 </body>
 </html>
